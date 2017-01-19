@@ -1,0 +1,35 @@
+<%
+var androidPreKey = androidPreKeyProperty!=null ? androidPreKeyProperty.message : "";
+var androidProKey = androidProKeyProperty!=null ? androidProKeyProperty.message : "";
+%>
+
+<h3 class="page-header">Modifica Impostazioni Avanzate</h3>
+
+<h4 class="page-header">Android notifiche push ApiKey</h4>
+<div>
+	<form class="form-horizontal" role="form">
+		Pre-production
+		<div class="form-group">
+			<div class="col-sm-11">
+				<input type="text" class="form-control" id="androidPreKey" placeholder="Api key..." value="<%=androidPreKey %>">
+			</div>
+			<div class="col-sm-1">
+				<button type="button" class="btn btn-primary" id="btnSaveAndroidPreKey">Salva</button>
+			</div>
+		</div>
+		
+		Production
+		<div class="form-group">
+			<div class="col-sm-11">
+				<input type="text" class="form-control" id="androidProKey" placeholder="Api key..." value="<%=androidProKey %>">
+			</div>
+			<div class="col-sm-1">
+				<button type="button" class="btn btn-primary" id="btnSaveAndroidProKey">Salva</button>
+			</div>
+		</div>
+		
+	</form>
+</div>
+
+
+<h4 class="page-header">Apple Push Certificates</h4>

@@ -1,0 +1,266 @@
+
+<%moment.lang("it")%>
+
+
+<ol class="breadcrumb">
+  <li><a href="#">Datasets</a></li>
+  <li class="active"><a  style="color: #999999;" href="#ds/<%= datasetMeta._slug %>">
+<%if (datasetMeta._name!=null) {%>
+	<%= datasetMeta._name %>
+<%}else{%>
+	<%= datasetMeta._slug %>
+<%}%>
+
+</a></li>
+</ol>
+
+
+<!-- Stack the columns on mobile by making one full-width and the other half-width -->
+<div class="row">
+  <div class="col-xs-12 col-md-2"></div>
+  <div class="col-xs-12 col-md-2">
+
+	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#apiModal">
+				<span class="glyphicon glyphicon-cloud" aria-hidden="true"></span> <%=_label.scopriLeAPI%>
+	</button>
+
+
+	<!-- Modal -->
+		<div class="modal fade" id="apiModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h4 class="modal-title" id="myModalLabel"><%=_label.guidaRapidaAlleAPI%></h4>
+		      </div>
+		      <div id="mymodalbody" class="modal-body">
+				<table class="table">
+
+				<thead>
+					 <tr>				
+						   <th>
+						    <%=_label.nome%>
+						   </th>
+
+		     				   <th>
+						    <%=_label.indirizzo%>
+						   </th>
+					</tr>
+				</thead>
+				<tbody>
+
+						 <tr>
+
+							   <td>
+							    <%=_label.elencoDeiDatiInFormatoJson%>
+							   </td>
+							   <td>
+							    <a target="_blank" href="<%=tenant + '/service/v1/datasets/'+datasetMeta.id%>"><%=_label.cliccaQui%></a>
+							   </td>
+
+						</tr>
+
+						 <tr>
+
+							   <td>
+							   <%=_label.elencoDeiDatiInFormatoCsv%>
+							   </td>
+							   <td>
+							    <a target="_blank" href="<%=tenant + '/service/v1/datasets/'+datasetMeta.id+'.csv'%>"><%=_label.cliccaQui%></a>
+							   </td>
+
+						</tr>
+
+						<tr>
+
+							  <td>
+							    <%=_label.ricercaDiUnDatoPerParametro%>
+							   </td>
+							   <td>
+							    <a target="_blank" href='<%=tenant + '/service/v1/datasets/'+datasetMeta.id+'?q={\x22name\x22:\x22MyName\x22}'%>'><%=_label.cliccaQui%></a>
+							   </td>
+						</tr>
+
+						<tr>
+
+							   <td>
+							    <%=_label.ricercaDeiDatiConPaginazioneEordinamento%>
+							   </td>
+							   <td>
+							    <a target="_blank" href='<%=tenant + '/service/v1/datasets/'+datasetMeta.id+'?page=0&pagesize=10&sort=name&direction=asc'%>'><%=_label.cliccaQui%></a>
+							   </td>
+
+
+						</tr>
+
+						<tr>
+
+							   <td>
+							    <%=_label.ricercaDeiDatiOrdinatiPerDistanzaDalPuntoConCoordinateXY%>
+							   </td>
+							   <td>
+							    <a target="_blank" href='<%=tenant + '/service/v1/datasets/'+datasetMeta.id+'?near=40.191511,18.210879'%>'><%=_label.cliccaQui%></a>
+							   </td>
+
+						</tr>
+
+
+						<tr>
+
+							   <td>
+							    <%=_label.ricercaPerTestoFulltext%>
+							   </td>
+							   <td>
+							    <a target="_blank" href='<%=tenant + '/service/v1/datasets/'+datasetMeta.id+'?text=prova'%>'><%=_label.cliccaQui%></a>
+							   </td>
+
+						</tr>
+
+			
+				</tbody>
+				</table>
+		      </div>
+		      <div class="modal-footer">
+			<a class="btn btn-primary" href="http://www.openrecordz.com/documentazione/api" target="_blank"><%=_label.documentazioneCompletaAPI%></a>
+			<button type="button" class="btn btn-default" data-dismiss="modal"><%=_label.chiudi%></button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+
+
+  </div>
+  <div class="col-xs-12 col-md-3">
+
+	<div class="dropdown">
+	  <button type="button" class="btn btn-default btn-lg dropdown-toggle"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" >
+	    <span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span> Download <span class="caret"></span>
+	  </button>
+	  <ul class="dropdown-menu">
+	    <li><a href="<%=tenant + '/service/v1/datasets/'+datasetMeta.id+'.csv?pagesize=1000'%>"><%=_label.downloadComeCSV%></a></li>
+	    <li><a target="_blank" href="<%=tenant + '/service/v1/datasets/'+datasetMeta.id+'?pagesize=1000'%>"><%=_label.downloadComeJSON%></a></li>
+	    <!--<li><a target="_blank" href="#">Download come XML</a></li>-->
+	  </ul>
+	</div>
+
+  </div>
+
+  <div class="col-xs-12 col-md-3">
+      <a href="#uploaddata/<%=datasetMeta._slug%>">
+	<button type="button" class="btn btn-success btn-lg">
+		<span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span> <%=_label.aggiungiNuovaRisorsa%>
+	</button>
+      </a>
+  </div>
+   <div class="col-xs-12 col-md-2">
+<!--
+<%=_user.username%>
+<%=datasetMeta._modifiedby%>
+<%=_user.username==datasetMeta._modifiedby%>
+<%=(_user.isAdministrator || (_user.isAuthenticated && _user.username==datasetMeta._modifiedby))%>
+
+<%if (false==false){%>
+ciaociao
+<%}%>
+<%if (_user.isAdministrator==true || (_user.isAuthenticated==true && _user.username==datasetMeta._modifiedby)){%>
+ciao2
+<%}%>-->
+     <%if (_user.isAdministrator==true || (_user.isAuthenticated==true && _user.username==datasetMeta._modifiedby)){%>
+	<div class="btn-group">
+	  <button type="button" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	    <%=_label.azioni%> <span class="caret"></span>
+	  </button>
+	  <ul class="dropdown-menu">
+	    <li><a href="#upsert/<%=datasetMeta._slug%>" id="btn-edit"><%=_label.modifica%></a></li>
+	    <li><a href="/" id="btn-delete-all-data"><%=_label.eliminaTuttiIdatiDelDataset%></a></li>
+	    <li><a href="/" id="btn-delete-dataset"><%=_label.cancellaIlDataset%></a></li>
+	  </ul>
+	</div>
+	
+    <%}%>
+
+
+   </div>
+</div>
+
+
+
+<!--<h1 class="page-header text-center">Elenco dati del dataset <%= datasetMeta._name %></h1>-->
+<h1 class="page-header text-center">
+<%if (datasetMeta._name!=null) {%>
+	<%= datasetMeta._name %>
+<%}else{%>
+	<%= datasetMeta._slug %>
+<%}%>
+
+</h1>
+
+
+<ul class="nav nav-tabs">
+<%if (asBinaryData==true){%>
+  <li role="presentation" <%if (showAsType=="resource" || (showAsType=="auto" && asBinaryData==true) ){%>class="active"<%}%>><a href="#ds/<%=datasetMeta._slug%>/resource">Dati</a></li>
+<%}%>
+<%if (asTableData==true){%>
+  <li role="presentation" <%if (showAsType=="table" || (showAsType=="auto" && asTableData==true)){%>class="active"<%}%>><a href="#ds/<%=datasetMeta._slug%>/table">Dati</a></li>
+<%}%>
+<%if (asLocationData==true){%>
+  <li role="presentation" <%if (showAsType=="map"){%>class="active"<%}%>><a id="maptab" href="/datasets/<%=datasetMeta._slug%>/map"><%=_label.mappa%></a></li>
+<%}%>
+<!--  <li role="presentation"><a href="#">Analisi</a></li>-->
+  <li role="presentation"><a href="/blog/<%=datasetMeta._slug%>" target="_blank">Blog</a></li>
+</ul>
+<br>
+
+
+	<%if (datasetMeta._description){%>
+		<em><%= datasetMeta._description%></em>
+	<%}%>
+
+	<%if (datasetMeta._license){%>
+		<br>
+		<%=_label.licenza%>: <em>
+			
+			<%if (datasetMeta._license==0) {%>
+				Open Data Commons Public Domain Dedication and License (PDDL)
+			<%} else if (datasetMeta._license==1) {%>
+				Open Data Commons Public Open Database License (ODbL)
+			<%} else if (datasetMeta._license==2) {%>
+				GNU Free Documentation License
+			<%} else if (datasetMeta._license==3) {%>
+				Creative Commons
+			<%} else {%>
+				<%=_label.altro%>
+			<%}%>
+			</em>
+	<%}%>
+
+<br>
+		<%if (datasetMeta._tag){%>
+			<br>
+			<div class="bootstrap-tagsinput center-block" style="width:90%;display:block;">
+			<% for (var t=0;t < datasetMeta._tag.split(",").length; t++) {%>
+				<span class="tag label label-info"><%= datasetMeta._tag.split(",")[t]%></span>
+			<%}%>
+			</div>
+		<%}%>
+
+<br>
+
+     <div id="datasetDetailDiv" class="container-fluid">
+
+
+
+
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+

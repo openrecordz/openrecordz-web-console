@@ -1,0 +1,111 @@
+<!-- Bottone di inserimento nuovo utente -->
+<div class="text-right">
+	<a href="#upsert" class="btn btn-primary btn-lg">
+<!--		<button type="button" class="btn btn-primary btn-lg" id="btnAdd">-->
+			<span class="glyphicon glyphicon-plus-sign"></span> <%=_label.creaNuovoDataset%>
+<!--		</button>-->
+	</a>
+</div>
+
+<h1 class="page-header text-center"><%=_label.elencoDatasetDisponibili%></h1>
+
+
+
+
+
+<div class="container">
+
+<!-- Form di ricerca degli utenti -->
+	<form class="form-inline" role="form">
+<!--	<form role="form">
+		<div class="row">
+      			<div class="col-xs-12">
+				 <div class="input-group">
+-->
+					<div class="form-group" style="width:100%">
+						<!--<label for="text">Nome</label>-->
+						<input type="text" class="form-control" style="width:90%" id="text" name="text" placeholder="<%=_label.cercaDataset%>">
+						<button type="submit" class="btn btn-primary" id="btnSearch" ><%=_label.cerca%></button>
+					</div>
+						
+<!--				</div>
+			</div>-->
+<!--		</div>-->
+	</form>
+<br/>
+
+
+	<% if (datasets.length>0) {	
+			var msg = '<h3>';
+			if (datasets.length==1) {
+				msg += datasets.length + ' <%=_label.datasetDisponibile%> <small><%=_label.cliccaSullaRigaPerIlDettaglio%></small></h3>';
+			} else {
+				msg += datasets.length + ' <%=_label.datasetDisponibili%> <small><%=_label.cliccaSullaRigaPerIlDettaglio%></small></h3>';
+			}
+	%>
+	
+			<%=msg %>
+			<br>
+			
+			<!-- iterazione lista -->
+			<div class="list-group">
+			<%
+			console.log(datasets);
+			for(var i=0; i<datasets.length; i++){
+								
+			%>
+				<a href="#ds/<%=datasets[i]._slug %>" name="dataset" class="list-group-item clearfix">
+						<h4 class="list-group-item-heading"><%if (datasets[i]._name!=null ){%><%=datasets[i]._name %><%}else {%><%=datasets[i]._slug %><%}%>
+						  <span class="glyphicon glyphicon-chevron-right pull-right" style="top:10px" aria-hidden="true"></span>
+						</h4>
+						<%if (datasets[i]._description!=null){%>
+							<p class="list-group-item-text">
+								<em>
+								<%if (datasets[i]._description.length>300){%>
+									<%=datasets[i]._description.substring(0,300)%>...								
+								<%}else{%>
+									<%=datasets[i]._description%>
+								<%}%>						
+								</em>
+							</p>
+						<%}%>
+				</a>				
+			<%				
+			}
+			%>
+			</div>
+	
+	<% } else { %>
+		<h3>
+			<%=_label.nessunDatasetPresentePerLaApp%> <%= tenantName %>.
+			<!--<%if (_user.isAuthenticated){%>-->
+				
+			<!--<%}%>-->
+		</h3>
+	<em>
+	<%=_label.creaNuovoDatasetDalBottoneInAlto%>
+	</em>
+	<% } %>
+	
+	
+</div>
+
+<!--
+<table id="tableDatasets" class="display" cellspacing="0" width="100%"> 
+	<thead>
+		<tr>
+			<th>Nome</th>
+			<th>Descrizione</th>
+			<th>Azioni</th>
+		</tr>
+	</thead>
+
+	<tfoot>
+		<tr>
+			<th>Nome</th>
+			<th>Descrizione</th>
+			<th>Azioni</th>
+		</tr>
+	</tfoot>
+</table>
+ -->

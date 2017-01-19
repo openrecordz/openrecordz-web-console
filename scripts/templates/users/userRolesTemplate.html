@@ -1,0 +1,53 @@
+<!-- 
+<div class="text-right">
+	<a href="http://www.smart21.it/it/guida-redazione-contenuti/" target="_blank" class="btn btn-info" role="button">Linee guida pubblicazione</a>
+</div>
+ -->
+<h3 class="page-header">Modifica permessi utente</h3>
+
+<span class="label label-default">Username: <%= username %></span>
+<!-- <span class="text-center"><h3 class="page-header">Modifica Contenuto</h3></span> -->
+
+<br/><br/>
+
+<form role="form">
+
+	<div class="form-group" id="administratorFG">
+		<div class="checkbox">
+			<label>
+				<input type="checkbox" id="chkAdministrator" name="chkAdministrator" data-size="mini" data-on-text="Sì" data-off-text="No"  data-on-color="info" data-off-color="warning">
+				&nbsp;Amministratore del tenant
+			</label>
+		</div>
+	</div>
+	
+	<div class="form-group" id="authorWebFG">
+		<div class="checkbox">
+			<label>
+				<input type="checkbox" id="chkAuthorWeb" name="chkAuthorWeb" data-size="mini" data-on-text="Sì" data-off-text="No" data-on-color="info" data-off-color="warning">
+				&nbsp;Autore sito web
+			</label>
+		</div>
+	</div>
+	
+	<div class="form-group" id="authorRestFG">
+		<div class="checkbox">
+			<label>
+				<input type="checkbox" id="chkAuthorRest" name="chkAuthorRest" data-size="mini" data-on-text="Sì" data-off-text="No" data-on-color="info" data-off-color="warning">
+				&nbsp;Autore mobile (servizi Rest)
+			</label>
+		</div>
+	</div>
+
+	<!-- 
+	<div class="form-group">
+		I campi obbligatori sono contrassegnati con *
+	</div>
+	 -->
+	
+	<br><br>
+	<div class="form-group" id="buttonFG">
+		<button type="submit" class="btn btn-primary" id="btnSave">Salva</button>
+		<button type="button" class="btn btn-default" id="btnCancel">Annulla</button>
+	</div>
+</form>

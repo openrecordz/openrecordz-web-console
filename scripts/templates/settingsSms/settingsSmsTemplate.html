@@ -1,0 +1,32 @@
+<%
+var username = usernameProperty!=null ? usernameProperty.message : "";
+var password = passwordProperty!=null ? passwordProperty.message : "";
+%>
+
+<h3 class="page-header">Modifica Impostazioni SMS</h3>
+
+<h4 class="page-header">Credenziali servizio invio SMS</h4>
+<div>
+	<form class="form-horizontal" role="form">
+		Username
+		<div class="form-group">
+			<div class="col-sm-11">
+				<input type="text" class="form-control" id="username" placeholder="Username..." value="<%=username %>">
+			</div>
+			<div class="col-sm-1">
+				<button type="button" class="btn btn-primary" id="btnSaveUsernameProperty">Salva</button>
+			</div>
+		</div>
+		
+		Password
+		<div class="form-group">
+			<div class="col-sm-11">
+				<input type="text" class="form-control" id="password" placeholder="Password..." value="<%=password %>">
+			</div>
+			<div class="col-sm-1">
+				<button type="button" class="btn btn-primary" id="btnSavePasswordProperty">Salva</button>
+			</div>
+		</div>
+		
+	</form>
+</div>

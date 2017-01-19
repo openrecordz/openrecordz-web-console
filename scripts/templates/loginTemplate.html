@@ -1,0 +1,68 @@
+<style>
+#dashboard_content {
+    margin-top: 10px;
+    padding: 0 15px 0;
+}
+
+</style>
+<div class="container">
+	<div id="logo" class="panel-heade text-center">
+	   <a href="http://www.openrecordz.com"><img alt="Entra in Smart21" src="http://www.openrecordz.com/wp-content/uploads/2016/10/logo_openrecordz_login_2.png" style="height: 50%;width: 50%;padding-bottom:20px;"/></a>
+	<h1 style="margin-top: 0px;margin-bottom: 20px;"><%=_label.accediEiniziaAcostruireLaTuaSmartCity%></h1>
+	</div>
+
+	<form class="form-signin" role="form">
+		<!--<h2 class="form-signin-heading">Entra in Smart21</h2>-->
+		
+		<div class="form-group">
+			<input type="email" class="form-control" name="username" id="username" placeholder="<%=_label.indirizzoEmailUsername%>" autocapitalize="off" autocorrect="off" autofocus>
+			<span class="help-block hidden"></span>
+		</div>
+		
+		
+		<div class="form-group">
+			<input type="password" class="form-control" name="password" id="password" placeholder="Password" autocapitalize="off" autocorrect="off">
+			<span class="help-block hidden"></span>
+		</div>
+		
+		<button class="btn btn-lg btn-primary btn-block" type="submit"><%=_label.accedi%></button>
+		
+		<div class="checkbox">
+			<label>
+				<a href="http://ext.ciaotrip.it/_services/forgotPassword.php?tenant=<%=tenantName %>&domain=<%=hostname %>"><%=_label.haiDimenticatoLaPassword%></a>
+			</label>
+		</div>
+		
+		<div class="checkbox">
+			<label>
+				<%=_label.nonHaiUnAccount%> <a href="/dashboard#signup"><%=_label.registrati%></a>
+			</label>
+		</div>
+		
+	</form>
+</div> <!-- /container -->
+
+<!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+<!--
+<div class="container">
+	<form class="login-form" role="form">
+		<h2 class="login-form-heading">Log In</h2>
+		
+		<div class="error" style="display:none"></div>
+		
+		<div class="form-group">
+			<input type="text" class="form-control" name="username" id="username" placeholder="Username" autocapitalize="off" autocorrect="off" autofocus>
+			<span class="help-block hidden"></span>
+		</div>
+		
+		<div class="form-group">
+			<input type="password" class="form-control" name="password" id="password" placeholder="Password" autocapitalize="off" autocorrect="off">
+			<span class="help-block hidden"></span>
+		</div>
+		
+		<button class="btn btn-lg btn-primary btn-block" type="submit">Accedi</button>
+		
+	</form>	
+	
+</div>
+-->

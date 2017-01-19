@@ -1,0 +1,42 @@
+<!-- Bottone di inserimento nuovo contenuto -->
+<!-- 
+<div class="text-right">
+	<button type="button" class="btn btn-default" id="btnSettingsAdvanced">
+		<span class="glyphicon glyphicon-cog"></span> Impostazioni avanzate
+	</button>
+</div>
+ -->
+
+<h3 class="page-header">Import</h3>
+
+<div class="container">
+	<div class="jumbotron">
+		<h4>Numeri di telefono</h4>
+		<!-- Form per la selezione e l'upload del file -->
+		<div>
+			<input type="file" id="filePhones" name="filePhones" title="Carica file dei numeri di telefono" accept=".csv">
+		</div>
+		<!-- END: Form per la selezione e l'upload del file -->
+		<br>
+		<div id="filePhonesLoaded">
+			<div id="filePhonesLoadedOK" class="alert alert-success" role="alert">
+				file <strong><%=tenantName%>_phones.csv</strong> caricato in data: <strong><span id="filePhonesDate"></span></strong>
+			</div>
+			<div id="filePhonesLoadedKO" class="alert alert-danger" role="alert">
+				Nessun file dei numeri di telefono caricato!
+			</div>
+		</div>
+		<div id="messageStartImportPhones" style="display: none">
+			<span id="startImportPhonesScript"></span>
+			<div class="alert alert-info" role="alert">
+				<strong>Procedura di Importazione avviata!!</strong><br>
+				La procedura richieder&agrave; del tempo.<br>
+				Al termine riceverete un rapporto dettagliato sulla vostra mail.
+			</div>
+		</div>
+		<div class="text-center">
+			<button type="button" class="btn btn-default btn-lg" id="btnStartImportPhones">Avvia import dei numeri di telefono</button>
+		</div>
+	</div>
+</div>
+

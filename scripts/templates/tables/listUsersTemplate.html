@@ -1,0 +1,49 @@
+<!-- Bottone di inserimento nuovo utente -->
+<div class="text-right">
+	<button type="button" class="btn btn-default" id="btnAdd" disabled>
+		<span class="glyphicon glyphicon-plus-sign"></span> Crea un nuovo utente
+	</button>
+</div>
+<br/>
+
+<!-- Form di ricerca degli utenti -->
+<div class="jumbotron">
+	<form class="form-horizontal" role="form">
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Nome</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="text" name="text" placeholder="inserire il testo da ricercare...">
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<button type="submit" class="btn btn-primary" id="btnSearch" >Cerca</button>
+			</div>
+		</div>
+	</form>
+</div>
+<br/>
+
+
+<table id="tableUsers" class="display" cellspacing="0" width="100%">
+	<thead>
+		<tr>
+			<th>Immagine</th>
+			<th>Username</th>
+			<th>Nome completo</th>
+			<th>Registrato il</th>
+			<th>Azioni</th>
+		</tr>
+	</thead>
+
+	<tfoot>
+		<tr>
+			<th>Immagine</th>
+			<th>Username</th>
+			<th>Nome completo</th>
+			<th>Registrato il</th>
+			<th>Azioni</th>
+		</tr>
+	</tfoot>
+</table>

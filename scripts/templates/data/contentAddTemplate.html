@@ -1,0 +1,95 @@
+<div class="text-right">
+	<a href="http://www.smart21.it/it/guida-redazione-contenuti/" target="_blank" class="btn btn-info" role="button">Linee guida pubblicazione</a>
+</div>
+<h3 class="page-header">Nuovo Contenuto</h3>
+
+<!-- <span class="label label-default">Id: ....</span> -->
+<!-- <span class="text-center"><h3 class="page-header">Modifica Contenuto</h3></span> -->
+
+<br/><br/>
+
+<form role="form">
+<!-- <form class="form-horizontal" role="form"> -->
+	<div class="alert alert-danger collapse" role="alert" id="formAlert">
+		<b>Errore!</b> <span id="errorMessage">Validazione dei dati non superata.</span>
+	</div>
+
+	<div class="form-group" id="categoryFG">
+		<label class="control-label" for="selectCategory">Categoria</label>
+		<div id="categoriesMenu">
+			<!-- Elenco categorie iniettato dalla View -->
+		</div>
+		<span class="help-block hidden"></span>
+	</div>
+	
+	<div class="form-group" id="imageFileFG">
+		<label class="control-label" for="contentImage">Immagine*</label>
+		<div>
+			<img title="" src="" id="contentImage" style="max-height:200px;max-width:200px;">
+			<span class="btn btn-default btn-file">
+			    Cambia immagine <input type="file" accept="image/*" id="imageFile" />
+			</span>
+		</div>
+	</div>
+
+	<div class="form-group" id="titleFG">
+		<label class="control-label" for="title">Titolo</label>
+		<input type="text" class="form-control" id="title" name="title" placeholder="inserire un titolo...">
+	</div>
+
+	<div class="form-group" id="descriptionFG">
+		<label class="control-label" for="description">Descrizione*</label>
+		<textarea class="form-control" id="description" name="description" rows="3" placeholder="inserire una descrizione..."></textarea>
+		<span><b>Suggerimento</b>: per inserire un link digitare "[[http://www.link.it|mio link]]"</span>
+		<span class="help-block hidden"></span>
+	</div>
+	
+	<div class="form-group" id="startPriceFG">
+		<label class="control-label" for="startPrice">Prezzo di listino [&euro;]</label>
+		<input type="text" class="form-control" name="startPrice" id="startPrice" placeholder="prezzo di listino...">
+		<span class="help-block hidden"></span>
+	</div>
+	
+	<div class="form-group" id="priceFG">
+		<label class="control-label" for="price">Prezzo scontato [&euro;]</label>
+		<input type="text" class="form-control" name="price" id="price" placeholder="prezzo scontato...">
+		<span class="help-block hidden"></span>
+	</div>
+
+	<div class="form-group" id="discountFG">
+		<label class="control-label">Sconto applicato [%]</label>
+		<input type="text" class="form-control" name="discount" id="discount" placeholder="sconto applicato..." disabled="disabled">
+	</div>
+	
+	<div class="form-group" id="phoneFG">
+		<label class="control-label" for="phone">Telefono</label>
+			<input type="text" class="form-control" id="phone" name="phone" placeholder="numero di telefono...">
+	</div>
+
+	<div class="form-group" id="validityFG">
+		<label class="control-label">Periodo di validità</label>
+		<div id="sandbox-container">
+			<div class="input-daterange input-group" id="datepicker">
+				<input onkeydown="return false" type="text" class="input-sm form-control" name="startDate" id="startDate" placeholder="inizio..." />
+				<span class="input-group-addon">to</span>
+				<input onkeydown="return false" type="text" class="input-sm form-control" name="endDate" id="endDate" placeholder="termine..." />
+			</div>
+			<span class="help-block hidden"></span>
+		</div>
+	</div>
+
+	<div class="form-group" id="poiDiv">
+		<label class="control-label">Punto di interesse*</label>
+		<div id="divSelectPoi"></div>
+		<span class="help-block hidden"></span>
+	</div>
+
+	<div class="form-group">
+		I campi obbligatori sono contrassegnati con *
+	</div>	
+	
+	<div class="form-group" id="buttonFG">
+		<button type="submit" class="btn btn-primary" id="btnSave">Salva</button>
+		<button type="button" class="btn btn-default" id="btnCancel">Annulla</button>
+	</div>
+</form>

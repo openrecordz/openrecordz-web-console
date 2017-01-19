@@ -1,0 +1,84 @@
+<!-- Bottone di creazione nuova notifica -->
+<div class="text-right">
+	<button type="button" class="btn btn-default" id="btnSent">
+		<span class="glyphicon glyphicon-list-alt"></span> Storico notifiche inviate
+	</button>
+</div>
+
+<h3 class="page-header">Invio nuova notifica</h3>
+<!-- <h2>Notifiche Push</h2> -->
+<form>
+
+	<div class="alert alert-danger collapse" role="alert" id="formAlert">
+		<b>Errore!</b> <span id="errorMessage">Validazione dei dati non superata.</span>
+	</div>
+	
+	<div class="form-group">
+		<label for="selectType">Tipo notifica</label>
+		<div id="typesMenu">
+			<!-- Elenco tipi di notifica iniettato dalla View -->
+		</div>
+		<span class="help-block hidden"></span>
+	</div>
+
+
+ 	
+ 	<div class="form-group collapse" id="divLinkWeb">
+		<label for="linkWeb">Pagina web</label>
+		<input type="text" class="form-control" id="linkWeb" placeholder="indicare indirizzo web...">
+		<span class="help-block hidden"></span>
+	</div>
+ 	
+	
+	
+	<div class="form-group collapse" id="divLinkContent">
+		<!-- 
+		<label for="contentId">Contenuto</label>
+		<input type="hidden" id="contentId">
+		<div id="divSelectedContent">
+		 -->
+		<label for="divSelectedContent">Contenuto</label>
+		<div id="divSelectedContent">
+		</div>
+		<button class="btn btn-default" type="button" id="btnSelectContent">Seleziona/Cambia</button>
+		<span class="help-block hidden"></span>
+	</div>
+	
+
+	
+	<div class="form-group">
+		<label for="message">Messaggio</label>
+			<textarea class="form-control" id="message" rows="3" placeholder="scrivere il testo del messaggio..." maxlength="100"></textarea>
+			<p class="text-right">
+				<small>
+					characters remaining: 
+					<span id="numChars" class="label label-info">100</span>
+				</small>
+			</p>
+			<span class="help-block hidden"></span>
+	</div>
+
+
+
+	<div class="form-group">
+		<label for="selectSendTo">Destinatari</label>
+		<div class="dropdown" id="sendToMenu">
+			<!-- Elenco destinatari della notifica iniettato dalla View -->
+		</div>
+		<span class="help-block hidden"></span>
+	</div>
+
+	
+	
+	<div class="form-group collapse" id="divUsers">
+		<label for="selectUsers">Utenti</label>
+		<div id="divSelectUsers"></div>
+		<span class="help-block hidden"></span>
+	</div>
+	
+	
+	
+	<button type="button" class="btn btn-primary" id="btnSend">Invia notifica</button>
+	<!-- <button type="submit" class="btn btn-primary" id="btnSend">Invia notifica</button> -->
+	<br><br>
+</form>

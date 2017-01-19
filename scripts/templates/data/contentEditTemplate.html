@@ -1,0 +1,229 @@
+<style>
+	#map {
+		height: 300px; 
+		margin-top:10px; 
+		margin-bottom:10px
+	}
+</style>
+
+
+<div class="text-right">
+	<a href="http://www.smart21.it/it/guida-redazione-contenuti/" target="_blank" class="btn btn-info" role="button">Linee guida pubblicazione</a>
+</div>
+<h3 class="page-header">Modifica Contenuto</h3>
+
+<span class="label label-default">Id: <%= content.id %></span>
+<!-- <span class="text-center"><h3 class="page-header">Modifica Contenuto</h3></span> -->
+
+
+
+<br/><br/>
+
+
+<%
+var imageUrl = tenant + '/products/' + content.id + '/image?w=200&h=200';
+var imageCreatedBy = tenant + '/service/v1/people/' + content.createdBy + '/photo?w=50&h=50';
+var imageModifiedBy = tenant + '/service/v1/people/' + content.modifiedBy + '/photo?w=50&h=50';
+
+//Recupero delle custom properties.
+var phone = '';
+var properties = content['properties'];
+if(properties!=undefined){
+	if(properties.phone!=undefined){
+		phone = properties.phone.values[0];
+	}
+}
+
+//Formattazione della data iniziale.
+var strStartDate = "";
+var startDate = moment(content.startDate, "ddd, DD MMM YYYY HH:mm:ss Z", 'en');
+if (startDate.isValid() && (startDate.year()>1971)){
+	strStartDate = moment(startDate).format('DD/MM/YYYY');
+}
+
+//Formattazione della data finale.
+var strEndDate = "";
+var endDate = moment(content.endDate, "ddd, DD MMM YYYY HH:mm:ss Z", 'en');
+if (endDate.isValid() && (endDate.year()<2900)){
+	strEndDate = moment(endDate).format('DD/MM/YYYY');
+}
+
+//Formattazione della data di creazione.
+var createdOnDate = moment(content.createdOn, "ddd, DD MMM YYYY HH:mm:ss Z", 'en');
+var strCreatedOn = moment(createdOnDate).format('DD/MM/YYYY HH:mm');
+
+//Formattazione della data di modifica.
+var modifiedOnDate = moment(content.modifiedOn, "ddd, DD MMM YYYY HH:mm:ss Z", 'en');
+var strModifiedOn = moment(modifiedOnDate).format('DD/MM/YYYY HH:mm');
+
+//Calcolo dello stato del contenuto.
+var status='';
+switch (parseInt(content.status)) {
+	case -100:
+        status = 'Cancellato';
+        break;
+	case -10:
+        status = 'Respinto';
+        break;
+	case -1:
+        status = 'Disabilitato';
+        break;
+	case 1:
+        status = 'Abilitato';
+        break;
+	case 10:
+        status = 'Visibile';
+        break;
+	case 20:
+        status = 'Verificato';
+        break;
+}
+%>
+
+
+<form role="form">
+<!-- <form class="form-horizontal" role="form"> -->
+	<div class="alert alert-danger collapse" role="alert" id="formAlert">
+		<b>Errore!</b> <span id="errorMessage">Validazione dei dati non superata.</span>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div id="map">
+		<!-- Contenuto iniettato dalla View -->
+	</div>
+	
+	
+	
+	
+	
+	
+
+	<div class="form-group" id="categoryFG">
+		<label class="control-label" for="selectCategory">Categoria</label>
+		<div id="categoriesMenu">
+			<!-- Elenco categorie iniettato dalla View -->
+		</div>
+		<span class="help-block hidden"></span>
+	</div>
+	
+	<div class="form-group" id="imageFileFG">
+		<label class="control-label" for="contentImage">Immagine*</label>
+		<div>
+			<a href="#" id="imageContent" title="Visualizza ingrandimento">
+				<img src="<%= imageUrl %>" id="contentImage" style="max-height:200px;max-width:200px;">
+			</a>
+			<span class="btn btn-default btn-file">
+			    Cambia immagine <input type="file" accept="image/*" id="imageFile" />
+			</span>
+		</div>
+	</div>
+
+	<div class="form-group" id="titleFG">
+		<label class="control-label" for="title">Titolo</label>
+		<input type="text" class="form-control" id="title" name="title" placeholder="inserire un titolo..." value="<%= content.title %>">
+	</div>
+
+	<div class="form-group" id="descriptionFG">
+		<label class="control-label" for="description">Descrizione*</label>
+		<textarea class="form-control" id="description" name="description" rows="3" placeholder="inserire una descrizione..."><%= content.description %></textarea>
+		<span><b>Suggerimento</b>: per inserire un link digitare "[[http://www.link.it|mio link]]"</span>
+		<span class="help-block hidden"></span>
+	</div>
+	
+	<div class="form-group" id="startPriceFG">
+		<label class="control-label" for="startPrice">Prezzo di listino [&euro;]</label>
+		<input type="text" class="form-control" name="startPrice" id="startPrice" placeholder="prezzo di listino..." value="<%= content.startPrice %>">
+		<span class="help-block hidden"></span>
+	</div>
+	
+	<div class="form-group" id="priceFG">
+		<label class="control-label" for="price">Prezzo scontato [&euro;]</label>
+		<input type="text" class="form-control" name="price" id="price" placeholder="prezzo scontato..." value="<%= content.price %>">
+		<span class="help-block hidden"></span>
+	</div>
+
+	<div class="form-group" id="discountFG">
+		<label class="control-label">Sconto applicato [%]</label>
+		<input type="text" class="form-control" name="discount" id="discount" placeholder="sconto applicato..." value="<%= content.discount %>" disabled="disabled">
+	</div>
+	
+	<div class="form-group" id="phoneFG">
+		<label class="control-label" for="phone">Telefono</label>
+			<input type="text" class="form-control" id="phone" name="phone" placeholder="numero di telefono..." value="<%= phone %>">
+	</div>
+
+	<div class="form-group" id="validityFG">
+		<label class="control-label">Periodo di validità</label>
+		<div id="sandbox-container">
+			<div class="input-daterange input-group" id="datepicker">
+				<input onkeydown="return false" type="text" class="input-sm form-control" name="startDate" id="startDate" placeholder="inizio..." value="<%= strStartDate %>" />
+				<span class="input-group-addon">to</span>
+				<input onkeydown="return false" type="text" class="input-sm form-control" name="endDate" id="endDate" placeholder="termine..." value="<%= strEndDate %>" />
+			</div>
+			<span class="help-block hidden"></span>
+		</div>
+	</div>
+
+	<div class="form-group" id="poiDiv">
+		<label class="control-label">Punto di interesse*</label>
+		<div id="divSelectPoi"></div>
+		<span class="help-block hidden"></span>
+	</div>
+
+	<div class="form-group" id="statusFG">
+		<label class="control-label" for="status">Stato</label>
+    	<input type="text" class="form-control" id="status" name="status" value="<%= status %>" disabled>
+	</div>
+
+	<div class="form-group" id="createdByFG">
+		<label class="control-label">Created by</label>
+		<div>
+			<img title="<%= content.createdBy %>" src="<%= imageCreatedBy %>" height="30px" width="30px">&nbsp;
+	    	<strong><%= content.createdBy %></strong> il <strong><%= strCreatedOn %></strong>
+		</div>
+	</div>
+	
+	<div class="form-group" id="modifiedByFG">
+		<label class="control-label">Modified by</label>
+		<div>
+			<img title="<%= content.modifiedBy %>" src="<%= imageModifiedBy %>" height="30px" width="30px">&nbsp;
+	    	<strong><%= content.modifiedBy %></strong> il <strong><%= strModifiedOn %></strong>
+		</div>
+	</div>
+	
+	<div class="form-group">
+		I campi obbligatori sono contrassegnati con *
+	</div>	
+	
+	
+	
+	
+	
+	<!-- 
+	<div class="form-group">
+		<label class="col-sm-2 control-label" for="selectCategory">Categoria</label>
+		<div id="categoriesMenu" class="col-sm-10">
+		</div>
+		<span class="help-block hidden"></span>
+	</div>
+	<div class="form-group" id="buttonFG">
+		<div class="col-sm-offset-2 col-sm-10">
+			<button type="submit" class="btn btn-primary" id="btnSave">Salva</button>
+			<button type="button" class="btn btn-default" id="btnCancel">Annulla</button>
+		</div>
+	</div>
+	 -->
+	
+	
+
+	<div class="form-group" id="buttonFG">
+		<button type="submit" class="btn btn-primary" id="btnSave">Salva</button>
+		<button type="button" class="btn btn-default" id="btnCancel">Annulla</button>
+	</div>
+</form>

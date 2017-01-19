@@ -1,0 +1,11 @@
+<select id="selectPoi" name="selectPoi" class="form-control">
+	<%
+	if(selectedPoi!=null){
+		//Inizializzo il poi con quello contenuto in 'item'.
+		var poiId = selectedPoi.poiId;
+		var poiCity = selectedPoi.poiCity!=null && selectedPoi.poiCity!='' ? ' ('+ selectedPoi.poiCity + ')' : '';
+		var poiName = selectedPoi.poiName + poiCity;
+	%>
+	<option value="<%= poiId %>" selected="selected"><%= poiName %></option>
+	<% } %>
+</select>

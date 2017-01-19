@@ -1,0 +1,74 @@
+<h3 class="page-header">Modifica Telefono</h3>
+
+<% if (phone!=null){ %>
+<span class="label label-default">Id: <%= phone.id %></span>
+<br/><br/>
+<% } %>
+
+
+<%
+var imageCreatedBy = (phone!=null) ? (tenant + '/service/v1/people/' + phone._createdby + '/photo?w=50&h=50') : null;
+var imageModifiedBy = (phone!=null) ? (tenant + '/service/v1/people/' + phone._modifiedby + '/photo?w=50&h=50') : null;
+
+//Formattazione della data di creazione.
+var strCreatedOn = (phone!=null) ? moment(phone._createdon).format('DD/MM/YYYY HH:mm') : null;
+
+//Formattazione della data di modifica.
+var strModifiedOn = (phone!=null) ? moment(phone._modifiedon).format('DD/MM/YYYY HH:mm') : null;
+%>
+
+
+<form role="form">
+	<div class="alert alert-danger collapse" role="alert" id="formAlert">
+		<b>Errore!</b> <span id="errorMessage">Validazione dei dati non superata.</span>
+	</div>
+
+	<div class="form-group" id="firstnameFG">
+		<label class="control-label" for="firstname">Nome</label>
+		<input type="text" class="form-control" id="firstname" name="firstname" placeholder="inserire il nome..." value="<%= (phone!=null) ? phone.firstname : '' %>">
+	</div>
+
+	<div class="form-group" id="lastnameFG">
+		<label class="control-label" for="lastname">Cognome</label>
+		<input type="text" class="form-control" id="lastname" name="lastname" placeholder="inserire il cognome..." value="<%= (phone!=null) ? phone.lastname : '' %>">
+	</div>
+	
+	<div class="form-group" id="telephoneFG">
+		<label class="control-label" for="telephone">Telefono</label>
+		<input type="text" class="form-control" id="telephone" name="telephone" placeholder="inserire il telefono (Es. 39 333 1234567)" value="<%= (phone!=null) ? phone.telephone : '' %>">
+	</div>
+
+<% if (phone!=null){ %>
+	<div class="form-group" id="statusFG">
+		<label class="control-label" for="status">Stato</label>
+    	<input type="text" class="form-control" id="status" name="status" value="<%= phone._status %>" disabled>
+	</div>
+
+	<div class="form-group" id="createdByFG">
+		<label class="control-label">Created by</label>
+		<div>
+			<img title="<%= phone._createdBy %>" src="<%= imageCreatedBy %>" height="30px" width="30px">&nbsp;
+	    	<strong><%= phone._createdby %></strong> il <strong><%= strCreatedOn %></strong>
+		</div>
+	</div>
+	
+	<div class="form-group" id="modifiedByFG">
+		<label class="control-label">Modified by</label>
+		<div>
+			<img title="<%= phone._modifiedBy %>" src="<%= imageModifiedBy %>" height="30px" width="30px">&nbsp;
+	    	<strong><%= phone._modifiedby %></strong> il <strong><%= strModifiedOn %></strong>
+		</div>
+	</div>
+<% } %>
+	
+	<div class="form-group">
+		I campi obbligatori sono contrassegnati con *
+	</div>	
+	
+	
+
+	<div class="form-group" id="buttonFG">
+		<button type="submit" class="btn btn-primary" id="btnSave">Salva</button>
+		<button type="button" class="btn btn-default" id="btnCancel">Annulla</button>
+	</div>
+</form>

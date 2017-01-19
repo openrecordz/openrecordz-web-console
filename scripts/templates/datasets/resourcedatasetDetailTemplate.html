@@ -1,0 +1,36 @@
+  <div>
+
+	<% if (data.length>0) {	%>
+
+
+		<div class="list-group">
+			<%for(var i=0; i<data.length; i++){ %>
+
+				  <a href="<%=tenant + '/service/v1/files/download?path='+data[i].file%>" class="list-group-item">
+				    <div class="pull-left" style="padding-right:10px;">
+						      <img class="media-object" src="/assets/images/csv_small.png" alt="CSV Format">
+				    </div>
+
+				    <h4 class="list-group-item-heading">
+					<%=data[i]["_name"]%>
+					<span class="glyphicon glyphicon-download-alt pull-right" aria-hidden="true"  style="padding-top: 10px;"></span>
+				    </h4>
+				    <%if (data[i]["_description"]!=null){%>
+				   	 <p class="list-group-item-text"><em><%=data[i]["_description"]%></em></p>
+				    <%}else {%>	
+					<br>
+				    <%}%>
+				  </a>
+
+
+			<%}%>
+		</div>
+
+			
+
+	<%} else { %>
+		<h3><%=_label.nessunDatoBinarioCaricato%></h3>
+		<em><%=_label.faiClickSullaVoceDiMenuTabellaPerVisualizzareEventualiDatiTabellari%></em>
+	<% } %>
+  </div>
+

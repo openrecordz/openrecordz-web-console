@@ -1,0 +1,7 @@
+<select id="selectVisibility" name="selectVisibility" class="form-control">
+	<% if (selectedVisibility){ %>
+	<option value="<%=selectedVisibility.id %>" selected="selected"><%=selectedVisibility.text %></option>
+	<% }else{ %>
+	<option value="" selected="selected"></option>
+	<% } %>
+</select>

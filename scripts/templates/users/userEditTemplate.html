@@ -1,0 +1,78 @@
+<div class="text-right">
+	<button type="button" class="btn btn-default" id="btnRoles">
+		<span class="glyphicon glyphicon-cog"></span> Gestione permessi
+	</button>
+</div>
+
+<h3 class="page-header">Modifica Utente</h3>
+
+<span class="label label-default">Username: <%= user.username %></span>
+<!-- <span class="text-center"><h3 class="page-header">Modifica Contenuto</h3></span> -->
+
+
+
+<br/><br/>
+
+
+<%
+var imageUrl = tenant + '/service/v1/people/' + user.username + '/photo?w=200&h=200';
+
+var myLink = '';
+var properties = user['properties'];
+if(properties!=undefined){
+	if(properties.myLink!=undefined){
+		myLink = properties.myLink.values[0];
+	}
+}else{
+	//Properties NON presenti.
+}
+%>
+
+
+<form role="form">
+<!-- <form class="form-horizontal" role="form"> -->
+	<div class="alert alert-danger collapse" role="alert" id="formAlert">
+		<b>Errore!</b> <span id="errorMessage">Validazione dei dati non superata.</span>
+	</div>
+
+	
+	
+	<div class="form-group" id="imageFileFG">
+		<label class="control-label" for="contentImage">Immagine*</label>
+		<div>
+			<img title="<%= user.fullName %>" src="<%= imageUrl %>" id="userImage" style="max-height:200px;max-width:200px;">
+			<span class="btn btn-default btn-file">
+			    Cambia immagine <input type="file" accept="image/*" id="imageFile" />
+			</span>
+			<button type="button" class="btn btn-default" id="btnRemoveImg">Rimuovi immagine</button>
+		</div>
+	</div>
+	
+	<% if (user.password){ %>
+	<div class="form-group" id="passwordFG">
+		<label class="control-label" for="password">Password</label>
+		<input type="text" class="form-control" id="Password" name="Password" value="<%= user.password %>" readonly>
+	</div>
+	<% } %>
+	
+	<div class="form-group" id="fullnameFG">
+		<label class="control-label" for="fullname">Nome completo</label>
+		<input type="text" class="form-control" id="fullname" name="fullname" placeholder="inserire il nome completo..." value="<%= user.fullName %>">
+	</div>
+	
+	<div class="form-group" id="emailFG">
+		<label class="control-label" for="fullname">Email</label>
+		<input type="email" class="form-control" id="email" name="email" placeholder="inserire la mail..." value="<%= user.email %>">
+	</div>
+	
+
+	<div class="form-group">
+		I campi obbligatori sono contrassegnati con *
+	</div>	
+	
+
+	<div class="form-group" id="buttonFG">
+		<button type="submit" class="btn btn-primary" id="btnSave">Salva</button>
+		<button type="button" class="btn btn-default" id="btnCancel">Annulla</button>
+	</div>
+</form>

@@ -1,0 +1,30 @@
+<div class="container">
+
+	<h3 class="page-header text-center"><%=_label.aggiungiIdati%></h3>
+	
+	<form id="uploadData"  enctype="multipart/form-data" method="post" accept-charset="utf-8">
+	  <div class="form-group">
+	    <label for="file"><%=_label.selezionaUnFileDaCaricare%></label>
+	    <input type="file" class="form-control" id="file"  name="file" placeholder="<%=_label.caricaUnFileCSV%>">
+	    <span class="help-block hidden"></span>
+	  </div>  
+	
+	 <div class="form-group">
+	    <label for="_name"><%=_label.nome%></label>
+	    <input type="text" class="form-control" id="_name"  name="_name" required placeholder="<%=_label.esempioElencoDelleFarmacieDiTurno%>" value="">
+	    <span class="help-block hidden"></span>
+	  </div>  
+	  <div class="form-group">
+	    <label for="_description"><%=_label.descrizione%></label>
+	     <textarea id="_description" name="_description" class="form-control" required rows="5" placeholder="<%=_label.descriviItuoiDati%>"></textarea>
+	     <span class="help-block hidden"></span>
+	  </div>
+	
+	  <a class="btn" href="#ds/<%=dsSlug%>"><%=_label.annulla%></a>
+	  <button id="btnResSave" type="submit" class="btn btn-primary btn-lg"><%=_label.salva%></button>
+	<button id="btnResSaveAndTrasform" type="submit" class="btn btn-success btn-lg"><%=_label.salvaEtrasformaInDataService%> <small>(BETA)</small></button> 
+	
+	
+	</form>
+
+</div>

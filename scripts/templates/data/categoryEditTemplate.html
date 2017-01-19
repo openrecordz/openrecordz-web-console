@@ -1,0 +1,93 @@
+<%
+//var imageUrl = tenant + '/products/' + content.id + '/image?w=200&h=200';
+var imageCategoryUrl = tenant + '/imagerepo/service/images/search?url=/' + tenantName + '/category' + category.id + '/icon.png';
+
+//Rimuovo il nome del tenant dal path.
+var path = category.path.replace('/'+tenantName, '');
+
+var allowUserContentCreation = category.allowUserContentCreation == "true";
+%>
+
+<!-- 
+<div class="text-right">
+	<a href="http://www.smart21.it/it/guida-redazione-contenuti/" target="_blank" class="btn btn-info" role="button">Linee guida pubblicazione</a>
+</div>
+ -->
+<h3 class="page-header">Modifica Categoria</h3>
+
+<span class="label label-default">Id: <%= category.id %></span>
+
+<br/><br/>
+
+<form role="form">
+<!-- <form class="form-horizontal" role="form"> -->
+	<div class="alert alert-danger collapse" role="alert" id="formAlert">
+		<b>Errore!</b> <span id="errorMessage">Validazione dei dati non superata.</span>
+	</div>
+
+	<div class="form-group" id="imageFileFG">
+		<label class="control-label" for="categoryImage">Immagine*</label>
+		<div>
+			<img title="<%= category.label %>" src="<%= imageCategoryUrl %>" id="categoryImage" style="max-height:200px;max-width:200px;">
+			<span class="btn btn-default btn-file">
+			    Cambia immagine <input type="file" accept="image/*" id="imageFile" />
+			</span>
+		</div>
+	</div>
+
+	<div class="form-group" id="labelFG">
+		<label class="control-label" for="label">Label*</label>
+		<input type="text" class="form-control" id="label" name="label" placeholder="inserire una label..." value="<%= category.label %>">
+		<span class="help-block hidden"></span>
+	</div>
+	
+	<div class="form-group" id="pathFG">
+		<label class="control-label" for="path">Path*</label>
+		<input type="text" class="form-control" id="path" name="path" placeholder="inserire il path..." value="<%= path %>" readonly>
+		<span class="help-block hidden"></span>
+	</div>
+
+	<div class="form-group" id="otypeFG">
+		<label class="control-label" for="selectOType">OType*</label>
+		<div id="otypesMenu">
+			<!-- Elenco otype iniettato dalla View -->
+		</div>
+		<span class="help-block hidden"></span>
+	</div>
+
+	<div class="form-group" id="visibilityFG">
+		<label class="control-label" for="selectVisibility">Visibilità*</label>
+		<div id="visibilityMenu">
+			<!-- Elenco visibility iniettato dalla View -->
+		</div>
+		<span class="help-block hidden"></span>
+	</div>
+
+	<div class="form-group" id="orderFG">
+		<label class="control-label" for="order">Order</label>
+		<input type="text" class="form-control" id="order" name="order" placeholder="inserire un numero..." value="<%= category.order %>">
+		<span class="help-block hidden"></span>
+	</div>
+	
+	<div class="form-group" id="allowUserContentCreationFG">
+		<div class="checkbox">
+			<label>
+				<% if (allowUserContentCreation){ %>
+					<input type="checkbox" id="chkContentCreation" name="chkContentCreation" checked="checked"> Permetti creazione contenuti
+				<% } else { %>
+					<input type="checkbox" id="chkContentCreation" name="chkContentCreation"> Permetti creazione contenuti
+				<% } %>
+			</label>
+		</div>
+	</div>
+	
+
+	<div class="form-group">
+		I campi obbligatori sono contrassegnati con *
+	</div>	
+	
+	<div class="form-group" id="buttonFG">
+		<button type="submit" class="btn btn-primary" id="btnSave">Salva</button>
+		<button type="button" class="btn btn-default" id="btnCancel">Annulla</button>
+	</div>
+</form>

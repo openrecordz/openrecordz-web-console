@@ -1,0 +1,17 @@
+<style>
+	#map {
+		height: 550px; 
+		margin-top:10px; 
+		margin-bottom:10px
+	}
+</style>
+
+
+<div id="map">
+	<%if (asLocationData){%>
+		<div id="map-container" style="width: 100%; height: 100%"></div>
+	<!--	<div id="map-container" style="width: 600px; height: 200px"></div>-->
+	<%}else {%>
+		<h3>Nessun dato geo spaziale</h3>
+	<%}%>
+</div>

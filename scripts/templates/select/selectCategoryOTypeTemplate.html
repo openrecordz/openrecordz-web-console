@@ -1,0 +1,7 @@
+<select id="selectOType" name="selectOType" class="form-control">
+	<% if (selectedOType){ %>
+	<option value="<%=selectedOType.id %>" selected="selected"><%=selectedOType.text %></option>
+	<% }else{ %>
+	<option value="" selected="selected"></option>
+	<% } %>
+</select>

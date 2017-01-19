@@ -1,0 +1,287 @@
+<!-- <h3 class="page-header">Dashboard</h3> -->
+
+	<style>
+	    .circle
+	    {
+		width:60px;
+		height:60px;
+		border-radius:50%;
+
+		font-size:21px;
+		color:#fff;
+
+
+		line-height:60px;
+		text-align:center;
+
+	    }
+
+	    .center {
+		margin: auto;
+		
+	    }
+
+	   a:hover{
+		text-decoration: none;
+	   }
+
+	</style>
+	   
+
+<div id="dashboard">
+
+
+<div class="row">
+  <div class="col-xs-12 col-md-3"></div>
+  <div class="col-xs-12 col-md-6">
+	<button id="newTenant" type="button" class="btn btn-success btn-block btn-lg loading" style="height: 50px">Nuova City App</button>	
+  </div>
+  <div class="col-xs-12 col-md-3"></div>
+</div>
+
+
+
+<h3 class="page-header">Le mie City App</h3>
+
+
+	<div class="list-apps row">
+
+
+		<%
+
+		if (tenants!=null && tenants.length>0) {
+		_.each(tenants, function(singleTenant) { %> 
+
+
+
+		      <div>
+			    <div class="col-md-4">
+				  <a href="http://<%= singleTenant %><%=domainConsole%>">
+					    <div class="panel panel-default">
+						<div class="panel-heading">
+						    <h5 class="panel-title text-center mynodecoration" ><%= singleTenant %></h5>
+						</div>
+					    
+						<div class="panel-body text-center">
+
+						    <div class="text-center"> 
+							<h4> <small> http://<%= singleTenant %><%=domainConsole%></small></h4>
+						    </div>
+
+						    <div><img alt="" width="60" height="60" class="img-circle" src="http://apps.openrecordz.com/assets/images/console.png"></div>
+						    
+						</div>
+				
+			
+						<div class="panel-footer">
+						    <button class="btn btn-block btn-primary" >Entra</button>
+						</div>
+					    </div>
+		   		  </a>
+
+			    </div>
+
+			</div>
+
+		<% }); 
+		}else {%>
+
+			<center>
+			<h3>Non hai ancora creato una City App. Fai click sul bottone Nuova City App per iniziare.</h3>
+			<em>Crea una City App per il tuo Comune, la tua Città o il tuo Ente. Scegli un dataset e carica i tuoi Open Data tramite API o importando i tuoi file binari o CSV.
+			Usa gli strumenti della piattaforma per connetterti ai dati, dal pannello di controllo al blog alle API.
+			</em>
+
+			</center>
+		<%}
+		%>
+
+
+
+
+
+
+	</div>
+
+
+
+
+
+
+	<h3 class="page-header">Esplora</h3>
+
+
+
+
+
+	<div class="explore-apps row">
+		<div>
+
+			   <div class="col-xs-6 col-sm-6 col-md-3">
+				  <a href="http://roma.openrecordz.com">
+					    <div class="panel panel-default">						
+					    
+						<div class="panel-body text-center" style="padding: 0px;">						   
+
+						    <div><img alt="comune_di_roma_openrecordz_open_data" class="img-thumbnail" src="http://www.openrecordz.com/wp-content/uploads/2016/10/comune_di_roma_openrecordz_open_data.png"></div>
+						    
+						</div>				
+						<div class="panel-footer">
+						    <h6 class="panel-title text-center mynodecoration" style="color: black;">Comune di Roma</h6>
+						</div>			
+					    </div>
+		   		  </a>
+
+			    </div>
+
+			     <div class="col-xs-6 col-sm-6 col-md-3">
+				  <a href="http://milano.openrecordz.com">						
+					    
+						    <div class="panel panel-default">						
+					    
+						<div class="panel-body text-center" style="padding: 0px;">						   
+
+						    <div><img alt="comune_di_milano_openrecordz_open_data" class="img-thumbnail" src="http://www.openrecordz.com/wp-content/uploads/2016/10/comune_di_milano_openrecordz_open_data.png"></div>
+						    
+						</div>				
+						<div class="panel-footer">
+						    <h6 class="panel-title text-center mynodecoration" style="color: black;">Comune di Milano</h6>
+						</div>			
+					    </div>
+		   		  </a>
+
+			    </div>
+
+			
+			    <div class="col-xs-6 col-sm-6 col-md-3">
+				  <a href="http://lecce.openrecordz.com">
+					        <div class="panel panel-default">						
+					    
+						<div class="panel-body text-center" style="padding: 0px;">						   
+
+						    <div><img alt="comune_di_lecce_openrecordz_open_data" class="img-thumbnail" src="http://www.openrecordz.com/wp-content/uploads/2016/10/comune_di_lecce_openrecordz_open_data.png"></div>
+						    
+						</div>				
+						<div class="panel-footer">
+						    <h6 class="panel-title text-center mynodecoration" style="color: black;">Comune di Lecce</h6>
+						</div>			
+					    </div>
+		   		  </a>
+
+			    </div>
+			    
+			   <div class="col-xs-6 col-sm-6 col-md-3">
+				  <a href="http://matera.openrecordz.com">
+					        <div class="panel panel-default">						
+					    
+						<div class="panel-body text-center" style="padding: 0px;">						   
+
+						    <div><img alt="comune_di_matera_openrecordz_open_data" class="img-thumbnail" src="http://www.openrecordz.com/wp-content/uploads/2016/10/comune_di_matera_openrecordz_open_data.png"></div>
+						    
+						</div>				
+						<div class="panel-footer">
+						    <h6 class="panel-title text-center mynodecoration" style="color: black;">Comune di Matera</h6>
+						</div>			
+					    </div>
+		   		  </a>
+
+			    </div>
+
+			    </div>
+
+		</div>
+
+	  </div>
+
+	<!--<div class="explore-apps row">
+		<div>
+
+			   <div class="col-md-3">
+				  <a href="http://roma.openrecordz.com">
+					    <div class="panel panel-default">						
+					    
+						<div class="panel-body text-center" style="padding: 0px;">						   
+
+						    <div><img alt="" width="auto" height="150" src="http://www.openrecordz.com/wp-content/uploads/2011/12/open_recordz_img_portfolio_smart_city-705x458.png"></div>
+						    
+						</div>				
+						<div class="panel-footer">
+						    <h6 class="panel-title text-center mynodecoration"  style="color: black;">Comune di Roma</h6>
+						</div>			
+					    </div>
+		   		  </a>
+
+			    </div>
+
+			     <div class="col-md-3">
+				  <a href="http://milano.openrecordz.com">
+					    <div class="panel panel-default">						
+					    
+						<div class="panel-body text-center" style="padding: 0px;">						   
+
+
+						    
+						</div>				
+						<div class="panel-footer">
+						    <h6 class="panel-title text-center mynodecoration"  style="color: black;">Comune di Milano</h6>
+						</div>			
+					    </div>
+		   		  </a>
+
+			    </div>
+
+			
+			    <div class="col-md-3">
+				  <a href="http://lecce.openrecordz.com">
+					    <div class="panel panel-default">						
+					    
+						<div class="panel-body text-center" style="padding: 0px;">						   
+
+
+						    
+						</div>				
+						<div class="panel-footer">
+						    <h6 class="panel-title text-center mynodecoration"  style="color: black;">Comune di Lecce</h6>
+						</div>			
+					    </div>
+		   		  </a>
+
+			    </div>
+			    
+			   <div class="col-md-3">
+				  <a href="http://matera.openrecordz.com">
+					    <div class="panel panel-default">						
+					    
+						<div class="panel-body text-center" style="padding: 0px;">						   
+
+
+						    
+						</div>				
+						<div class="panel-footer">
+						    <h6 class="panel-title text-center mynodecoration"  style="color: black;">Comune di Matera</h6>
+						</div>			
+					    </div>
+		   		  </a>
+
+			    </div>
+
+		</div>
+
+	</div>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<br/>

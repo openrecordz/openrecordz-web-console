@@ -1,0 +1,76 @@
+<div class="container">
+
+	<h3 class="page-header text-center"><%=_label.inserisciUnNuovoDataset%></h3>
+	
+	<form id="upsertDataset">
+	  <div class="form-group">
+	    <label for="_name"><%=_label.nomeDelDataset%></label>
+	    <input type="text" class="form-control" id="_name"  name="_name" placeholder="<%=_label.nomeDelDatasetEsFarmacieDellaCitta%>" value="<%if(datasetMeta && datasetMeta._name){%><%=datasetMeta._name%><%}%>">
+	  </div>
+	  <div class="form-group">
+	    <label for="exampleInputPassword1">Permalink (*)</label> 
+	    <div class="input-group">
+		  <span class="input-group-addon" id="basic-addon3">http://<%=tenantName%>.openrecordz.com/datasets#ds/</span>
+		  <input type="text" class="form-control input-sm" id="_slug" name="_slug" required aria-describedby="basic-addon3" value="<%if(datasetMeta && datasetMeta._slug){%><%=datasetMeta._slug%><%}%>">
+	    </div>
+		<span class="help-block hidden"></span>
+	    <!--<input type="text" class="form-control" id="_slug" placeholder="Permalink del dataset">-->
+	  </div>
+	  <div class="form-group">
+	    <label for="_description"><%=_label.descrizione%></label>
+	     <textarea id="_description" name="_description" class="form-control" rows="5" placeholder="<%=_label.descriviIlTuoDataset%>"><%if(datasetMeta && datasetMeta._description){%><%=datasetMeta._description%><%}%></textarea>
+	  </div>
+	<!--
+	  <div class="form-group">
+	    <label for="_tag">Tags</label>
+		     <input type="text" id="_tag" name="_tag"  class="form-control" placeholder="ex. economia, salute, governo, finanza, trasporti, etc." value="<%if(datasetMeta && datasetMeta._tag){%><%=datasetMeta._tag%><%}%>">
+	  </div>-->
+	<!--data-role="tagsinput"-->
+	
+	   <div class="form-group">
+	    <label for="_license"><%=_label.licenza%></label>
+	 	 <select class="form-control" id="_license" name="_license">
+	 	   <option value="0" <%if(datasetMeta && datasetMeta._license && datasetMeta._license==0 ){%> selected<%}%>>Open Data Commons Public Domain Dedication and License (PDDL)</option>
+	 	   <option value="1" <%if(datasetMeta && datasetMeta._license && datasetMeta._license==1 ){%> selected<%}%>>Open Data Commons Public Open Database License (ODbL)</option>
+	 	   <option value="2" <%if(datasetMeta && datasetMeta._license && datasetMeta._license==2 ){%> selected<%}%>>GNU Free Documentation License</option>
+		   <option value="3" <%if(datasetMeta && datasetMeta._license && datasetMeta._license==3 ){%> selected<%}%>>Creative Commons</option>
+		   <option value="4" <%if(datasetMeta && datasetMeta._license && datasetMeta._license==4 ){%> selected<%}%>><%=_label.altro%></option>
+		  </select>	    
+		  <span id="helpBlock" class="help-block">Le definizioni delle licenze e ulteriori informazioni sono disponibili su <a href="http://opendefinition.org">opendefinition.org</a></span> 
+	  </div>
+	
+	
+	  <div class="form-group">
+	    <label for="_origin"><%=_label.origine%></label>
+	    <input type="url" class="form-control" id="_origin"  name="_origin" placeholder="http://example.com/dataset.json" value="<%if(datasetMeta && datasetMeta._origin){%><%=datasetMeta._origin%><%}%>">
+	  </div>
+	
+	<hr>
+	  <div class="form-group">
+	    <!-- <label for="_accesstype">Tipo</label>-->
+	    <div class="radio">
+		  <label>
+		    <input type="radio" name="_accesstype" id="_accesstype_pub" value="10" <%if( (datasetMeta==null) || (datasetMeta && datasetMeta._accesstype && datasetMeta._accesstype==10 ) ){%> checked<%}%>>
+		    <b>Pubblico</b>
+		  </label>
+		  <span id="helpBlock" class="help-block">Tutti gli utenti potranno modificare i dati del dataset </span>
+		</div>
+		<div class="radio">
+		  <label>
+		    <input type="radio" name="_accesstype" id="_accesstype_priv" value="5" <%if(datasetMeta && datasetMeta._accesstype && datasetMeta._accesstype==5 ){%> checked<%}%>>
+		    <b>Privato</b>
+		  </label>
+		  <span id="helpBlock" class="help-block">Solo gli utenti invitati potranno modificare il dataset</span>
+		</div>	    
+	  </div>
+	  
+	  <a class="btn" href="#" ><%=_label.annulla%></a>
+	  <button type="submit" id="savebnt" class="btn btn-default"><%=_label.salva%></button>
+	
+	<%if (datasetMeta==null){%>
+	  <button type="submit" id="saveAndImportbnt" class="btn btn-primary"><%=_label.salvaEdImportaIdati%></button>
+	<%}%>
+	</form>
+	
+
+</div>

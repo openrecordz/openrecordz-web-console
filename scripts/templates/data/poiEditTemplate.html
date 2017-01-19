@@ -1,0 +1,161 @@
+<!-- 
+<div class="text-right">
+	<a href="http://www.smart21.it/it/guida-redazione-contenuti/" target="_blank" class="btn btn-info" role="button">Linee guida pubblicazione</a>
+</div>
+ -->
+<h3 class="page-header">Modifica punto di interesse</h3>
+
+<span class="label label-default">Id: <%= poi.id %></span>
+
+<br/><br/>
+
+<%
+var imageUrl = poi.cover;
+
+var imageCreatedBy = tenant + '/service/v1/people/' + poi.createdBy + '/photo?w=50&h=50';
+var imageModifiedBy = tenant + '/service/v1/people/' + poi.modifiedBy + '/photo?w=50&h=50';
+
+var createdOnDate = moment(poi.createdOn, "ddd, DD MMM YYYY HH:mm:ss Z", 'en');
+var strCreatedOn = moment(createdOnDate).format('DD/MM/YYYY HH:mm');
+
+var modifiedOnDate = moment(poi.modifiedOn, "ddd, DD MMM YYYY HH:mm:ss Z", 'en');
+var strModifiedOn = moment(modifiedOnDate).format('DD/MM/YYYY HH:mm');
+
+function endsWith(str, suffix) {
+	return str.indexOf(suffix, str.length - suffix.length) !== -1;
+}
+var isPoiImagePresent = !endsWith(imageUrl, '?url=');
+%>
+
+
+<form role="form">
+<!-- <form class="form-horizontal" role="form"> -->
+	<div class="alert alert-danger collapse" role="alert" id="formAlert">
+		<b>Errore!</b> <span id="errorMessage">Validazione dei dati non superata.</span>
+	</div>
+
+	<div class="form-group" id="imageFileFG">
+		<label class="control-label" for="poiImage">Immagine</label>
+		<div>
+
+<% if (isPoiImagePresent){ %>
+			<img title="<%= poi.name %>" src="<%= imageUrl %>" id="poiImage" style="max-height:200px;max-width:200px;">
+			<span class="btn btn-default btn-file">
+			    Scegli immagine <input type="file" accept="image/*" id="imageFile" />
+			</span>
+			<button type="button" class="btn btn-default" id="btnRemoveImg">Rimuovi immagine</button>
+			&nbsp;(Dimensioni consigliate: 640px x 360px)
+<% }else{ %>
+			<img title="<%= poi.name %>" src="<%= imageUrl %>" id="poiImage" style="max-height:200px;max-width:200px;" hidden>
+			<span class="btn btn-default btn-file">
+			    Scegli immagine <input type="file" accept="image/*" id="imageFile" />
+			</span>
+			<button type="button" class="btn btn-default" id="btnRemoveImg" disabled>Rimuovi immagine</button>
+			&nbsp;(Dimensioni consigliate: 640px x 360px)
+<% } %>
+
+		</div>
+	</div>
+
+
+	
+	<div class="form-group" id="nameFG">
+		<label class="control-label" for="name">Nome*</label>
+		<input type="text" class="form-control" id="name" name="name" placeholder="inserire il nome..." value="<%= poi.name %>">
+		<span class="help-block hidden"></span>
+	</div>
+
+	<div class="form-group" id="descriptionFG">
+		<label class="control-label" for="description">Descrizione</label>
+		<textarea class="form-control" id="description" name="description" rows="3" placeholder="inserire una descrizione..."><%= poi.description %></textarea>
+		<span class="help-block hidden"></span>
+	</div>
+	
+	<div class="form-group" id="cityFG">
+		<label class="control-label" for="city">Citt&agrave;</label>
+		<input type="text" class="form-control" name="city" id="city" placeholder="inserire la citt&agrave;..." value="<%= poi.city %>">
+		<span class="help-block hidden"></span>
+	</div>
+	
+	<div class="form-group" id="countryFG">
+		<label class="control-label" for="country">Nazione</label>
+		<input type="text" class="form-control" name="country" id="country" placeholder="inserire la nazione..." value="<%= poi.country %>">
+		<span class="help-block hidden"></span>
+	</div>
+
+	<div class="form-group" id="addressFG">
+		<label class="control-label" for="address">Indirizzo</label>
+		<input type="text" class="form-control" name="address" id="address" placeholder="inserire l'indirizzo..." value="<%= poi.address %>">
+		<span class="help-block hidden"></span>
+	</div>
+	
+	<div class="form-group" id="websiteFG">
+		<label class="control-label" for="website">Sito web</label>
+		<input type="text" class="form-control" id="website" name="website" placeholder="inserire il sito web..." value="<%= poi.website %>" readonly>
+		<span class="help-block hidden"></span>
+	</div>
+
+	<div class="form-group" id="emailFG">
+		<label class="control-label" for="email">Email</label>
+		<input type="email" class="form-control" id="email" name="email" placeholder="inserire la mail..." value="<%= poi.email %>" readonly>
+		<span class="help-block hidden"></span>
+	</div>
+	
+	<div class="form-group" id="phoneFG">
+		<label class="control-label" for="phone">Telefono</label>
+		<input type="text" class="form-control" id="phone" name="phone" placeholder="inserire il telefono..." value="<%= poi.phone %>">
+		<span class="help-block hidden"></span>
+	</div>
+	
+	<div class="form-group" id="sourceFG">
+		<label class="control-label" for="source">Source</label>
+		<input type="text" class="form-control" id="source" name="source" placeholder="source..." value="<%= poi.source %>" readonly>
+		<span class="help-block hidden"></span>
+	</div>
+	
+	<div class="form-group" id="referenceFG">
+		<label class="control-label" for="reference">Reference</label>
+		<input type="text" class="form-control" id="reference" name="reference" placeholder="reference..." value="<%= poi.reference %>" readonly>
+		<span class="help-block hidden"></span>
+	</div>
+	
+	<div class="form-group" id="latFG">
+		<label class="control-label" for="lat">Latitude*</label>
+		<input type="text" class="form-control" id="lat" name="lat" placeholder="inserire la latitudine..." value="<%= poi.lat %>">
+		<span class="help-block hidden"></span>
+	</div>
+	
+	<div class="form-group" id="lonFG">
+		<label class="control-label" for="lon">Longitudine*</label>
+		<input type="text" class="form-control" id="lon" name="lon" placeholder="inserire la longitudine..." value="<%= poi.lon %>">
+		<span class="help-block hidden"></span>
+	</div>
+	
+	<div class="form-group" id="createdByFG">
+		<label class="control-label">Created by</label>
+		<div>
+			<img title="<%= poi.createdBy %>" src="<%= imageCreatedBy %>" height="30px" width="30px">&nbsp;
+	    	<strong><%= poi.createdBy %></strong> il <strong><%= strCreatedOn %></strong>
+		</div>
+	</div>
+	
+	<% if (poi.modifiedBy!=""){ %>
+	<div class="form-group" id="modifiedByFG">
+		<label class="control-label">Modified by</label>
+		<div>
+			<img title="<%= poi.modifiedBy %>" src="<%= imageModifiedBy %>" height="30px" width="30px">&nbsp;
+	    	<strong><%= poi.modifiedBy %></strong> il <strong><%= strModifiedOn %></strong>
+		</div>
+	</div>
+	<% } %>
+	
+	<div class="form-group">
+		I campi obbligatori sono contrassegnati con *
+	</div>	
+	
+
+	<div class="form-group" id="buttonFG">
+		<button type="submit" class="btn btn-primary" id="btnSave">Salva</button>
+		<button type="button" class="btn btn-default" id="btnCancel">Annulla</button>
+	</div>
+</form>

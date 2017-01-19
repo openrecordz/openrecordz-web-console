@@ -1,0 +1,47 @@
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<!-- 
+				<a class="navbar-brand" href="#">Tenant name</a>
+			 -->
+			<a class="navbar-brand" href="index">
+				<% if (config.logoTenant) { %>
+				<img src="assets/images/<%= config.logoTenant %>" alt="openRecordz" >
+				<!--style="max-height: 40px; max-width:100px; margin-top: -7px;">-->
+				<% } %>
+				<%= tenantName %>
+			</a>
+		</div>
+		<div id="navbar" class="navbar-collapse collapse">
+			<ul class="nav navbar-nav">
+				<!-- <li class="active"><a href="#">Dashboard</a></li> -->
+				<li class="_docs"><a href="http://www.openrecordz.com/documentazione">Documentazione</a></li>
+<!--				<li class="_example"><a href="http://www.smart21.it">Esempi</a></li>-->
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<!-- <li class="active"><a href="#">Home</a></li> -->
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= username %> <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+
+<!--						<li><a href="http://<%= tenantName %>.ciaotrip.it/users/<%= username %>" target="_blank">Profilo</a></li>
+						<li><a href="http://<%= tenantName %>.ciaotrip.it/settings" target="_blank">Impostazioni utente</a></li>
+-->
+						<li><a href="#logout">Logout</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div><!--/.nav-collapse -->
+	</div>
+</nav>
+
+
+
+

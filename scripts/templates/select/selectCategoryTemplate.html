@@ -1,0 +1,7 @@
+<select id="selectCategory" name="selectCategory" class="form-control">
+	<% if (selectedCategory){ %>
+	<option value="<%=selectedCategory.id %>" selected="selected"><%=selectedCategory.label %></option>
+	<% }else{ %>
+	<option value="" selected="selected"></option>
+	<% } %>
+</select>
