@@ -21,6 +21,6 @@ $tenant = $a[0];
 // else
 // 	$hostmane = 'frontiere21.it';
 //$hostmane = 'v2.smart21.it';
-//$hostmane = 'api.openrecordz.com';
-$hostmane = 'api.openrecordz.local:8880/smart21-server';
+$hostmane = 'api.openrecordz.com';
+//$hostmane = 'api.openrecordz.local:8880/smart21-server';
 ?>
