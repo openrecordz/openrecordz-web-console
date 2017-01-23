@@ -187,6 +187,31 @@ define([
 				callback('fail', jqXHR);
 			});
 		},
+
+		patch: function(id,json, callback){
+			console.log('Dataset.patch');
+			console.log(id);			
+			console.log(json);
+			
+			var add = $.ajax({
+        	  	url: tenant + '/service/v1/datasets/'+id,		
+				data: json,
+
+				cache: false,
+			    contentType: false,
+			    processData: false,
+				type: 'PATCH'
+			});
+			add.done(function(response){
+				console.log('Dataset.patch.done');
+				callback('success', response);
+			});
+			add.fail(function(jqXHR, textStatus, errorThrown){
+				console.log('Dataset.patch.fail');
+				callback('fail', jqXHR);
+			});
+		},
+
 			
 		//delete tenant property by id.
 		deleteById: function( id, callback){

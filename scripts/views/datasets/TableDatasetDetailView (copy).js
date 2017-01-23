@@ -67,17 +67,14 @@ define([
 			this.numberOfPages=Math.ceil(this.totalCount/this.rowPerPage);
 			console.log("numberOfPages", this.numberOfPages);
 		
-			_g_data=this.data;
 			if (this.data !=null && this.data.length>0) {	
 				this.header=[];		
-				for (var i=0;i<this.data.length;i++ ) {
-					for (var key in this.data[i]) {
-						if (this.data[i].hasOwnProperty(key) && this.header.indexOf(key) == -1 && key!="id" && key!="_dataset_ref_id") { 
-							this.header.push(key);
-						}
+				for (var key in this.data[0]) {
+					if (this.data[0].hasOwnProperty(key)) { 
+						this.header.push(key);
 					}
 				}
-				console.log("header: " + this.header);
+//			    console.log("header: " + this.header);
 //				pippo3=this.header;
 			}
 		},

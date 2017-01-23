@@ -35,6 +35,8 @@ define([
 			this.data = this.options.data;
 			this.asLocationData=this.options.asLocationData;
 			console.log("this.asLocationData:"+this.asLocationData);
+			this.datasetMeta=this.options.datasetMeta;
+			//_g_datasetmeta=this.datasetMeta;
 //			this.position = this.options.position;
 //			this.zoom = this.options.zoom;
 //			this.render();
@@ -108,8 +110,12 @@ define([
 			    var lat = singleData._latitude;
 			    var lon = singleData._longitude;
 			    var id = singleData.id;
+				var title=id;
+				if (singleData._title){
+					title=singleData._title;
+				}
 //			    location = [description, lat, lon, 1];
-			    location = [id, lat, lon, 1];
+			    location = [id, lat, lon, title];
 			    locations.push(location);
 			});
 			
@@ -133,7 +139,8 @@ define([
 
 				google.maps.event.addListener(marker, 'click', (function(marker, i) {
 					return function() {
-						infowindow.setContent(locations[i][0]);
+						var infowindowContent='<a href="#ds/'+view.datasetMeta._slug+'/id/'+locations[i][0]+'"><h3>'+locations[i][3]+'</h3></a>';
+						infowindow.setContent(infowindowContent);
 						infowindow.open(this.map, marker);
 					}
 				})(marker, i));

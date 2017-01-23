@@ -105,8 +105,8 @@ _label_en = {
 
 "visualizzaIlDatoConId":"Viewing data with id",
 
-"nessunDatoBinarioCaricato":"No binary data loaded",
-"faiClickSullaVoceDiMenuTabellaPerVisualizzareEventualiDatiTabellari":"Click on the Table menu item to display eventual tabular data"
+"nessunDatoBinarioCaricato":"No data available",
+//"faiClickSullaVoceDiMenuTabellaPerVisualizzareEventualiDatiTabellari":"Click on the Table menu item to display eventual tabular data"
 
 
 }

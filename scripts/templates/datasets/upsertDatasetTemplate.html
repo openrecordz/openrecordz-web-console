@@ -63,7 +63,16 @@
 		  <span id="helpBlock" class="help-block">Solo gli utenti invitati potranno modificare il dataset</span>
 		</div>	    
 	  </div>
-	  
+
+<%if(datasetMeta && datasetMeta._mapping) {%>
+ <div class="form-group">
+	    <label for="_origin">Mapping Schema</label>
+			<textarea id="_mapping" disabled name="_mapping" class="form-control" rows="5"><%=JSON.stringify(datasetMeta._mapping)%></textarea>
+	    
+</div>
+<%}%>
+
+
 	  <a class="btn" href="#" ><%=_label.annulla%></a>
 	  <button type="submit" id="savebnt" class="btn btn-default"><%=_label.salva%></button>
 	

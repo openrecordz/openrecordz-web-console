@@ -230,7 +230,7 @@ define([
 		deleteAll: function(dsId, callback){
 			console.log('Data.deleteAll');
 			var del = $.ajax({
-        	    url: tenant + '/service/v1/datasets/' + dsId,
+        	    url: tenant + '/service/v1/datasets/' + dsId+'/onlyrecord',
 				type : 'DELETE'
 			});
 			del.done(function(response){

@@ -1,0 +1,102 @@
+
+<h1 class="page-header text-center"><%=_label.mappingDelleColonneStepTreDiTre%></h1>
+
+
+<br>
+
+
+
+<div class="container-fluid">
+  <div class="table-responsive">
+     <form id="mappingFieldForm"  method="post" accept-charset="utf-8">
+	<% if (myheaders!=null) {	%>
+	<table class="table">
+
+			<thead>
+				 <tr>				
+					   <th>
+					    <%=_label.colonneDelFileCsv%>
+					   </th>
+					   <th>
+					    <%=_label.tipoDiColonna%>
+					   </th>
+				   	   <th>
+					    <%=_label.nomeDellaColonnaSuOpenRecordz%>
+					   </th>
+				</tr>
+			</thead>
+			<tbody>
+				<% 
+					var i =0;
+					for (var key in myheaders) {
+					  if (myheaders.hasOwnProperty(key)) { 
+						
+				  %>
+						 <tr>
+
+							   <td id="keyname-<%=i%>" class="col-md-4">								   
+									<input type="text"  class="form-control origcolumnnameClass" name="origcolumnname" readonly value="<%=key%>"/>
+							 	</td>
+							   <td class="col-md-4">
+									<select id="select-<%=i%>" name="mapping" class="form-control mappingselect">
+										<option value="gen"><%=_label.automatico%></option>
+										<option value="_location"><%=_label.posizioneNellaFormaLatLon%></option>
+										<option value="_latitude"><%=_label.latitudine%></option>
+										<option value="_longitude"><%=_label.longitudine%></option>
+										<option value="_title"><%=_label.titolo%></option>
+										<option value="_description"><%=_label.descrizione%></option>
+										<option value="_email"><%=_label.email%></option>
+										<option value="_phone"><%=_label.telefono%></option>
+										<option value="_website"><%=_label.sitoWeb%></option>
+										<option value="_main_image"><%=_label.immagine%></option>
+										<option value="_idext"><%=_label.chiaveprimariacsv%></option>
+										<option value="_skipcolumn"><%=_label.escludiColonna%></option>
+									</select>
+							   </td>
+
+							   <td class="col-md-4">
+								<input type="text" id="columnname-<%=i%>" class="form-control renameValueClass" name="columnname" value="<%=key.replace(/\./g,"").replace(/\./g,"").replace(/\,/g,"").replace(/\$/g,"").trim()%>"/>
+							   </td>
+						</tr>
+
+						  
+				  <% 	
+					i++;
+					}
+				}
+				 %>
+
+
+			</tbody>
+		</table>
+
+
+<a class="btn" href="#ds/<%=dsSlug%>"><%=_label.annulla%></a>
+
+<a class="btn btn-default btn-lg" href="#previewUploadedData/<%=uploadedFilePath%>/ds/<%=dsSlug%>/delimiter/<%=currentDelimiter%>"><%=_label.indietro%></a>
+
+<!--<button type="submit" class="btn btn-default btn-lg" id="saveMappingFieldbtn">Fine</button>-->
+<a class="btn btn-primary btn-lg" id="mappingfieldbtn" href="#parse/<%=uploadedFilePath%>/ds/<%=dsSlug%>/delimiter/<%=currentDelimiter%>"><%=_label.fine%></a>
+
+	</form>
+
+			
+				
+     					   
+						  
+				   
+		
+
+
+
+	<%}%>
+
+ 
+  </div>
+
+
+</div>
+
+<br>
+
+

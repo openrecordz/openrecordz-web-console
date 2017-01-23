@@ -447,7 +447,7 @@ define([
 			if (!delimiter)
 				delimiter=",";
 
-			var queryStr="?file="+uploadedFilePath+"&charseparator="+delimiter;
+			var queryStr="?file="+uploadedFilePath+"&charseparator="+delimiter+'&ds='+dsSlug;
 			console.log("queryStr", queryStr);
 
 			customFunction.call("parsecsvheader",queryStr, null, callback);
@@ -461,7 +461,7 @@ define([
 			this.setHeaderAndFooter();
 			
 			console.log("headers", headers.headers);
-			var mappingFieldView = new MappingFieldView({headers:headers.headers,uploadedFilePath:uploadedFilePath, dsSlug: dsSlug,currentDelimiter:delimiter});
+			var mappingFieldView = new MappingFieldView({headers:headers.headers,dataset:headers.dataset, uploadedFilePath:uploadedFilePath, dsSlug: dsSlug,currentDelimiter:delimiter});
 			this.changeView(mappingFieldView, '#dashboard_content');
 
 			return this;
@@ -485,23 +485,65 @@ define([
 			var queryStr="?file="+uploadedFilePath+"&ds="+dsSlug+"&charseparator="+delimiter;
 			
 			var data = {};
-			var jsonValue = "";
+			var jsonValueColumnName = "";
+			var jsonValueMapping = "";
+			var jsonValueOrigColumnName = "";
+			
+			
+			
+			
 			$("#mappingFieldForm").serializeArray().map(function(x){ 
+				
 				if (x.name=="columnname"){
-					jsonValue = jsonValue+","+x.value;
+					jsonValueColumnName = jsonValueColumnName+","+x.value;				
 				}
+				if (x.name=="mapping"){
+					jsonValueMapping = jsonValueMapping+","+x.value;
+				}
+				if (x.name=="origcolumnname"){
+					jsonValueOrigColumnName = jsonValueOrigColumnName+","+x.value;				
+				}
+				
 			});
 			//remove initial ,
-			jsonValue=jsonValue.substring(1,jsonValue.length);
-			console.log("jsonValue", jsonValue);
-//			data["columnname"]="ssss";
-		
-		//	var jsonDataStr=JSON.stringify(data);
-//			console.log("jsonData : " + jsonDataStr);			
-//			queryStr = queryStr +"&columnname="+ jsonValue;
-//			console.log("queryStr", queryStr);
-			data.columnname=jsonValue;
-		
+			jsonValueColumnName=jsonValueColumnName.substring(1,jsonValueColumnName.length);
+			console.log("jsonValueColumnName", jsonValueColumnName);
+
+			jsonValueMapping=jsonValueMapping.substring(1,jsonValueMapping.length);
+			console.log("jsonValueMapping", jsonValueMapping);
+
+			jsonValueOrigColumnName=jsonValueOrigColumnName.substring(1,jsonValueOrigColumnName.length);
+			console.log("jsonValueOrigColumnName", jsonValueOrigColumnName);
+
+
+
+			var mappingArray = [];
+			var mappingColumnObj = {};
+			var serializedForm=$("#mappingFieldForm").serializeArray();
+			for (var i=0; i<serializedForm.length; i++){
+				console.log(serializedForm);
+
+				if (serializedForm[i].name=="origcolumnname") {
+					mappingColumnObj.origColumnName=serializedForm[i].value;
+				}
+				if (serializedForm[i].name=="mapping") {
+					mappingColumnObj.columnType=serializedForm[i].value;
+				}
+				if (serializedForm[i].name=="columnname") {
+					mappingColumnObj.columnName=serializedForm[i].value;
+					mappingArray.push(mappingColumnObj);
+					mappingColumnObj={};
+				}				
+			}
+			console.log("mappingArray", mappingArray);
+			
+
+
+			data.columnname=jsonValueColumnName;
+			data.mapping=jsonValueMapping;
+			data.origcolumnname=jsonValueOrigColumnName;
+			data.mappingArray=mappingArray;
+
 			waitingDialog.show('Importazione dei dati in corso. Attendere!');
 
 			customFunction.call("parsecsv",queryStr, JSON.stringify(data), callback);
@@ -525,6 +567,8 @@ define([
 					message:	errMessage,
 				});
 			}
+			return this;	
+
 		}
 
 		

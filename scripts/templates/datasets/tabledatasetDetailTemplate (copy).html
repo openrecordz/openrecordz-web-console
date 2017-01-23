@@ -85,11 +85,8 @@ table {table-layout:fixed}
 					<%= data[i]["id"] %>					
 				   </td>
 
-			<%	
-					var key;
-					for (var j=0;j< header.length;j++) {
-							key=header[j];
-					 //console.log(key);
+			<%	for (var key in data[i]) {
+				  if (data[i].hasOwnProperty(key) && key!="id" && key!="_dataset_ref_id") { 
 		%>
 			
 			          <td>
@@ -97,16 +94,12 @@ table {table-layout:fixed}
 						<%= data[i][key] %>
 					<%} else if (key=="_createdon" || key=="_modifiedon"){%>
 						<%= moment(data[i][key]).format('LLL') %>
-					<%} else {
-						if (data[i][key]) {	
-					%>
-							<%= data[i][key] %>
-					<%
-						}
-					}%>
+					<%} else {%>
+						<%= data[i][key] %>
+					<%}%>
 				  </td>
 		<%
-				
+				  }	 
 				} %>
 			</tr>
 		<%	

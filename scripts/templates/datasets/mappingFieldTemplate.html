@@ -9,7 +9,7 @@
 <div class="container-fluid">
   <div class="table-responsive">
      <form id="mappingFieldForm"  method="post" accept-charset="utf-8">
-	<% if (myheaders!=null) {	%>
+	<% if (mappedHeaders!=null) {	%>
 	<table class="table">
 
 			<thead>
@@ -27,41 +27,41 @@
 			</thead>
 			<tbody>
 				<% 
-					var i =0;
-					for (var key in myheaders) {
-					  if (myheaders.hasOwnProperty(key)) { 
+					for (var i=0; i< mappedHeaders.length;i++) {
 						
 				  %>
 						 <tr>
 
-							   <td id="keyname-<%=i%>" class="tofind col-md-5"><%=key%></td>
-							   <td class="col-md-2">
-									<select id="select-<%=i%>" name="mapping" class="form-control">
-										<option value="gen"><%=_label.automatico%></option>
-										<option value="_location"><%=_label.posizioneNellaFormaLatLon%></option>
-										<option value="_latitude"><%=_label.latitudine%></option>
-										<option value="_longitude"><%=_label.longitudine%></option>
-										<option value="_title"><%=_label.titolo%></option>
-										<option value="_description"><%=_label.descrizione%></option>
-										<option value="_email"><%=_label.email%></option>
-										<option value="_phone"><%=_label.telefono%></option>
-										<option value="_website"><%=_label.sitoWeb%></option>
-										<option value="_main_image"><%=_label.immagine%></option>
-										<option value="_idext"><%=_label.chiaveprimariacsv%></option>
-										<option value="_skipcolumn"><%=_label.escludiColonna%></option>
+							   <td id="keyname-<%=i%>" class="col-md-4">								   
+									<input type="text"  class="form-control origcolumnnameClass" name="origcolumnname" readonly value="<%=mappedHeaders[i].origColumnName%>"/>
+							 	</td>
+							   <td class="col-md-4">
+								  <!--<%=mappedHeaders[i].columnType%>-->
+									<select id="select-<%=i%>" name="mapping" class="form-control mappingselect">
+										<option value="gen"<%if (mappedHeaders[i].columnType=="gen"){%> selected<%}%>><%=_label.automatico%></option>
+										<option value="_location"<%if (mappedHeaders[i].columnType=="_location"){%> selected<%}%>><%=_label.posizioneNellaFormaLatLon%></option>
+										<option value="_latitude"<%if (mappedHeaders[i].columnType=="_latitude"){%> selected<%}%>><%=_label.latitudine%></option>
+										<option value="_longitude"<%if (mappedHeaders[i].columnType=="_longitude"){%> selected<%}%>><%=_label.longitudine%></option>
+										<option value="_title"<%if (mappedHeaders[i].columnType=="_title"){%> selected<%}%>><%=_label.titolo%></option>
+										<option value="_description"<%if (mappedHeaders[i].columnType=="_description"){%> selected<%}%>><%=_label.descrizione%></option>
+										<option value="_email"<%if (mappedHeaders[i].columnType=="_email"){%> selected<%}%>><%=_label.email%></option>
+										<option value="_phone"<%if (mappedHeaders[i].columnType=="_phone"){%> selected<%}%>><%=_label.telefono%></option>
+										<option value="_website"<%if (mappedHeaders[i].columnType=="_website"){%> selected<%}%>><%=_label.sitoWeb%></option>
+										<option value="_main_image"<%if (mappedHeaders[i].columnType=="_website"){%> selected<%}%>><%=_label.immagine%></option>
+										<option value="_idext"<%if (mappedHeaders[i].columnType=="_idext"){%> selected<%}%>><%=_label.chiaveprimariacsv%></option>
+										<option value="_skipcolumn"<%if (mappedHeaders[i].columnType=="_skipcolumn"){%> selected<%}%>><%=_label.escludiColonna%></option>
 									</select>
 							   </td>
 
-							   <td class="col-md-5">
-								<input type="text" id="columnname-<%=i%>" class="form-control" name="columnname" value="<%=key.replace(/\./g,"").replace(/\./g,"").replace(/\,/g,"").replace(/\$/g,"").trim()%>"/>
+							   <td class="col-md-4">
+					<input type="text" id="columnname-<%=i%>" class="form-control renameValueClass" <%if (mappedHeaders[i].columnType!="gen"){%>readonly<%}%> name="columnname" value="<%=mappedHeaders[i].columnName%>"/>
 							   </td>
 						</tr>
 
 						  
 				  <% 	
-					i++;
+					
 					}
-				}
 				 %>
 
 

@@ -124,7 +124,7 @@ _label_it= {
 
 "visualizzaIlDatoConId":"Visualizza il dato con id",
 
-"nessunDatoBinarioCaricato":"Nessun dato binario caricato",
-"faiClickSullaVoceDiMenuTabellaPerVisualizzareEventualiDatiTabellari":"Fai clic sulla voce di menu Tabella per visualizzare eventuali dati tabellari"
+"nessunDatoBinarioCaricato":"Nessun dato caricato",
+//"faiClickSullaVoceDiMenuTabellaPerVisualizzareEventualiDatiTabellari":"Fai clic sulla voce di menu Tabella per visualizzare eventuali dati tabellari"
 
 }

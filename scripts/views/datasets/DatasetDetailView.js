@@ -91,6 +91,7 @@ define([
 					this.asBinaryData=false;
 				}
 				this.header=[];		
+				//iterate over all the columns of the first row
 				for (var key in this.data[0]) {
 					if (this.data[0].hasOwnProperty(key)) { 
 						this.header.push(key);
@@ -183,11 +184,13 @@ define([
 			bootbox.confirm("Sei sicuro di voler cancellare tutti i dati di questo dataset ?",  function(result){ 
 				if (result==true) {
 					var callback = function(){
-					Backbone.history.navigate('#', { trigger : true });
+					//Backbone.history.navigate('#ds/'+view.datasetMeta._slug, { trigger : true });
+					//http://stackoverflow.com/questions/8901574/how-to-refresh-a-page-in-a-backbone-application
+					  Backbone.history.loadUrl();
 					};
 
 					var data = new Data();
-					data.deleteAll(view.datasetMeta._slug, callback);
+					data.deleteAll(view.datasetMeta.id, callback);
 			
 					return this;
 				}
@@ -215,7 +218,7 @@ define([
 					};
 
 					var data = new Data();
-					data.deleteAll(view.datasetMeta._slug, callback);
+					data.deleteAll(view.datasetMeta.id, callback);
 			
 					return this;
 				}

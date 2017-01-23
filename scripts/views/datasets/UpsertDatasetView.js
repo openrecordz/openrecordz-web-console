@@ -149,7 +149,8 @@ define([
 				if (this.datasetMeta){
 					var dsId=this.datasetMeta.id;
 					console.log("dsIs", dsId);
-					dataset.update(dsId, jsonString, callback);
+					//dataset.update(dsId, jsonString, callback);
+					dataset.patch(dsId, jsonString, callback);
 				}else{
 					dataset.add(jsonString, callback);
 				}

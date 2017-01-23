@@ -156,8 +156,9 @@ define([
 			console.log(response);	
 			console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>');
 
-			waitingDialog.hide();
 			
+			
+
 			var view = this;
 
 			if(result=='success'){
@@ -170,7 +171,14 @@ define([
 				console.log('this.dsId : '+ this.dsId);
 				
 
-				
+				if (BtnSalveId=="btnResSaveAndTrasform"){
+					waitingDialog.hide();
+					var route = '#previewUploadedData/'+this.uploadedFilePath+"/ds/"+this.dsSlug;
+					Backbone.history.navigate(route, { trigger : true });
+					return this;
+				}
+
+
 				var callback = function(result, response){
 					view.fileUploadedAndMetaSaved(result, response, BtnSalveId);
 				};
@@ -199,6 +207,7 @@ define([
 				return this;
 				
 			}else{
+				waitingDialog.hide();
 				var errMessage = Utils.getError(response);
 				bootbox.alert({
 					title: "Esito operazione",
@@ -212,13 +221,14 @@ define([
 			console.log('UploadDataView.fileUploadedAndMetaSaved');
 			console.log('UploadDataView.BtnSalveId',BtnSalveId);
 
+			waitingDialog.hide();
 
 			var route;
-			if (BtnSalveId=="btnResSaveAndTrasform"){
-				route = '#previewUploadedData/'+this.uploadedFilePath+"/ds/"+this.dsSlug;
-			} else {
+		//	if (BtnSalveId=="btnResSaveAndTrasform"){
+		//		route = '#previewUploadedData/'+this.uploadedFilePath+"/ds/"+this.dsSlug;
+		//	} else {
 				route = "#ds/"+this.dsSlug;
-			}
+		//	}
 
 			Backbone.history.navigate(route, { trigger : true });
 
