@@ -47,14 +47,14 @@ table {table-layout:fixed}
 					_id
 				</th>
 				<% for (var j=0;j < header.length; j++) {
-					if (header[j]!="id" && header[j]!="_dataset_ref_id"){
+					//if (header[j]!="id" && header[j]!="_dataset_ref_id"){
 				  %>
      					   <th <%if(header[j]!=null && header[j].length>1 && header[j].substring(0,1)=="_"){%>style="color:gray"<%}%> >
 						   <%=header[j]%>
 					   </th>
 				  <% 
+					//}
 					}
-				}
 				 %>
 				   
 			</tr>

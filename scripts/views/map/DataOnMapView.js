@@ -107,16 +107,19 @@ define([
 
 //			     console.log("singleData",singleData);
 
-			    var lat = singleData._latitude;
-			    var lon = singleData._longitude;
-			    var id = singleData.id;
-				var title=id;
-				if (singleData._title){
-					title=singleData._title;
+				//check if all the records contains latitude e longitude fields. skip if not.
+				if (singleData._latitude && singleData._longitude) {
+					var lat = singleData._latitude;
+					var lon = singleData._longitude;
+					var id = singleData.id;
+					var title=id;
+					if (singleData._title){
+						title=singleData._title;
+					}
+	//			    location = [description, lat, lon, 1];
+					location = [id, lat, lon, title];
+					locations.push(location);
 				}
-//			    location = [description, lat, lon, 1];
-			    location = [id, lat, lon, title];
-			    locations.push(location);
 			});
 			
 			console.log("locations",locations);

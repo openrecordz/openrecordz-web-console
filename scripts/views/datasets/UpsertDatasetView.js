@@ -173,7 +173,7 @@ define([
 				var route=null;
 				if (buttonId=="savebnt") {
 					
-					if (view.datasetMeta=null){
+					if (view.datasetMeta==null){
 						route = '#';
 						bootbox.alert({
 							title: 		'Dataset creato',

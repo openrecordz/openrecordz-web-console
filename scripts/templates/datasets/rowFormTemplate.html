@@ -35,22 +35,73 @@ if (row!=null) {
 
 
 <%
-	console.log("row",row);
-	_globalrow=row;
-	for (var key in row) {
-				  if (row.hasOwnProperty(key)  && key!="id" && key!="_type") { 
+	
+
+ for (var j=0;j < headers.length; j++) {
+				   var header = headers[j];
 		%>
+
+		<%
+			if (header=="_main_image") {
+		%>
+		
+		<div class="form-group">
+			    <label for="_main_image"><%=header%></label>
+			    <img src="<%= row[header] %>" id="_main_image" style="max-height:200px;max-width:200px;"/>
+		</div>
+
+	<%}else if (header=="_title") {%>
 			
 			 <div class="form-group">
-			    <label for="exampleInputEmail1"><%=key%></label>
-			    <input type="text" class="form-control" placeholder="<%=key%>" value="<%= row[key] %>" <%if (key.startsWith("_")) {%> disabled <%}%> />
+			    <label for="_title"><%=header%></label>
+			    <input type="text" id="_title" class="form-control" placeholder="Titolo" value="<%= row[header] %>" />
+			  </div>
+						
+
+<%}else if (header=="_description") {%>
+			
+			 <div class="form-group">
+			    <label for="_description"><%=header%></label>
+					<textarea class="form-control" id="_description" name="_description" rows="3" placeholder="inserire una descrizione..."><%= row[header] %></textarea>			    
+			  </div>
+						
+	
+
+		<%}else {%>
+
+
+		
+			
+			 <div class="form-group">
+			    <label for="exampleInputEmail1"><%=header%></label>
+			    <input type="text" class="form-control" id="<%=header%>" placeholder="<%=header%>" value="<%= row[header] %>" <%if (header.startsWith("_")) {%> disabled <%}%> />
 			  </div>
 					
 
-		<%
-				  }	
-	} 
+		<%			
+		}
+		%>
+
+
+<%
 } %>
+
+
+			
+			 <div class="form-group">
+			    <label for="_createdby">Created by</label>
+					<strong id="_createdby"><%= row["_createdby"] %></strong> at <strong id="_createdon"><%= moment(row["_createdon"]).format('LLL') %></strong>	    
+			  </div>
+
+				 <div class="form-group">
+			    <label for="_modifiedby">Modified by</label>
+					<strong id="_modifiedby"><%= row["_modifiedby"] %></strong> at <strong id="_modifieon"><%= moment(row["_modifiedon"]).format('LLL') %></strong>	    
+			  </div>
+
+
+<%
+} 
+%>
 
 
 	<a class="btn btn-default btn-lg" href="#ds/<%=dsSlug%>/table"><%=_label.chiudi%></a>

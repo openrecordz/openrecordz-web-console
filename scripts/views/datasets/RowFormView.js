@@ -25,6 +25,8 @@ define([
 //		datasetId: null,	
 		row:null,
 		dsSlug:null,
+		header:null,
+		headerWithScore:null,
 //		table: null,	//Oggetto DataTables che conterrà la tabella utenti.
 //		onContentSelectedCallback: null,
 //		callback: null,
@@ -45,7 +47,77 @@ define([
 			//Recupero dei parametri passati al costruttore della classe.
 			this.row = this.options.row;
 			this.dsSlug=this.options.dsSlug;
-		
+			_g_row=this.row;
+
+		    if (this.row !=null) {	
+				this.header=[];		
+				this.headerWithScore=[];
+				var headerScore={};		
+				
+					for (var key in this.row) {
+						if (this.row.hasOwnProperty(key) && this.header.indexOf(key) == -1 						
+						&& key!="id" && key!="_dataset_ref_id" && key!="_type" 
+							&& key!="_location" 
+							&& key!="_createdby" && key!="_createdon" && key!="_modifiedy" && key!="_modifiedon" 
+							/*&& key!="_status"*/
+							)  { 
+							
+							this.header.push(key);
+						
+						    headerScore={};
+							headerScore.name=key;
+							
+							if (key=="_main_image")
+								headerScore.score=1;
+							else if (key=="_title")
+								headerScore.score=2;
+							else if (key=="_description")
+								headerScore.score=3;
+							else if (key=="_latitude")
+								headerScore.score=177;
+							else if (key=="_longitude")
+								headerScore.score=178;
+							/*else if (key=="_createdby")
+								headerScore.score=196;
+							else if (key=="_createdon")
+								headerScore.score=197;*/
+							else if (key=="_type")
+								headerScore.score=198;
+							else if (key=="_status")
+								headerScore.score=199;
+							else if (key=="_location")
+								headerScore.score=200;
+							else 
+								headerScore.score=100;
+
+							this.headerWithScore.push(headerScore);
+						}
+					}
+				
+				
+				
+				// sort by score
+				this.headerWithScore.sort(function (a, b) {
+					return a.score - b.score;
+				});				
+
+				_g_headerWithScore=this.headerWithScore;
+
+				var headerScoreOrderedArray = [];
+				for (var i=0;i<this.headerWithScore.length;i++ ) {
+					headerScoreOrderedArray.push(this.headerWithScore[i].name);
+				}
+
+				//override this.header var
+				this.header=headerScoreOrderedArray;
+
+				console.log("header: " + this.header);
+				_g_header=this.header;
+			}
+
+
+
+
 		},
 		
 		
@@ -54,7 +126,7 @@ define([
 //			console.log('===========================================');
 //			console.log(this.dataset);
 //			console.log('===========================================');
-			this.$el.html(this.template({row:this.row, dsSlug: this.dsSlug}));
+			this.$el.html(this.template({row:this.row, dsSlug: this.dsSlug, headers:this.header}));
 
 			// var view = this;
 			
