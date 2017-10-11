@@ -127,4 +127,9 @@ _label_it= {
 "nessunDatoBinarioCaricato":"Nessun dato caricato",
 //"faiClickSullaVoceDiMenuTabellaPerVisualizzareEventualiDatiTabellari":"Fai clic sulla voce di menu Tabella per visualizzare eventuali dati tabellari"
 
+
+"dataset_label" : "(dataset)",
+"record_label" : "(record)",
+
+
 }

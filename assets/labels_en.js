@@ -108,5 +108,7 @@ _label_en = {
 "nessunDatoBinarioCaricato":"No data available",
 //"faiClickSullaVoceDiMenuTabellaPerVisualizzareEventualiDatiTabellari":"Click on the Table menu item to display eventual tabular data"
 
+"dataset_label" : "(dataset)",
+"record_label" : "(record)",
 
 }

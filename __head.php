@@ -49,8 +49,13 @@ if(isset($_POST["alusername"])) {
     var tenant = "http://<?=$tenant?>." + hostname;
     // var tenant = "http://localhost:8880/smart21-server";
 	var tenantName = "<?=$tenant?>";
-//	var domainConsole = ".admin.smart21.it";
-	var domainConsole = ".openrecordz.com";
+
+	//development 
+	var domainConsole = ".localhost";
+	//production
+	//var domainConsole = ".openrecordz.com";
+
+	
 	var dashboardDomain = "http://apps"+domainConsole;
 </script>
     

@@ -8,10 +8,22 @@
 // * produzione --> 'http://nome_tenant.console.smart21.it'
 //Recupero il nome del tenant e il domain dall'indirizzo.
 $s = $_SERVER['HTTP_HOST'];
-$a = explode(".", $s);
+$a = explode(".", $s, -1);
+
+//echo $a;
+//echo count($a);
+
+//example http://localhost
+if (count($a)<=0) {
+	$tenant = "default";
+}else {
+	//default.openrecordz.com
+	$tenant = $a[0];
+}
+
+
 // echo 'tenant: ' . $a[0];
 // echo '<br>';
-$tenant = $a[0];
 // echo 'domain: ' . $a[1];
 // echo '<br>';
 

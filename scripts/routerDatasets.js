@@ -14,11 +14,13 @@ define([
 	'views/datasets/UploadDataView',
 	'views/datasets/PreviewUploadedDataView',
 	'views/datasets/MappingFieldView',
+	'views/datasets/GlobalSearchView',
 
 //	'views/users/UserEditView',
 //	'views/users/UserRolesView',
 	'models/Dataset',
 	'models/Data',
+	'models/GlobalSearch',
 	'models/CustomFunction',
 //	'bootstraptagsinput',
 	'models/Utils',
@@ -41,9 +43,11 @@ define([
 		UploadDataView,
 		PreviewUploadedDataView,
 		MappingFieldView,
+		GlobalSearchView,
 //		,UserEditView, UserRolesView,
 		Dataset,
 		Data,
+		GlobalSearch,
 		CustomFunction,
 //		bootstraptagsinput,
 		Utils,
@@ -68,7 +72,7 @@ define([
 //			'none': 'none',
 			
 			'search/:text': 	'search',
-
+			'globalSearch/:text': 	'globalSearch',
 
 
 			'ds/:dsSlug/resource': 	'datasetDetailAsResource',
@@ -94,7 +98,7 @@ define([
 
 			'ds/:dsSlug/map': 	'datasetDetailAsMap',
 			'ds/:dsSlug/page/:page/map': 	'datasetDetailAsMap',
-			'ds/:dsSlug/page/:page/text/:text/map': 	'datasetDetailAsMap',
+			'ds/:dsSlug/page/:page/text/:text/map': 	'datasetDetailAsMap',  
 
 
 
@@ -161,6 +165,39 @@ define([
 			var datasetsView = new DatasetsView();
 			this.changeView(datasetsView, '#dashboard_content');
 		},
+
+		globalSearch: function(text){
+			console.log('RouterDatasets.globalSearch');
+			console.log("text", text);
+			
+			var view = this;
+			var callback = function(data){		
+				console.log('data :' + data);		
+				view.globalSearchDataTaken(data,text);
+			};
+			
+			var globalSearch = new GlobalSearch();
+			//console.log('dsSlug :' + dsSlug);
+
+			globalSearch.textAsMap("59b95378e4b0a018d1a61896",text, 0,callback,10);			
+			
+
+			return this;
+
+		},
+
+		globalSearchDataTaken: function(data,text){
+			console.log('RouterDatasets.globalSearchDataTaken');
+			console.log("data", data);
+			console.log("text", text);
+			this.setHeaderAndFooter();
+
+			var globalSearchView = new GlobalSearchView({data: data, text: text});
+			
+			this.changeView(globalSearchView, '#dashboard_content');
+			return this;
+		},
+
 
 		datasetDetailAsAuto: function(dsSlug, page,text){ 
 			console.log('RouterDatasets.datasetDetailAsAuto');
@@ -230,9 +267,9 @@ define([
 
 		datasetDetailAsMap: function(dsSlug, page,text){ 
 			console.log('RouterDatasets.datasetDetailAsMap');
-			console.log("dsSlug", dsSlug);
+			console.log("dsSlug", dsSlug); // nome dataset su cui fare la ricerca
 			console.log("page", page);
-			console.log("text", text);
+			console.log("text", text); // query
 
 //			waitingDialog.show('I\'m waiting');
 

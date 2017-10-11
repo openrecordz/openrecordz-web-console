@@ -1,0 +1,11 @@
+
+## 1.0 ##
+- aggiunto file .htaccess
+- aggiunta barra di ricerca in /scripts/templates/dashboardHeaderTemplate.html
+- aggiunto gestore ricerca in /scripts/views/DashboardHeaderView.js
+- aggiunto modello ricerca in /scripts/models/GlobalSearch.js
+- aggiunto router globalSearch ricerca in /scripts/routerDatasets.js
+- aggiunta view /scripts/views/datasets/GlobalSearchView.js
+- aggiunto template /scripts/templates/datasets/globalSearchTemplate.html
+- aggiunta traduzione label "dataset_label" e "record_label" in /assets/labels_en.js e /assets/labels_it.js
+- bugfix domain console

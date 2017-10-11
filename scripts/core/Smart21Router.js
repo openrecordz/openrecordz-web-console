@@ -25,7 +25,7 @@ define([
 //		preventAccessWhenAuth : ['#login'],
 		
 
-		publicPath : ['/$','index$','/datasets$','/datasets#$','/datasets#ds/.'],
+		publicPath : ['/$','index$','/datasets$','/datasets#$','/datasets#ds/.','/datasets#globalSearch/.'],
 		next: null,
 
 		

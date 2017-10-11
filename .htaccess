@@ -1,0 +1,22 @@
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+
+RewriteRule blog/(.*)/(.*)$ content.php?id=$2&ds=$1 [QSA,NC,L]
+RewriteRule blog/(.*)$ blog.php?request=$1 [QSA,NC,L]
+RewriteRule blog$ index_blog.php [QSA,NC,L]
+
+RewriteRule ^datasets/(.*)$ /datasets#ds/$1 [L,NE,R=302]
+##L last nn vedere altre regole
+#NE non escape per hash
+
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule (.*) $1.php [L]
+
+</IfModule>
+
+# END WordPress
+

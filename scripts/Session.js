@@ -218,17 +218,21 @@ define([
 			console.log('Session.set - (key, value) = (' + key + ', ' + value + ')');
 			var myDate = new Date();
 			myDate.setMonth(myDate.getMonth() + 12);
+			document.cookie = key+"="+value + ";expires=" + myDate +";domain="+domainConsole+";path=/";
 			//document.cookie = key+"="+value + ";expires=" + myDate +";domain=.openrecordz.local;path=/";
-			document.cookie = key+"="+value + ";expires=" + myDate +";domain=.openrecordz.com;path=/";
-			
+			//document.cookie = key+"="+value + ";expires=" + myDate +";domain=.openrecordz.com;path=/";
+			//document.cookie = key+"="+value + ";expires=" + myDate +";domain=.localhost;path=/";
+
 			console.log("cookies: "+ document.cookie);
 
 			return this;
 		},
 
 		unset : function(key){
-			document.cookie = key+"=;expires=Thu, 01 Jan 1970 00:00:00 UTC;domain=.openrecordz.com;path=/";
+			document.cookie = key+"=;expires=Thu, 01 Jan 1970 00:00:00 UTC;domain="+domainConsole+";path=/";
+			// document.cookie = key+"=;expires=Thu, 01 Jan 1970 00:00:00 UTC;domain=.openrecordz.com;path=/";
 			//document.cookie = key+"=;expires=Thu, 01 Jan 1970 00:00:00 UTC;domain=.openrecordz.local;path=/";
+			//document.cookie = key+"=;expires=Thu, 01 Jan 1970 00:00:00 UTC;domain=.localhost;path=/";
 			return this;	
 		},
 
