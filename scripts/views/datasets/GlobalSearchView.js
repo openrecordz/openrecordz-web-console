@@ -40,10 +40,9 @@ define([
 		render: function(){
 			console.log('GlobalSearchView.render');
 //			this.$el.html(this.template());
-			
-			if(this.data == null)
-				this.data =  []; // an array
 
+			if(this.data == null || this.data == undefined)
+				this.data = [];
 
 			this.$el.html(this.template({data: this.data}));
 			return this;
