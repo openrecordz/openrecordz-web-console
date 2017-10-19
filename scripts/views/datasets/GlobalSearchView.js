@@ -44,6 +44,9 @@ define([
 			if(this.data == null || this.data == undefined)
 				this.data = [];
 
+			console.log("data");
+			console.log(this.data);
+
 			this.$el.html(this.template({data: this.data}));
 			return this;
 		}
