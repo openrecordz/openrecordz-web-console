@@ -40,6 +40,12 @@ define([
 		render: function(){
 			console.log('GlobalSearchView.render');
 //			this.$el.html(this.template());
+			
+			if(this.data == null) {
+				this.$el.html(this.template({data: ""}));
+				return this;
+			}
+
 			this.$el.html(this.template({data: this.data}));
 			return this;
 		}
