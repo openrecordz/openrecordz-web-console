@@ -53,11 +53,7 @@ define([
 				if(data.records != null && data.records != undefined) {
 					console.log("data.records", data.records);
 				}
-			}
-
-
-			
-			console.log("data", this.data);
+			} 
 
 			this.$el.html(this.template({data: this.data}));
 			return this;

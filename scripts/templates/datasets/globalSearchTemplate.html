@@ -19,52 +19,58 @@
 	<div class="list-group">
 
 		<br>
+		<% if (data != null && data != undefined) { 
 
-		<% if (data.count > 0) { 
+			<% if (data.count > 0) { 
 
-			<!-- @TODO correggere questo  -->
-			 var _slug = data.dataset._slug; %>
+				<!-- @TODO correggere questo  -->
+				 var _slug = data.dataset._slug; %>
 
-			<% if ( data.records.length > 0) { %>
+				<% if ( data.records.length > 0) { %>
 
-				<% for (var i=0; i < data.records.length; i++) {
-					var currentItem = data.records[i];
-				%>
+					<% for (var i=0; i < data.records.length; i++) {
+						var currentItem = data.records[i];
+					%>
 
-				<!-- @TODO cambiare la condizione in base al tipo di dato in ingresso -->
-    			<% if(i % 2 == 0) { %>
-					<!-- print record -->
-					<a href="#ds/<%=_slug %>/id/<%=currentItem.id %>" name="record" class="list-group-item clearfix">
-						<h4 class="list-group-item-heading">Serve uno slug per questo record con id: <%=currentItem.id%> 
-							
-							<span class="glyphicon glyphicon-chevron-right pull-right" style="top:10px" aria-hidden="true"></span>
-							<span style="color:red;" aria-hidden="true"><%=_label.record_label %></span>						
-						</h4>
-					</a>
-    			<% } else { %>
-	        		<!-- print dataset -->
-					<a href="#ds/<%=_slug %>" name="dataset" class="list-group-item clearfix">
-						<h4 class="list-group-item-heading">Serve uno slug per questo dataset con id: <%=currentItem.id%> 
-							<span class="glyphicon glyphicon-chevron-right pull-right" style="top:10px" aria-hidden="true"></span>
-							<span style="color: blue;" aria-hidden="true"><%=_label.dataset_label %></span>						
-						</h4>
-					</a>
-    			<% } %>
-	
+					<!-- @TODO cambiare la condizione in base al tipo di dato in ingresso -->
+	    			<% if(i % 2 == 0) { %>
+						<!-- print record -->
+						<a href="#ds/<%=_slug %>/id/<%=currentItem.id %>" name="record" class="list-group-item clearfix">
+							<h4 class="list-group-item-heading">Serve uno slug per questo record con id: <%=currentItem.id%> 
+								
+								<span class="glyphicon glyphicon-chevron-right pull-right" style="top:10px" aria-hidden="true"></span>
+								<span style="color:red;" aria-hidden="true"><%=_label.record_label %></span>						
+							</h4>
+						</a>
+	    			<% } else { %>
+		        		<!-- print dataset -->
+						<a href="#ds/<%=_slug %>" name="dataset" class="list-group-item clearfix">
+							<h4 class="list-group-item-heading">Serve uno slug per questo dataset con id: <%=currentItem.id%> 
+								<span class="glyphicon glyphicon-chevron-right pull-right" style="top:10px" aria-hidden="true"></span>
+								<span style="color: blue;" aria-hidden="true"><%=_label.dataset_label %></span>						
+							</h4>
+						</a>
+	    			<% } %>
+		
 
-				<% } %> <!-- end for -->
+					<% } %> <!-- end for -->
 
-			<% } else {%> <!-- end if data.records.length -->
+				<% } else {%> <!-- end if data.records.length -->
+						<h3>
+							<%=_label.no_results_found%> .
+						</h3>
+				<% } %> <!-- end else data.records.length -->
+		
+			<% } else { %>
 					<h3>
 						<%=_label.no_results_found%> .
 					</h3>
-			<% } %> <!-- end else data.records.length -->
-	
-		<% } else { %>
+			<% }
+		} else { %> <!-- end data.count -->
 				<h3>
 					<%=_label.no_results_found%> .
 				</h3>
-		<% } %> <!-- end data.count -->
+		<% } %> <!-- end data != null -->
 
 	</div> <!-- end list-group -->
 
