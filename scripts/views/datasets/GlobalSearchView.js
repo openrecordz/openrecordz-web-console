@@ -41,19 +41,19 @@ define([
 			console.log('GlobalSearchView.render');
 //			this.$el.html(this.template());
 
-			console.log("data", this.data);
+			// console.log("data", this.data);
 
-			if(this.data != null && this.data != undefined) {
-				console.log("data.count", this.data.count);
+			// if(this.data != null && this.data != undefined) {
+			// 	console.log("data.count", this.data.count);
 
-				if(this.data.dataset != null && this.data.dataset != undefined) {
-					console.log("data.dataset", this.data.dataset);
-				}
+			// 	if(this.data.dataset != null && this.data.dataset != undefined) {
+			// 		console.log("data.dataset", this.data.dataset);
+			// 	}
 
-				if(this.data.records != null && this.data.records != undefined) {
-					console.log("data.records", this.data.records);
-				}
-			} 
+			// 	if(this.data.records != null && this.data.records != undefined) {
+			// 		console.log("data.records", this.data.records);
+			// 	}
+			// } 
 
 			this.$el.html(this.template({data: this.data}));
 			return this;
