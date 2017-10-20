@@ -19,16 +19,16 @@
 	<div class="list-group">
 
 		<br>
-		<% if (data != null && data != undefined) { 
 
+		<% if (data != null && data != undefined) {  %>
 			<% if (data.count > 0) { 
 
 				<!-- @TODO correggere questo  -->
 				 var _slug = data.dataset._slug; %>
 
-				<% if ( data.records.length > 0) { %>
+				<% if (data.records.length > 0) { %>
 
-					<% for (var i=0; i < data.records.length; i++) {
+					<% for (var i=0;i < data.records.length; i++) {
 						var currentItem = data.records[i];
 					%>
 
@@ -55,22 +55,14 @@
 
 					<% } %> <!-- end for -->
 
-				<% } else {%> <!-- end if data.records.length -->
-						<h3>
-							<%=_label.no_results_found%> .
-						</h3>
-				<% } %> <!-- end else data.records.length -->
+				<% } %> <!-- end data.records.length -->
 		
 			<% } else { %>
-					<h3>
-						<%=_label.no_results_found%> .
-					</h3>
-			<% }
-		} else { %> <!-- end data.count -->
-				<h3>
-					<%=_label.no_results_found%> .
-				</h3>
-		<% } %> <!-- end data != null -->
+				<%=_label.no_results_found%>
+			<% } %> <!-- end data.count -->
+		% } else { %>
+			<%=_label.no_results_found%>
+		<% } %> <!-- end data != null && data != undefined -->
 
 	</div> <!-- end list-group -->
 
