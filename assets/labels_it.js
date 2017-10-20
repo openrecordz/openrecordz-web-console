@@ -40,7 +40,7 @@ _label_it= {
 "haiGiaUnAccount":"Hai già un account?",
 
 "elencoDatasetDisponibili":"Elenco dei dataset disponibili",
-"creaNuovoDataset":"Crea un nuovo dataset",
+"creaNuovoDataset":"Nuovo dataset",
 "cercaDataset":"Cerca i dataset...",
 "cerca":"Cerca",
 "datasetDisponibile":"dataset disponibile",

@@ -22,7 +22,7 @@ _label_en = {
 "haiGiaUnAccount":"Already have an account?",
 
 "elencoDatasetDisponibili":"List of available datasets",
-"creaNuovoDataset":"Create a new dataset",
+"creaNuovoDataset":"new dataset",
 "cercaDataset":"Search datasets...",
 "cerca":"Search",
 "datasetDisponibile":"dataset available",
