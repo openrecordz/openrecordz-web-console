@@ -1,1 +1,7 @@
-<%=data%>
+<!-- <%=data%> -->
+
+<% if (data != null && data != undefined) {  %>
+	<%=data.count%>
+<% } else {  %>
+	<p> data is null </p>
+<% }   %>
