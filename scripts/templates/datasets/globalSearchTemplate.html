@@ -25,9 +25,9 @@
 			<!-- @TODO correggere questo  -->
 			 var _slug = data.dataset._slug; %>
 
-			<% if (data.records.length > 0) { %>
+			<% if (data.records != null && data.records.length > 0) { %>
 
-				<% for (var i=0;i < data.records.length; i++) {
+				<% for (var i=0; i < data.records.length; i++) {
 					var currentItem = data.records[i];
 				%>
 
@@ -54,7 +54,11 @@
 
 				<% } %> <!-- end for -->
 
-			<% } %> <!-- end data.records.length -->
+			<% } else {%> <!-- end if data.records.length -->
+					<h3>
+						<%=_label.no_results_found%> .
+					</h3>
+			<% } %> <!-- end else data.records.length -->
 	
 		<% } else { %>
 

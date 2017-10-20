@@ -111,4 +111,6 @@ _label_en = {
 "dataset_label" : "(dataset)",
 "record_label" : "(record)",
 
+"no_results_found":"Your search returned no results",
+
 }

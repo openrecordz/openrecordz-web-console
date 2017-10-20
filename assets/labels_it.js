@@ -131,5 +131,7 @@ _label_it= {
 "dataset_label" : "(dataset)",
 "record_label" : "(record)",
 
+"no_results_found" : "La ricerca non ha prodotto nessun risultato",
+
 
 }
