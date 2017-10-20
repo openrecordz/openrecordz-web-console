@@ -19,8 +19,9 @@ define([
 			};
 
 			var Datas = $.ajax({
-        	    // url:  tenant + '/service/v1/datasets/'+ dsId +".map",
-        	    url : 'http://tenant1.api.openrecordz.com/service/v1/datasets/59b95378e4b0a018d1a61896.map',
+				// example url:
+				// url : 'http://tenant1.api.openrecordz.com/service/v1/datasets/59b95378e4b0a018d1a61896.map',
+        	    url:  tenant + '/service/v1/datasets/'+ dsId +".map",
 			data: data,
 				type : 'GET'
 			});
