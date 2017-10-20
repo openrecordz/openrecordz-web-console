@@ -44,14 +44,14 @@ define([
 			console.log("data", this.data);
 
 			if(this.data != null && this.data != undefined) {
-				console.log("data.count", data.count);
+				console.log("data.count", this.data.count);
 
-				if(data.dataset != null && data.dataset != undefined) {
-					console.log("data.dataset", data.dataset);
+				if(this.data.dataset != null && this.data.dataset != undefined) {
+					console.log("data.dataset", this.data.dataset);
 				}
 
-				if(data.records != null && data.records != undefined) {
-					console.log("data.records", data.records);
+				if(this.data.records != null && this.data.records != undefined) {
+					console.log("data.records", this.data.records);
 				}
 			} 
 
