@@ -1,7 +1,62 @@
-<!-- <%=data%> -->
+<br>
 
-<% if (data != null && data != undefined) {  %>
-	<%=data.count%>
-<% } else {  %>
-	<p> data is null </p>
-<% }   %>
+<div class="container">
+
+	<div class="list-group">
+
+		<br>
+
+		<% if (data != null && data != undefined) {  %>
+
+			<!-- retrieves data.dataset -->
+			<% if (data.dataset != null && data.dataset != undefined) {  %>
+				<!-- @TODO correggere questo  -->	 
+				<% var _slug = data.dataset._slug; %>
+			<% } else {  %>
+				<!-- data.dataset is null or data is undefined -->
+				<h3> <%=_label.no_results_found%> </h3>
+			<% }   %>
+
+
+			<!-- retrieves data.records -->
+			<% if (data.records != null && data.records != undefined) {  %>
+				<% for (var i=0;i < data.records.length; i++) { %>
+					<% var currentItem = data.records[i]; %>
+
+					<!-- @TODO cambiare la condizione in base al tipo di dato in ingresso -->
+					<!-- @TODO stringhe nel file _label -->
+	    			<% if(i % 2 == 0) { %>
+						<!-- print record -->
+						<a href="#ds/<%=_slug %>/id/<%=currentItem.id %>" name="record" class="list-group-item clearfix">
+							<h4 class="list-group-item-heading">Serve uno slug per questo record con id: <%=currentItem.id%> 
+								
+								<span class="glyphicon glyphicon-chevron-right pull-right" style="top:10px" aria-hidden="true"></span>
+								<span style="color:red;" aria-hidden="true"><%=_label.record_label %></span>						
+							</h4>
+						</a>
+	    			<% } else { %>
+		        		<!-- print dataset -->
+						<a href="#ds/<%=_slug %>" name="dataset" class="list-group-item clearfix">
+							<h4 class="list-group-item-heading">Serve uno slug per questo dataset con id: <%=currentItem.id%> 
+								<span class="glyphicon glyphicon-chevron-right pull-right" style="top:10px" aria-hidden="true"></span>
+								<span style="color: blue;" aria-hidden="true"><%=_label.dataset_label %></span>						
+							</h4>
+						</a>
+	    			<% } %>
+
+				<% } %> <!-- end for -->
+			<% } else {  %>
+				<!-- data.records is null or data is undefined -->
+				<h3> <%=_label.no_results_found%> </h3>
+			<% }   %>
+
+
+
+		<% } else {  %>
+			<!-- data is null or data is undefined -->
+			<h3> <%=_label.no_results_found%> </h3>
+		<% }   %>
+
+	</div> <!-- end list-group --> 
+
+</div> <!-- end container -->
