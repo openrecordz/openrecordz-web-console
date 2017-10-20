@@ -41,11 +41,23 @@ define([
 			console.log('GlobalSearchView.render');
 //			this.$el.html(this.template());
 
-			if(this.data == null || this.data == undefined)
-				this.data = [];
+			console.log("data", this.data);
 
-			console.log("data");
-			console.log(this.data);
+			if(this.data != null && this.data != undefined) {
+				console.log("data.count", data.count);
+
+				if(data.dataset != null && data.dataset != undefined) {
+					console.log("data.dataset", data.dataset);
+				}
+
+				if(data.records != null && data.records != undefined) {
+					console.log("data.records", data.records);
+				}
+			}
+
+
+			
+			console.log("data", this.data);
 
 			this.$el.html(this.template({data: this.data}));
 			return this;

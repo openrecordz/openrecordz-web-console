@@ -20,12 +20,12 @@
 
 		<br>
 
-		<% if (data != null && data != undefined && data.count > 0) { 
+		<% if (data.count > 0) { 
 
 			<!-- @TODO correggere questo  -->
 			 var _slug = data.dataset._slug; %>
 
-			<% if (data.records != null && data.records != undefined && data.records.length > 0) { %>
+			<% if ( data.records.length > 0) { %>
 
 				<% for (var i=0; i < data.records.length; i++) {
 					var currentItem = data.records[i];
