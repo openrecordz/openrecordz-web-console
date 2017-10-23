@@ -445,7 +445,7 @@ define([
 			var queryStr="?file="+uploadedFilePath+"&charseparator="+delimiter;
 			console.log("queryStr", queryStr);
 
-			customFunction.call("previewcsv",queryStr, null, callback);
+			customFunction.callCSV("previewcsv",queryStr, null, callback);
 			return this;
 		},
 		previewUploadedDataCompleted:function(status, firstLines,uploadedFilePath,dsSlug,delimiter) {
@@ -487,7 +487,7 @@ define([
 			var queryStr="?file="+uploadedFilePath+"&charseparator="+delimiter+'&ds='+dsSlug;
 			console.log("queryStr", queryStr);
 
-			customFunction.call("parsecsvheader",queryStr, null, callback);
+			customFunction.callCSV("parsecsvheader",queryStr, null, callback);
 			return this;
 		},
 		mappingfieldCompleted:function(status, headers,uploadedFilePath,dsSlug,delimiter) {
@@ -583,8 +583,8 @@ define([
 
 			waitingDialog.show('Importazione dei dati in corso. Attendere!');
 
-			customFunction.call("parsecsv",queryStr, JSON.stringify(data), callback);
-//			customFunction.call("parsecsv",queryStr, jsonDataStr, callback);
+			customFunction.callCSV("parsecsv",queryStr, JSON.stringify(data), callback);
+//			customFunction.callCSV("parsecsv",queryStr, jsonDataStr, callback);
 			return this;
 		},
 		parsedFile: function(status,response, uploadedFilePath,dsSlug){
