@@ -51,9 +51,9 @@ if(isset($_POST["alusername"])) {
 	var tenantName = "<?=$tenant?>";
 
 	//development 
-	//var domainConsole = ".localhost";
+	var domainConsole = ".localhost";
 	//production
-	var domainConsole = ".v2.openrecordz.com";
+	// var domainConsole = ".v2.openrecordz.com";
 
 	
 	var dashboardDomain = "http://apps"+domainConsole;
@@ -166,5 +166,14 @@ if ((localStorage.getItem('lan')) =="IT") {
 }
 
 </script>
+
+<!-- chat21 -->
+<!-- <app-root></app-root>
+<script type="text/javascript" src="https://chat21-web.firebaseapp.com/inline.bundle.js"></script>
+<script type="text/javascript" src="https://chat21-web.firebaseapp.com/polyfills.bundle.js"></script>
+<script type="text/javascript" src="https://chat21-web.firebaseapp.com/scripts.bundle.js"></script>
+<script type="text/javascript" src="https://chat21-web.firebaseapp.com/styles.bundle.js"></script>
+<script type="text/javascript" src="https://chat21-web.firebaseapp.com/vendor.bundle.js"></script>
+<script type="text/javascript" src="https://chat21-web.firebaseapp.com/main.bundle.js"></script> -->
 
 
