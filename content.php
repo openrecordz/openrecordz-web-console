@@ -429,6 +429,14 @@ foreach ($data as $key => $valueDs) {
       "url": "http://<?=$tenant;?>.openrecordz.com/blog"
     }
      </script>
+
+     <app-root></app-root>
+<script type="text/javascript" src="https://chat21-web.firebaseapp.com/inline.bundle.js"></script>
+<script type="text/javascript" src="https://chat21-web.firebaseapp.com/polyfills.bundle.js"></script>
+<script type="text/javascript" src="https://chat21-web.firebaseapp.com/scripts.bundle.js"></script>
+<script type="text/javascript" src="https://chat21-web.firebaseapp.com/styles.bundle.js"></script>
+<script type="text/javascript" src="https://chat21-web.firebaseapp.com/vendor.bundle.js"></script>
+<script type="text/javascript" src="https://chat21-web.firebaseapp.com/main.bundle.js"></script>
 </head>
 
 <body id="top" itemscope="itemscope" itemtype="https://schema.org/WebPage">
