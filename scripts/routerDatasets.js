@@ -463,7 +463,7 @@ define([
 
 				this.setHeaderAndFooter();
 			
-				console.log("firstLines", firstLines.firstLines);
+				console.log("firstLines", firstLines);
 				var previewUploadedDataView = new PreviewUploadedDataView({firstLines:firstLines.firstLines,uploadedFilePath:uploadedFilePath, dsSlug:dsSlug,currentDelimiter:delimiter});
 				this.changeView(previewUploadedDataView, '#dashboard_content');
 			}
