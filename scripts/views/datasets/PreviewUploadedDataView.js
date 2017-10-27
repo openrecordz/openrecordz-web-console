@@ -6,17 +6,10 @@
 define([
 	'core/BaseView',
 	'Session',
-//	'datatables',
-	
-	'models/CustomFunction',
-//	'models/Utils',
 	'moment',
 	'bootbox',
 	'text!templates/datasets/previewUploadedDataTemplate.html',
 ], function(BaseView, Session, 
-//		DataTable, 
-		Data, 
-//		Utils, 
 		moment, bootbox,
 		previewUploadedDataTemplate){ 
 	

@@ -21,7 +21,7 @@ define([
 	'models/Dataset',
 	'models/Data',
 	'models/GlobalSearch',
-	'models/CustomFunction',
+	'models/CSV',
 //	'bootstraptagsinput',
 	'models/Utils',
 	'bootbox',
@@ -48,7 +48,7 @@ define([
 		Dataset,
 		Data,
 		GlobalSearch,
-		CustomFunction,
+		CSV,
 //		bootstraptagsinput,
 		Utils,
 		bootbox,
@@ -431,7 +431,7 @@ define([
 				view.previewUploadedDataCompleted(status,firstLines,uploadedFilePath,dsSlug,delimiter);
 			};
 			//Recupero il dataset.
-			var customFunction = new CustomFunction();
+			var csvModel = new CSV();
 			console.log('uploadedFilePath :' + uploadedFilePath);
 //			var data = {};
 //			data.file=uploadedFilePath;
@@ -445,7 +445,7 @@ define([
 			var queryStr="?file="+uploadedFilePath+"&charseparator="+delimiter;
 			console.log("queryStr", queryStr);
 
-			customFunction.callCSV("previewcsv",queryStr, null, callback);
+			csvModel.preview(queryStr, null, callback);
 			return this;
 		},
 		previewUploadedDataCompleted:function(status, firstLines,uploadedFilePath,dsSlug,delimiter) {
@@ -479,7 +479,7 @@ define([
 				view.mappingfieldCompleted(status,headers,uploadedFilePath, dsSlug,delimiter);
 			};
 
-			var customFunction = new CustomFunction();
+			var csvUtil = new CSV();
 
 			if (!delimiter)
 				delimiter=",";
@@ -487,7 +487,7 @@ define([
 			var queryStr="?file="+uploadedFilePath+"&charseparator="+delimiter+'&ds='+dsSlug;
 			console.log("queryStr", queryStr);
 
-			customFunction.callCSV("parsecsvheader",queryStr, null, callback);
+			csvUtil.getHeaders(queryStr, null, callback);
 			return this;
 		},
 		mappingfieldCompleted:function(status, headers,uploadedFilePath,dsSlug,delimiter) {
@@ -513,7 +513,7 @@ define([
 				view.parsedFile(status,response,uploadedFilePath, dsSlug);
 			};
 
-			var customFunction = new CustomFunction();
+			var csvUtil = new CSV();
 
 			if (!delimiter)
 				delimiter=",";
@@ -583,8 +583,7 @@ define([
 
 			waitingDialog.show('Importazione dei dati in corso. Attendere!');
 
-			customFunction.callCSV("parsecsv",queryStr, JSON.stringify(data), callback);
-//			customFunction.callCSV("parsecsv",queryStr, jsonDataStr, callback);
+			csvUtil.import(queryStr, JSON.stringify(data), callback);
 			return this;
 		},
 		parsedFile: function(status,response, uploadedFilePath,dsSlug){

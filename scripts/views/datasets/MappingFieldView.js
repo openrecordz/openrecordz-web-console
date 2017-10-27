@@ -6,17 +6,10 @@
 define([
 	'core/BaseView',
 	'Session',
-//	'datatables',
-	
-	'models/CustomFunction',
-//	'models/Utils',
 	'moment',
 	'bootbox',
 	'text!templates/datasets/mappingFieldTemplate.html',
 ], function(BaseView, Session, 
-//		DataTable, 
-		Data, 
-//		Utils, 
 		moment, bootbox,
 		mappingFieldTemplate){ 
 	
