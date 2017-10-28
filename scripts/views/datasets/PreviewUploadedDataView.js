@@ -19,7 +19,7 @@ define([
 
 		events : {
 			"change input[type=radio][name=cvsformat]" : "delimiterChanged",
-			"change input[type=text][name=cvsskiprow]" : "skipRowChanged",
+			"change input[type=number][name=cvsskiprow]" : "skipRowChanged",
 		},
 		
 
