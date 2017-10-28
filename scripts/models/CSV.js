@@ -76,7 +76,7 @@ define([
 				cache: false,
 			    	contentType: false,
 				processData: false,
-				type : 'GET'
+				type : 'POST'
 			});
 			callFn.done(function(response){
 				console.log('callCSV.import.done');
