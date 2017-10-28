@@ -497,8 +497,8 @@ define([
 
 			this.setHeaderAndFooter();
 			
-			console.log("headers", headers.headers);
-			var mappingFieldView = new MappingFieldView({headers:headers.headers,dataset:headers.dataset, uploadedFilePath:uploadedFilePath, dsSlug: dsSlug,currentDelimiter:delimiter});
+			console.log("headers", headers);
+			var mappingFieldView = new MappingFieldView({headers:headers,dataset:headers.dataset, uploadedFilePath:uploadedFilePath, dsSlug: dsSlug,currentDelimiter:delimiter});
 			this.changeView(mappingFieldView, '#dashboard_content');
 
 			return this;
