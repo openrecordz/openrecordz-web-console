@@ -53,13 +53,15 @@ define([
 				}else {
 					if (mappedHeader.origColumnName=="lat" || mappedHeader.origColumnName=="latitude"){
 						mappedHeader.columnType="_latitude";
+						mappedHeader.columnName="_latitude";
 					}else if (mappedHeader.origColumnName=="lon" || mappedHeader.origColumnName=="longitude"){
 						mappedHeader.columnType="_longitude";
+						mappedHeader.columnName="_longitude";
 					}else {
-						mappedHeader.columnType="gen";						
+						mappedHeader.columnType="gen";	
+						mappedHeader.columnName=head.replace(/\./g,"").replace(/\./g,"").replace(/\,/g,"").replace(/\$/g,"").trim();						
 					}
 					
-					mappedHeader.columnName=head.replace(/\./g,"").replace(/\./g,"").replace(/\,/g,"").replace(/\$/g,"").trim();
 				}
 				this.mappedHeaders.push(mappedHeader);
 				_g_mappedHeaders=this.mappedHeaders;
