@@ -69,8 +69,7 @@ define([
 			console.log('Tenant.create');
 			console.log("params: "+ params);
 			var tenants = $.ajax({
-	        	   url: tenant + '/service/v1/tenants/add',
-			 //url: 'http://dressique.localhost.com:8880/smart21-server/service/v1/tenants/add',
+	        	   url: tenant + '/service/v1/tenants',
 				type : 'POST',
 				data : params,
 				headers: {'Authorization' : 'Basic ' + Session.get("basicAuth")}		
