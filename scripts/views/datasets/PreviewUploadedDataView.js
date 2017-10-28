@@ -15,7 +15,8 @@ define([
 		uploadedFilePath:null,
 		dsSlug:null,
 		currentDelimiter:",",
-		
+		skip:0,
+
 		events : {
 			"change input[type=radio][name=cvsformat]" : "delimiterChanged",
 		},
@@ -28,12 +29,13 @@ define([
 			this.uploadedFilePath= this.options.uploadedFilePath;		
 			this.dsSlug=this.options.dsSlug;	
 			this.currentDelimiter=this.options.currentDelimiter;
+			this.skip=this.options.skip;
 		},
 		
 		
 		render: function(){
 			console.log('PreviewUploadedDataView.render');
-			this.$el.html(this.template({firstLines:this.firstLines, uploadedFilePath: this.uploadedFilePath,dsSlug:this.dsSlug, currentDelimiter:this.currentDelimiter}));
+			this.$el.html(this.template({firstLines:this.firstLines, uploadedFilePath: this.uploadedFilePath,dsSlug:this.dsSlug, currentDelimiter:this.currentDelimiter,skip:this.skip}));
 			
 			return this;
 		},
@@ -42,7 +44,7 @@ define([
 			var curDelimiter=e.target.value;		
 			console.log("curDelimiter", curDelimiter);
 //previewUploadedData/:uploadedFilePath/ds/:dsSlug/delimiter/:delimiter'
-				var route = '#previewUploadedData/'+this.uploadedFilePath+"/ds/"+this.dsSlug+"/delimiter/"+curDelimiter;		
+				var route = '#previewUploadedData/'+this.uploadedFilePath+"/ds/"+this.dsSlug+"/delimiter/"+curDelimiter+"/skip/"+this.skip;		
 				Backbone.history.navigate(route, { trigger : true });
 			return this;
 		},		
