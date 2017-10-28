@@ -53,6 +53,7 @@ _label_en = {
 
 "anteprimaDeiDatiStepTwoOfThree":"Data preview (Step 2 of 3)",
 "campiDelCsvSeparatiDa":"CSV fields separated by:",
+"saltaNumeroRigheCSV":"Skip rows :",
 "virgola":"Comma:",
 "puntoEvirgola":"Semicolon:",
 "nessunDato":"No data available",

@@ -71,6 +71,7 @@ _label_it= {
 
 "anteprimaDeiDatiStepTwoOfThree":"Anteprima dei dati (Step 2 di 3)",
 "campiDelCsvSeparatiDa":"Campi del CSV separati da:",
+"saltaNumeroRigheCSV":"Salta un numero di righe pari a :",
 "virgola":"Virgola:",
 "puntoEvirgola":"Punto e virgola:",
 "nessunDato":"Nessun dato",
