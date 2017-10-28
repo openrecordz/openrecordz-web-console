@@ -1,7 +1,3 @@
-/**
- * Classe utilizzata per .....
- * Esempio di utilizzo: ....
- */
 
 define([
 	'core/BaseView',
@@ -19,21 +15,15 @@ define([
 		uploadedFilePath:null,
 		dsSlug:null,
 		currentDelimiter:",",
-//		onContentSelectedCallback: null,
-//		callback: null,
 		
 		events : {
 			"change input[type=radio][name=cvsformat]" : "delimiterChanged",
-//			'click #btnSearch': 'search',
-			
-//			'click #btnAdd':	'userAdd',
 		},
 		
 
 		
 		initialize: function() {
 			console.log('PreviewUploadedDataView.initialize');
-//			_.bindAll(this);
 			this.firstLines=this.options.firstLines;	
 			this.uploadedFilePath= this.options.uploadedFilePath;		
 			this.dsSlug=this.options.dsSlug;	
@@ -43,7 +33,7 @@ define([
 		
 		render: function(){
 			console.log('PreviewUploadedDataView.render');
-//			console.log('===========================================');
+			console.log('this.firstLines===========================================', this.firstLines);
 //			console.log(this.dataset);
 //			console.log('===========================================');
 			this.$el.html(this.template({firstLines:this.firstLines, uploadedFilePath: this.uploadedFilePath,dsSlug:this.dsSlug, currentDelimiter:this.currentDelimiter}));
