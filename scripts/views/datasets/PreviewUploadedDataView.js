@@ -19,6 +19,7 @@ define([
 
 		events : {
 			"change input[type=radio][name=cvsformat]" : "delimiterChanged",
+			"change input[type=text][name=cvsskiprow]" : "skipRowChanged",
 		},
 		
 
@@ -45,6 +46,16 @@ define([
 			console.log("curDelimiter", curDelimiter);
 //previewUploadedData/:uploadedFilePath/ds/:dsSlug/delimiter/:delimiter'
 				var route = '#previewUploadedData/'+this.uploadedFilePath+"/ds/"+this.dsSlug+"/delimiter/"+curDelimiter+"/skip/"+this.skip;		
+				Backbone.history.navigate(route, { trigger : true });
+			return this;
+		},		
+
+		skipRowChanged: function(e){
+			var curSkipRow=e.target.value;		
+			console.log("curSkipRow", curDelimiter);
+			this.skip=curSkipRow;
+//previewUploadedData/:uploadedFilePath/ds/:dsSlug/delimiter/:delimiter'
+				var route = '#previewUploadedData/'+this.uploadedFilePath+"/ds/"+this.dsSlug+"/delimiter/"+this.currentDelimiter+"/skip/"+this.skip;		
 				Backbone.history.navigate(route, { trigger : true });
 			return this;
 		},		
