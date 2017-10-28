@@ -21,6 +21,7 @@ define([
 		currentDelimiter:",",
 		dataset:null,
 		mappedHeaders:[],
+		skip:0,
 
 		events : {
 			"change select" : "typeFieldChanged",
@@ -34,6 +35,8 @@ define([
 			this.uploadedFilePath= this.options.uploadedFilePath;	
 			this.dsSlug=this.options.dsSlug;		
 			this.currentDelimiter=this.options.currentDelimiter;
+			this.skip=this.options.skip;
+
 			this.dataset=this.options.dataset;
 
 			this.mappedHeaders=[];
@@ -74,7 +77,7 @@ define([
 //			console.log('===========================================');
 			console.log("this.headers",this.headers);
 //			console.log('===========================================');
-			this.$el.html(this.template({myheaders:this.headers, mappedHeaders:this.mappedHeaders, dataset: this.dataset,uploadedFilePath: this.uploadedFilePath, dsSlug:this.dsSlug, currentDelimiter: this.currentDelimiter}));
+			this.$el.html(this.template({myheaders:this.headers, mappedHeaders:this.mappedHeaders, dataset: this.dataset,uploadedFilePath: this.uploadedFilePath, dsSlug:this.dsSlug, currentDelimiter: this.currentDelimiter, skip:this.skip}));
 
 			// var view = this;
 			
