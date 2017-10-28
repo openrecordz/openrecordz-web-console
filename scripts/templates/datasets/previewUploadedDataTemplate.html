@@ -9,21 +9,40 @@
 <div class="container">
 <!--<%=currentDelimiter%>-->
 
-	 <div class="form-group">
-	    <label for="comma"><%=_label.campiDelCsvSeparatiDa%></label>
-		<div class="radio">
-			  <label>
-			    <input type="radio" name="cvsformat" id="comma" value="," <%if (currentDelimiter==",") {%>checked=""<%}%>>
-			   <%=_label.virgola%> ","
-			  </label>
-			</div>
-		<div class="radio">
-			  <label>
-			    <input type="radio" name="cvsformat"  id="semicolon" value=";" <%if (currentDelimiter==";") {%>checked=""<%}%>>
-			    <%=_label.puntoEvirgola%> ";"
-			  </label>
-			</div>
-	  </div>	
+<div class="row">
+  <div class="col-xs-12 col-md-6">
+			<div class="form-group">
+					<label for="comma"><%=_label.campiDelCsvSeparatiDa%></label>
+				<div class="radio">
+						<label>
+							<input type="radio" name="cvsformat" id="comma" value="," <%if (currentDelimiter==",") {%>checked=""<%}%>>
+						 <%=_label.virgola%> ","
+						</label>
+					</div>
+				<div class="radio">
+						<label>
+							<input type="radio" name="cvsformat"  id="semicolon" value=";" <%if (currentDelimiter==";") {%>checked=""<%}%>>
+							<%=_label.puntoEvirgola%> ";"
+						</label>
+					</div>
+				</div>	
+	</div>
+
+  <div class="col-xs-12 col-md-6">
+			<div class="form-group">
+					<label for="skiprow"><%=_label.campiDelCsvSeparatiDa%></label>
+				
+					<div class="input-group">
+							<input type="text" class="form-control" aria-label="Rows to skip">
+						</div>
+
+				</div>
+	</div>
+
+</div>
+
+
+
 
   <div style="overflow-x:auto;">
 <!--  <div class="table-responsive">-->
@@ -82,7 +101,7 @@
 <br>
 <a class="btn" href="#ds/<%=dsSlug%>"><%=_label.annulla%></a>
 <a class="btn btn-default btn-lg" href="#uploaddata/<%=dsSlug%>"><%=_label.indietro%></a>
-<a class="btn btn-primary btn-lg" id="mappingfieldbtn" href="#mappingfield/<%=uploadedFilePath%>/ds/<%=dsSlug%>/delimiter/<%=currentDelimiter%>"><%=_label.avanti%></a>
+<a class="btn btn-primary btn-lg" id="mappingfieldbtn" href="#mappingfield/<%=uploadedFilePath%>/ds/<%=dsSlug%>/delimiter/<%=currentDelimiter%>/skip/<%=skip%>"><%=_label.avanti%></a>
 
 </div>
 <br>
