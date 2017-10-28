@@ -51,7 +51,14 @@ define([
 						mappedHeader.columnType=tryFindMappingInDataset.columnType;
 						mappedHeader.columnName=tryFindMappingInDataset.columnName;
 				}else {
-					mappedHeader.columnType="gen";
+					if (mappedHeader.origColumnName=="lat" || mappedHeader.origColumnName=="latitude"){
+						mappedHeader.columnType="_latitude";
+					}else if (mappedHeader.origColumnName=="lon" || mappedHeader.origColumnName=="longitude"){
+						mappedHeader.columnType="_longitude";
+					}else {
+						mappedHeader.columnType="gen";						
+					}
+					
 					mappedHeader.columnName=head.replace(/\./g,"").replace(/\./g,"").replace(/\,/g,"").replace(/\$/g,"").trim();
 				}
 				this.mappedHeaders.push(mappedHeader);
