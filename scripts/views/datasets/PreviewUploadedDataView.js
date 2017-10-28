@@ -52,7 +52,7 @@ define([
 
 		skipRowChanged: function(e){
 			var curSkipRow=e.target.value;		
-			console.log("curSkipRow", curDelimiter);
+			console.log("curSkipRow", curSkipRow);
 			this.skip=curSkipRow;
 //previewUploadedData/:uploadedFilePath/ds/:dsSlug/delimiter/:delimiter'
 				var route = '#previewUploadedData/'+this.uploadedFilePath+"/ds/"+this.dsSlug+"/delimiter/"+this.currentDelimiter+"/skip/"+this.skip;		
