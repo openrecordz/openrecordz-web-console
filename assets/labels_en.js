@@ -92,6 +92,7 @@ _label_en = {
 "documentazioneCompletaAPI":"API complete documentation",
 "chiudi":"Close",
 "downloadComeCSV":"Download as CSV",
+"downloadComeRDF":"Download as RDF",
 "downloadComeJSON":"Download as JSON",
 "aggiungiNuovaRisorsa":"Add New Resource",
 "azioni":"Actions",

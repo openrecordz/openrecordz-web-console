@@ -110,6 +110,7 @@ _label_it= {
 "documentazioneCompletaAPI":"Documentazione completa API",
 "chiudi":"Chiudi",
 "downloadComeCSV":"Download come CSV",
+"downloadComeRDF":"Download come RDF",
 "downloadComeJSON":"Download come JSON",
 "aggiungiNuovaRisorsa":"Aggiungi Nuova Risorsa",
 "azioni":"Azioni",
