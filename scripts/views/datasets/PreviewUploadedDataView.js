@@ -16,6 +16,7 @@ define([
 		dsSlug:null,
 		currentDelimiter:",",
 		skip:0,
+		status:null,
 
 		events : {
 			"change input[type=radio][name=cvsformat]" : "delimiterChanged",
@@ -31,12 +32,13 @@ define([
 			this.dsSlug=this.options.dsSlug;	
 			this.currentDelimiter=this.options.currentDelimiter;
 			this.skip=this.options.skip;
+			this.status=this.options.status;
 		},
 		
 		
 		render: function(){
 			console.log('PreviewUploadedDataView.render');
-			this.$el.html(this.template({firstLines:this.firstLines, uploadedFilePath: this.uploadedFilePath,dsSlug:this.dsSlug, currentDelimiter:this.currentDelimiter,skip:this.skip}));
+			this.$el.html(this.template({firstLines:this.firstLines, uploadedFilePath: this.uploadedFilePath,dsSlug:this.dsSlug, currentDelimiter:this.currentDelimiter,skip:this.skip, status:this.status}));
 			
 			return this;
 		},
