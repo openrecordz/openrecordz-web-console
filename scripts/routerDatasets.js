@@ -21,7 +21,7 @@ define([
 	'models/Dataset',
 	'models/Data',
 	'models/GlobalSearch',
-	'models/CustomFunction',
+	'models/CSV',
 //	'bootstraptagsinput',
 	'models/Utils',
 	'bootbox',
@@ -48,7 +48,7 @@ define([
 		Dataset,
 		Data,
 		GlobalSearch,
-		CustomFunction,
+		CSV,
 //		bootstraptagsinput,
 		Utils,
 		bootbox,
@@ -107,11 +107,11 @@ define([
 			'upsert/:dsSlug': 	'updateDataset',
 			'uploaddata/:dsSlug': 	'uploadData',
 			'previewUploadedData/:uploadedFilePath/ds/:dsSlug': 	'previewUploadedData',
-			'previewUploadedData/:uploadedFilePath/ds/:dsSlug/delimiter/:delimiter': 	'previewUploadedData',
+			'previewUploadedData/:uploadedFilePath/ds/:dsSlug/delimiter/:delimiter/skip/:skip': 	'previewUploadedData',
 			'mappingfield/:uploadedFilePath/ds/:dsSlug': 	'mappingfield',
-			'mappingfield/:uploadedFilePath/ds/:dsSlug/delimiter/:delimiter': 	'mappingfield',
+			'mappingfield/:uploadedFilePath/ds/:dsSlug/delimiter/:delimiter/skip/:skip': 	'mappingfield',
 			'parse/:uploadedFilePath/ds/:dsSlug': 	'parseFile',
-			'parse/:uploadedFilePath/ds/:dsSlug/delimiter/:delimiter': 	'parseFile',
+			'parse/:uploadedFilePath/ds/:dsSlug/delimiter/:delimiter/skip/:skip': 	'parseFile',
 
 			
 			'*default': 'home',	//La default route DEVE essere l'ultima!!!
@@ -421,17 +421,18 @@ define([
 			return this;
 		},
 
-		previewUploadedData:function(uploadedFilePath,dsSlug,delimiter) {
+		previewUploadedData:function(uploadedFilePath,dsSlug,delimiter,skip) {
 			console.log('RouterDatasets.uploadData');
 			console.log('dsSlug: ' +dsSlug);
 			console.log('delimiter: ' +delimiter);
-
+			console.log('skip: ' +skip);
+			
 			var view = this;
 			var callback = function(firstLines,status){
-				view.previewUploadedDataCompleted(status,firstLines,uploadedFilePath,dsSlug,delimiter);
+				view.previewUploadedDataCompleted(status,firstLines,uploadedFilePath,dsSlug,delimiter,skip);
 			};
 			//Recupero il dataset.
-			var customFunction = new CustomFunction();
+			var csvModel = new CSV();
 			console.log('uploadedFilePath :' + uploadedFilePath);
 //			var data = {};
 //			data.file=uploadedFilePath;
@@ -442,13 +443,16 @@ define([
 				delimiter=",";
 
 
-			var queryStr="?file="+uploadedFilePath+"&charseparator="+delimiter;
+			if (!skip)
+				skip=0;
+
+			var queryStr="?file="+uploadedFilePath+"&charseparator="+delimiter+"&skip="+skip;
 			console.log("queryStr", queryStr);
 
-			customFunction.callCSV("previewcsv",queryStr, null, callback);
+			csvModel.preview(queryStr, null, callback);
 			return this;
 		},
-		previewUploadedDataCompleted:function(status, firstLines,uploadedFilePath,dsSlug,delimiter) {
+		previewUploadedDataCompleted:function(status, firstLines,uploadedFilePath,dsSlug,delimiter, skip) {
 			console.log('RouterDatasets.previewUploadedDataCompleted');
 
 			if (status=="fail"){				
@@ -463,63 +467,67 @@ define([
 
 				this.setHeaderAndFooter();
 			
-				console.log("firstLines", firstLines.firstLines);
-				var previewUploadedDataView = new PreviewUploadedDataView({firstLines:firstLines.firstLines,uploadedFilePath:uploadedFilePath, dsSlug:dsSlug,currentDelimiter:delimiter});
+				console.log("firstLines", firstLines);
+				var previewUploadedDataView = new PreviewUploadedDataView({firstLines:firstLines,uploadedFilePath:uploadedFilePath, dsSlug:dsSlug,currentDelimiter:delimiter, skip: skip});
 				this.changeView(previewUploadedDataView, '#dashboard_content');
 			}
 			return this;
 		},
-		mappingfield:function(uploadedFilePath,dsSlug,delimiter) {
+		mappingfield:function(uploadedFilePath,dsSlug,delimiter, skip) {
 			console.log('RouterDatasets.mappingfield');
 			console.log('uploadedFilePath', uploadedFilePath);
 			console.log('dsSlug', dsSlug);
+			console.log('skip', skip);
+			
 
 			var view = this;
 			var callback = function(headers,status){
-				view.mappingfieldCompleted(status,headers,uploadedFilePath, dsSlug,delimiter);
+				view.mappingfieldCompleted(status,headers,uploadedFilePath, dsSlug,delimiter,skip);
 			};
 
-			var customFunction = new CustomFunction();
+			var csvUtil = new CSV();
 
 			if (!delimiter)
 				delimiter=",";
 
-			var queryStr="?file="+uploadedFilePath+"&charseparator="+delimiter+'&ds='+dsSlug;
+			var queryStr="?file="+uploadedFilePath+"&charseparator="+delimiter+'&ds='+dsSlug+"&skip="+skip;
 			console.log("queryStr", queryStr);
 
-			customFunction.callCSV("parsecsvheader",queryStr, null, callback);
+			csvUtil.getHeaders(queryStr, null, callback);
 			return this;
 		},
-		mappingfieldCompleted:function(status, headers,uploadedFilePath,dsSlug,delimiter) {
+		mappingfieldCompleted:function(status, headers,uploadedFilePath,dsSlug,delimiter,skip) {
 			console.log('RouterDatasets.mappingfieldCompleted');
 			console.log('uploadedFilePath', uploadedFilePath);
 			console.log('dsSlug', dsSlug);
-
+			console.log('skip', skip);
+			
 			this.setHeaderAndFooter();
 			
-			console.log("headers", headers.headers);
-			var mappingFieldView = new MappingFieldView({headers:headers.headers,dataset:headers.dataset, uploadedFilePath:uploadedFilePath, dsSlug: dsSlug,currentDelimiter:delimiter});
+			console.log("headers", headers);
+			var mappingFieldView = new MappingFieldView({headers:headers,dataset:headers.dataset, uploadedFilePath:uploadedFilePath, dsSlug: dsSlug,currentDelimiter:delimiter,skip:skip});
 			this.changeView(mappingFieldView, '#dashboard_content');
 
 			return this;
 		},
-		parseFile:function(uploadedFilePath,dsSlug,delimiter) {
+		parseFile:function(uploadedFilePath,dsSlug,delimiter,skip) {
 			console.log('RouterDatasets.parseFile');
 			console.log('uploadedFilePath', uploadedFilePath);
 			console.log('dsSlug', dsSlug);
+			console.log('skip', skip);
 
 			var view = this;
 			var callback = function(response,status){
 				view.parsedFile(status,response,uploadedFilePath, dsSlug);
 			};
 
-			var customFunction = new CustomFunction();
+			var csvUtil = new CSV();
 
 			if (!delimiter)
 				delimiter=",";
 
 
-			var queryStr="?file="+uploadedFilePath+"&ds="+dsSlug+"&charseparator="+delimiter;
+			var queryStr="?file="+uploadedFilePath+"&ds="+dsSlug+"&charseparator="+delimiter+"&skip="+skip;
 			
 			var data = {};
 			var jsonValueColumnName = "";
@@ -583,8 +591,7 @@ define([
 
 			waitingDialog.show('Importazione dei dati in corso. Attendere!');
 
-			customFunction.callCSV("parsecsv",queryStr, JSON.stringify(data), callback);
-//			customFunction.callCSV("parsecsv",queryStr, jsonDataStr, callback);
+			csvUtil.import(queryStr, JSON.stringify(data), callback);
 			return this;
 		},
 		parsedFile: function(status,response, uploadedFilePath,dsSlug){

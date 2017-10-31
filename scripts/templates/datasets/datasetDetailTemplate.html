@@ -139,7 +139,8 @@
 	  </button>
 	  <ul class="dropdown-menu">
 	    <li><a href="<%=tenant + '/service/v1/datasets/'+datasetMeta.id+'.csv?pagesize=1000'%>"><%=_label.downloadComeCSV%></a></li>
-	    <li><a target="_blank" href="<%=tenant + '/service/v1/datasets/'+datasetMeta.id+'?pagesize=1000'%>"><%=_label.downloadComeJSON%></a></li>
+			<li><a target="_blank" href="<%=tenant + '/service/v1/datasets/'+datasetMeta.id+'?pagesize=1000'%>"><%=_label.downloadComeJSON%></a></li>
+			<li><a href="<%=tenant + '/service/v1/datasets/'+datasetMeta.id+'.rdf?pagesize=1000'%>"><%=_label.downloadComeRDF%></a></li>
 	    <!--<li><a target="_blank" href="#">Download come XML</a></li>-->
 	  </ul>
 	</div>

@@ -53,6 +53,7 @@ _label_en = {
 
 "anteprimaDeiDatiStepTwoOfThree":"Data preview (Step 2 of 3)",
 "campiDelCsvSeparatiDa":"CSV fields separated by:",
+"saltaNumeroRigheCSV":"Skip rows :",
 "virgola":"Comma:",
 "puntoEvirgola":"Semicolon:",
 "nessunDato":"No data available",
@@ -91,6 +92,7 @@ _label_en = {
 "documentazioneCompletaAPI":"API complete documentation",
 "chiudi":"Close",
 "downloadComeCSV":"Download as CSV",
+"downloadComeRDF":"Download as RDF",
 "downloadComeJSON":"Download as JSON",
 "aggiungiNuovaRisorsa":"Add New Resource",
 "azioni":"Actions",

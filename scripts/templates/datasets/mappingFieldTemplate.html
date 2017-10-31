@@ -13,7 +13,10 @@
 	<table class="table">
 
 			<thead>
-				 <tr>				
+				 <tr>	
+						<!--<th>
+								Info
+						</th>	-->		
 					   <th>
 					    <%=_label.colonneDelFileCsv%>
 					   </th>
@@ -31,8 +34,14 @@
 						
 				  %>
 						 <tr>
-
-							   <td id="keyname-<%=i%>" class="col-md-4">								   
+								<!--<td class="col-md-1">		
+										
+										<button type="button" class="btn infopopover" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">					   
+												<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+										</button>
+								</td>
+							-->
+							   <td id="keyname-<%=i%>" class="col-md-3">								   
 									<input type="text"  class="form-control origcolumnnameClass" name="origcolumnname" readonly value="<%=mappedHeaders[i].origColumnName%>"/>
 							 	</td>
 							   <td class="col-md-4">
@@ -54,7 +63,7 @@
 							   </td>
 
 							   <td class="col-md-4">
-					<input type="text" id="columnname-<%=i%>" class="form-control renameValueClass" <%if (mappedHeaders[i].columnType!="gen"){%>readonly<%}%> name="columnname" value="<%=mappedHeaders[i].columnName%>"/>
+									<input type="text" id="columnname-<%=i%>" class="form-control renameValueClass" <%if (mappedHeaders[i].columnType!="gen"){%>readonly<%}%> name="columnname" value="<%=mappedHeaders[i].columnName%>"/>
 							   </td>
 						</tr>
 
@@ -71,10 +80,10 @@
 
 <a class="btn" href="#ds/<%=dsSlug%>"><%=_label.annulla%></a>
 
-<a class="btn btn-default btn-lg" href="#previewUploadedData/<%=uploadedFilePath%>/ds/<%=dsSlug%>/delimiter/<%=currentDelimiter%>"><%=_label.indietro%></a>
+<a class="btn btn-default btn-lg" href="#previewUploadedData/<%=uploadedFilePath%>/ds/<%=dsSlug%>/delimiter/<%=currentDelimiter%>/skip/<%=skip%>"><%=_label.indietro%></a>
 
 <!--<button type="submit" class="btn btn-default btn-lg" id="saveMappingFieldbtn">Fine</button>-->
-<a class="btn btn-primary btn-lg" id="mappingfieldbtn" href="#parse/<%=uploadedFilePath%>/ds/<%=dsSlug%>/delimiter/<%=currentDelimiter%>"><%=_label.fine%></a>
+<a class="btn btn-primary btn-lg" id="mappingfieldbtn" href="#parse/<%=uploadedFilePath%>/ds/<%=dsSlug%>/delimiter/<%=currentDelimiter%>/skip/<%=skip%>"><%=_label.fine%></a>
 
 	</form>
 

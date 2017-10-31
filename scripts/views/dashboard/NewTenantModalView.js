@@ -119,7 +119,7 @@ define([
 //				var tenantName = $('#newTenantName').val();
 				 
 				var params = {
-					tenantadd: tenantName					
+					tenant: tenantName					
 				};
 
 				console.log(params);
