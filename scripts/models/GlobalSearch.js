@@ -10,6 +10,7 @@ define([
 			console.log('GlobalSearch.initialize');
 		},
 
+		// @TODO rimuovi parametro dsId
 		textAsMap: function(dsId,text,page, callback){
 			console.log('Data.search'); 
 			console.log('Data.textAsMap: '+ text);
@@ -20,8 +21,10 @@ define([
 
 			var Datas = $.ajax({
 				// example url:
-				// url : 'http://tenant1.api.openrecordz.com/service/v1/datasets/59b95378e4b0a018d1a61896.map',
-        	    url:  tenant + '/service/v1/datasets/'+ dsId +".map",
+				// @TODO rimuovi // url : 'http://tenant1.api.openrecordz.com/service/v1/datasets/59b95378e4b0a018d1a61896.map',
+				// http://apps.api2.openrecordz.com/service/v1/search?text=lecce
+        	    // url:  tenant + '/service/v1/datasets/'+ dsId +".map",
+        	    url:  tenant + '/service/v1/search?text='+ text +"&crossDomainSearch=true",
 			data: data,
 				type : 'GET'
 			});
