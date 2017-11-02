@@ -133,7 +133,10 @@ _label_it= {
 "dataset_label" : "(dataset)",
 "record_label" : "(record)",
 
+// global search 
 "no_results_found" : "La ricerca non ha prodotto nessun risultato",
+"global_search_record_createdby" : "creato da",
+"global_search_record_createdon" : "il",
 
 
 }

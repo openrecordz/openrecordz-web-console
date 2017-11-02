@@ -113,6 +113,9 @@ _label_en = {
 "dataset_label" : "(dataset)",
 "record_label" : "(record)",
 
-"no_results_found":"Your search returned no results",
+// global search 
+"no_results_found" : "Your search returned no results",
+"global_search_record_createdby" : "created by",
+"global_search_record_createdon" : "on",
 
 }

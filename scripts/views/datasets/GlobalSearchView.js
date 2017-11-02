@@ -41,6 +41,8 @@ define([
 			console.log('GlobalSearchView.render');
 //			this.$el.html(this.template());
 
+console.log("data", this.data);
+
 			// console.log("data", this.data);
 
 			// if(this.data != null && this.data != undefined) {
