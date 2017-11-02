@@ -46,7 +46,9 @@
 
   <div style="overflow-x:auto;">
 <!--  <div class="table-responsive">-->
-	
+	<%if (status=="fail"){	%>
+		Errore nel parsing del csv. Prego cambiare il delimitatore in virgola o punto e virgola.<br>
+	<%}%>
 
 	<% if (firstLines && firstLines.length>0) {	%>
 
