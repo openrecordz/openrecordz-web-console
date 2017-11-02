@@ -176,4 +176,3 @@ if ((localStorage.getItem('lan')) =="IT") {
 <script type="text/javascript" src="https://chat21-web.firebaseapp.com/vendor.bundle.js"></script>
 <script type="text/javascript" src="https://chat21-web.firebaseapp.com/main.bundle.js"></script> -->
 
-
