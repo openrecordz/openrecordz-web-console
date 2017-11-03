@@ -51,9 +51,10 @@ if(isset($_POST["alusername"])) {
 	var tenantName = "<?=$tenant?>";
 
 	//development 
+	//var domainConsole = ".localhost";
 	var domainConsole = "localhost";
 	//production
-	// var domainConsole = ".v2.openrecordz.com";
+	var domainConsole = ".v2.openrecordz.com";
 
 	// check if the domain console starts with ".". if not add it
 	if(domainConsole.charAt(0) !== ".") {
