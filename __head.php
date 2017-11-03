@@ -61,7 +61,6 @@ if(isset($_POST["alusername"])) {
 		domainConsole = "." + domainConsole;
 	}
 
-	
 	var dashboardDomain = "http://apps"+domainConsole;
 </script>
     
