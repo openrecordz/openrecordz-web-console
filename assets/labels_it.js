@@ -59,6 +59,7 @@ _label_it= {
 "origine":"Origine",
 "annulla":"Annulla",
 "salva":"Salva",
+"carica":"Carica",
 "salvaEdImportaIdati":"Salva ed importa i dati",
 
 "aggiungiIdati":"Aggiungi i dati",

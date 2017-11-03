@@ -41,6 +41,7 @@ _label_en = {
 "origine":"Source",
 "annulla":"Cancel",
 "salva":"Save",
+"carica":"Upload",
 "salvaEdImportaIdati":"Save and import data",
 
 "aggiungiIdati":"Add data",
