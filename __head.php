@@ -55,6 +55,11 @@ if(isset($_POST["alusername"])) {
 	//production
 	// var domainConsole = ".v2.openrecordz.com";
 
+	// check if the domain console starts with ".". if not add it
+	if(domainConsole.charAt(0) !== ".") {
+		domainConsole = "." + domainConsole;
+	}
+
 	
 	var dashboardDomain = "http://apps"+domainConsole;
 </script>
