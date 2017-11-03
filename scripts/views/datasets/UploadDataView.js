@@ -137,7 +137,7 @@ define([
 					view.fileUploadedNowSaveMeta(result, response,BtnSalveId);
 				};
 				var file = new File();
-				
+
 				var name = $("#file").prop('files')[0].name;
 				console.log('UploadDataView.upload.name',name);	
 
@@ -223,18 +223,39 @@ define([
 		fileUploadedAndMetaSaved: function(result, response,BtnSalveId){
 			console.log('UploadDataView.fileUploadedAndMetaSaved');
 			console.log('UploadDataView.BtnSalveId',BtnSalveId);
-			console.log('UploadDataView.fileUploadedAndMetaSaved.result',result);
+			console.log('UploadDataView.fileUploadedAndMetaSaved.response',response);
 			
 			waitingDialog.hide();
 
-			var route;
-		//	if (BtnSalveId=="btnResSaveAndTrasform"){
-		//		route = '#previewUploadedData/'+this.uploadedFilePath+"/ds/"+this.dsSlug;
-		//	} else {
-				route = "#ds/"+this.dsSlug;
-		//	}
+			var fileName = response.file;
+			var extension = fileName.substring(fileName.lastIndexOf('.')+1);
+			
+			if (extension=="csv") {
+				if (confirm(_label.salvaEtrasformaInDataService) == true) {
+					var route = '#previewUploadedData/'+this.uploadedFilePath+"/ds/"+this.dsSlug;
+					Backbone.history.navigate(route, { trigger : true });
 
-			Backbone.history.navigate(route, { trigger : true });
+				} else {
+					Backbone.history.navigate("#ds/"+this.dsSlug, { trigger : true });				
+				}
+				
+			}else {
+
+				//var route;
+				//	if (BtnSalveId=="btnResSaveAndTrasform"){
+				//		route = '#previewUploadedData/'+this.uploadedFilePath+"/ds/"+this.dsSlug;
+				//	} else {
+						//route = "#ds/"+this.dsSlug;
+				//	}
+		
+					Backbone.history.navigate("#ds/"+this.dsSlug, { trigger : true });
+
+
+			}
+
+			
+
+			
 
 			return this;
 		},
@@ -263,7 +284,7 @@ define([
 //				});
 				this.uploadedFilePath = response.name;
 				console.log('uploadedFilePath : '+ this.uploadedFilePath);
-			console.log('this.dsSlug : '+ this.dsSlug);
+				console.log('this.dsSlug : '+ this.dsSlug);
 
 
 				var route = '#previewUploadedData/'+this.uploadedFilePath+"/ds/"+this.dsSlug;
