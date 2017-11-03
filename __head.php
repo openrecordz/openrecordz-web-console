@@ -51,9 +51,9 @@ if(isset($_POST["alusername"])) {
 	var tenantName = "<?=$tenant?>";
 
 	//development 
-	var domainConsole = ".localhost";
+	//var domainConsole = ".localhost";
 	//production
-	// var domainConsole = ".v2.openrecordz.com";
+	var domainConsole = ".v2.openrecordz.com";
 
 	
 	var dashboardDomain = "http://apps"+domainConsole;
