@@ -20,7 +20,8 @@
 							    	
 			          			<!-- title -->
 			            		<div class="card-title">
-			              			<span style="word-wrap: break-word; font-weight: bold; font-size:18px;" >/<%=currentItem._tenants[0] %>/<%=currentItem._slug%></span>
+	<!-- 		              			<span style="word-wrap: break-word; font-weight: bold; font-size:18px;" >/<%=currentItem._tenants[0] %>/<%=currentItem._slug%></span> -->
+			              			<span style="word-wrap: break-word; font-weight: bold; font-size:18px;" ><%=currentItem._tenants[0] %>.<%=domainConsole%>/datasets#ds/<%=currentItem._slug %></span>
 			                	</div>
 
 			                	<!-- subtitle -->
@@ -50,13 +51,16 @@
 						</div>	
 					</a>
     			<% } else if(currentItem._type == "record")  { %>
-					<a href="#ds/<%=currentItem._tenants[0] %>/id/<%=currentItem.id %>" name="record" class="list-group-item clearfix">
+					<a href="#ds/<%=currentItem._dataset._slug %>/id/<%=currentItem.id %>" name="record" class="list-group-item clearfix">
 						<div class="container">
   							<div class="row">
 							    	
 			          			<!-- title -->
 			            		<div class="card-title">
-			              			<span style="word-wrap: break-word; font-weight: bold; font-size:18px;" >/<%=currentItem._tenants[0] %>/<%=currentItem._dataset._slug%>/<%=currentItem.id%> </span>
+			              			<!-- <span style="word-wrap: break-word; font-weight: bold; font-size:18px;" >/<%=currentItem._tenants[0] %>/<%=currentItem._dataset._slug%>/<%=currentItem.id%> </span> -->
+
+			              			<span style="word-wrap: break-word; font-weight: bold; font-size:18px;" >
+			              				<%=currentItem._tenants[0] %>.<%=domainConsole%>/datasets#ds/<%=currentItem._dataset._slug %>/id/<%=currentItem.id %> </span>
 			                	</div>
 
 			                	<!-- subtitle -->
