@@ -171,12 +171,12 @@ define([
 				console.log('this.dsId : '+ this.dsId);
 				
 
-				if (BtnSalveId=="btnResSaveAndTrasform"){
-					waitingDialog.hide();
-					var route = '#previewUploadedData/'+this.uploadedFilePath+"/ds/"+this.dsSlug;
-					Backbone.history.navigate(route, { trigger : true });
-					return this;
-				}
+				// if (BtnSalveId=="btnResSaveAndTrasform"){
+				// 	waitingDialog.hide();
+				// 	var route = '#previewUploadedData/'+this.uploadedFilePath+"/ds/"+this.dsSlug;
+				// 	Backbone.history.navigate(route, { trigger : true });
+				// 	return this;
+				// }
 
 
 				var callback = function(result, response){
@@ -220,7 +220,8 @@ define([
 		fileUploadedAndMetaSaved: function(result, response,BtnSalveId){
 			console.log('UploadDataView.fileUploadedAndMetaSaved');
 			console.log('UploadDataView.BtnSalveId',BtnSalveId);
-
+			console.log('UploadDataView.fileUploadedAndMetaSaved.result',result);
+			
 			waitingDialog.hide();
 
 			var route;
