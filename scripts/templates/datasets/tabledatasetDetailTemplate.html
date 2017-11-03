@@ -93,8 +93,13 @@ table {table-layout:fixed}
 		%>
 			
 			          <td>
-					<%if (key=="_status"){%>						
-						<%= data[i][key] %>
+					<%if (key=="_status"){%>		
+						
+						<%if (data[i][key].length>300){%>
+							<%=data[i][key].substring(0,300)%>...								
+						<%}else{%>
+							<%=data[i][key]%>
+						<%}%>				
 					<%} else if (key=="_createdon" || key=="_modifiedon"){%>
 						<%= moment(data[i][key]).format('LLL') %>
 					<%} else {

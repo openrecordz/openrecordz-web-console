@@ -455,22 +455,22 @@ define([
 		previewUploadedDataCompleted:function(status, firstLines,uploadedFilePath,dsSlug,delimiter, skip) {
 			console.log('RouterDatasets.previewUploadedDataCompleted');
 
-			if (status=="fail"){				
-				bootbox.alert({
-					title: 		'Esito operazione',
-					message:	"Errore nell'analisi del file CSV. Prego controllare la sintassi del file",
-					callback: function(){ Backbone.history.navigate("#uploaddata/"+dsSlug, { trigger : true });}
-				});
-			}else {
+			// if (status=="fail"){				
+			// 	bootbox.alert({
+			// 		title: 		'Esito operazione',
+			// 		message:	"Errore nell'analisi del file CSV. Prego controllare la sintassi del file",
+			// 		callback: function(){ Backbone.history.navigate("#uploaddata/"+dsSlug, { trigger : true });}
+			// 	});
+			// }else {
 				console.log('uploadedFilePath', uploadedFilePath);
 				console.log('dsSlug', dsSlug);
 
 				this.setHeaderAndFooter();
 			
 				console.log("firstLines", firstLines);
-				var previewUploadedDataView = new PreviewUploadedDataView({firstLines:firstLines,uploadedFilePath:uploadedFilePath, dsSlug:dsSlug,currentDelimiter:delimiter, skip: skip});
+				var previewUploadedDataView = new PreviewUploadedDataView({firstLines:firstLines,uploadedFilePath:uploadedFilePath, dsSlug:dsSlug,currentDelimiter:delimiter, skip: skip, status:status});
 				this.changeView(previewUploadedDataView, '#dashboard_content');
-			}
+			// }
 			return this;
 		},
 		mappingfield:function(uploadedFilePath,dsSlug,delimiter, skip) {

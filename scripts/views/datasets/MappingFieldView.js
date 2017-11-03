@@ -51,10 +51,12 @@ define([
 						mappedHeader.columnType=tryFindMappingInDataset.columnType;
 						mappedHeader.columnName=tryFindMappingInDataset.columnName;
 				}else {
-					if (mappedHeader.origColumnName=="lat" || mappedHeader.origColumnName=="latitude"){
+					if (mappedHeader.origColumnName=="lat" || mappedHeader.origColumnName=="latitude" || mappedHeader.origColumnName=="Latitude"
+						|| mappedHeader.origColumnName=="latitudine" || mappedHeader.origColumnName=="Latitudine"){
 						mappedHeader.columnType="_latitude";
 						mappedHeader.columnName="_latitude";
-					}else if (mappedHeader.origColumnName=="lon" || mappedHeader.origColumnName=="longitude"){
+					}else if (mappedHeader.origColumnName=="lon" || mappedHeader.origColumnName=="longitude" || mappedHeader.origColumnName=="Longitude"
+						|| mappedHeader.origColumnName=="longitudine" || mappedHeader.origColumnName=="Longitudine"){
 						mappedHeader.columnType="_longitude";
 						mappedHeader.columnName="_longitude";
 					}else {

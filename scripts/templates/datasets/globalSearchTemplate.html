@@ -6,48 +6,89 @@
 
 		<br>
 
-		<% if (data != null && data != undefined) {  %>
+		<% if (data != null && data != undefined &&  data.length > 0) {  %>
 
-			<!-- retrieves data.dataset -->
-			<% if (data.dataset != null && data.dataset != undefined) {  %>
-				<!-- @TODO correggere questo  -->	 
-				<% var _slug = data.dataset._slug; %>
-			<% }    %>
+			<!-- retrieves data items -->
+			<% for (var i=0;i < data.length; i++) { %>
+				<% var currentItem = data[i]; %>
 
+    			<% if(currentItem._type == "dataset") { %>
+					<!-- print dataset -->
+					<a href="#ds/<%=currentItem._slug %>" name="dataset" class="list-group-item clearfix">
+						<div class="container">
+  							<div class="row">
+							    	
+			          			<!-- title -->
+			            		<div class="card-title">
+			              			<span style="word-wrap: break-word; font-weight: bold; font-size:18px;" >/<%=currentItem._tenants[0] %>/<%=currentItem._slug%></span>
+			                	</div>
 
-			<!-- retrieves data.records -->
-			<% if (data.records != null && data.records != undefined) {  %>
-				<% for (var i=0;i < data.records.length; i++) { %>
-					<% var currentItem = data.records[i]; %>
+			                	<!-- subtitle -->
+			                	<div class="card-subtitle" style="padding-left:16px; padding-right:16px;">
+			                  		<span style="font-size:16px; word-wrap: break-word;"><%=currentItem._name%></span>
+			                    </div>
 
-					<!-- @TODO cambiare la condizione in base al tipo di dato in ingresso -->
-					<!-- @TODO stringhe nel file _label -->
-	    			<% if(i % 2 == 0) { %>
-						<!-- print record -->
-						<a href="#ds/<%=_slug %>/id/<%=currentItem.id %>" name="record" class="list-group-item clearfix">
-							<h4 class="list-group-item-heading">Serve uno slug per questo record con id: <%=currentItem.id%> 
-								
-								<span class="glyphicon glyphicon-chevron-right pull-right" style="top:10px" aria-hidden="true"></span>
-								<span style="color:red;" aria-hidden="true"><%=_label.record_label %></span>						
-							</h4>
-						</a>
-	    			<% } else { %>
-		        		<!-- print dataset -->
-						<a href="#ds/<%=_slug %>" name="dataset" class="list-group-item clearfix">
-							<h4 class="list-group-item-heading">Serve uno slug per questo dataset con id: <%=currentItem.id%> 
-								<span class="glyphicon glyphicon-chevron-right pull-right" style="top:10px" aria-hidden="true"></span>
-								<span style="color: blue;" aria-hidden="true"><%=_label.dataset_label %></span>						
-							</h4>
-						</a>
-	    			<% } %>
+			                    <!-- data type -->
+			                    <div class="row card-type" style="padding-left:16px; padding-right:16px;">
+			                    	<span style="height: 18px; padding-left:16px; padding-right:16px;">
+									 	<img class="img-rounded" src="./assets/images/ic-dataset.svg" style="height: 24px;"></img>
+		    						</span>
+	    					
+		                  			<span style="font-size:16px; word-wrap: break-word;"><%=currentItem._type%></span>
+			                    </div>
 
-				<% } %> <!-- end for -->
-			<% } else {  %>
-				<!-- data.records is null or data is undefined -->
-				<h3> <%=_label.no_results_found%> </h3>
-			<% }   %>
+			                    <!-- user creator and creation date -->
+			                  	<div class="row card-box-creation" style="padding:16px;">
+			                   		<div>
+			                   			<span style="text-align:left; padding-left:16px; word-wrap: break-word; padding-right:16px;" class="text-left"><%=_label.global_search_record_createdby %> <%=currentItem._createdby %></span>
+			                   		</div>
+			                      	<div>
+			                      		<span style="text-align:left; padding-left:16px; word-wrap: break-word; padding-right:16px;" class="text-left"><%=_label.global_search_record_createdon %> <%= moment(currentItem._createdon).format('LLL') %></span>
+			                      	</div>
+			                    </div> 
+		                	</div>
+						</div>	
+					</a>
+    			<% } else if(currentItem._type == "record")  { %>
+					<a href="#ds/<%=currentItem._tenants[0] %>/id/<%=currentItem.id %>" name="record" class="list-group-item clearfix">
+						<div class="container">
+  							<div class="row">
+							    	
+			          			<!-- title -->
+			            		<div class="card-title">
+			              			<span style="word-wrap: break-word; font-weight: bold; font-size:18px;" >/<%=currentItem._tenants[0] %>/<%=currentItem._dataset._slug%>/<%=currentItem.id%> </span>
+			                	</div>
 
+			                	<!-- subtitle -->
+			                	<div class="card-subtitle" style="padding-left:16px; padding-right:16px;">
+			                  		<span style="font-size:16px; word-wrap: break-word;"><%=currentItem._dataset._name%></span>
+			                    </div>
 
+			                    <!-- data type -->
+			                    <div class="row card-type" style="padding-left:16px; padding-right:16px;">
+			                    	<span style="height: 18px; padding-left:16px; padding-right:16px;">
+									 	<img class="img-rounded" src="./assets/images/ic-record.svg" style="height: 24px;"></img>
+		    						</span>
+	    					
+		                  			<span style="font-size:16px; word-wrap: break-word;"><%=currentItem._type%></span>
+			                    </div>
+
+			                    <!-- user creator and creation date -->
+			                  	<div class="row card-box-creation" style="padding:16px;">
+			                   		<div>
+			                   			<span style="text-align:left; padding-left:16px; word-wrap: break-word; padding-right:16px;" class="text-left"><%=_label.global_search_record_createdby %> <%=currentItem._createdby %></span>
+			                   		</div>
+			                      	<div>
+			                      		<span style="text-align:left; padding-left:16px; word-wrap: break-word; padding-right:16px;" class="text-left"><%=_label.global_search_record_createdon %> <%= moment(currentItem._createdon).format('LLL') %></span>
+			                      	</div>
+			                    </div> 
+				                
+							</div>	
+						</div>	
+					</a>
+    			<% } %>
+
+			<% } %> <!-- end for -->
 
 		<% } else {  %>
 			<!-- data is null or data is undefined -->
