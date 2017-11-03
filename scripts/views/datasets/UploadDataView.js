@@ -137,7 +137,10 @@ define([
 					view.fileUploadedNowSaveMeta(result, response,BtnSalveId);
 				};
 				var file = new File();
+				
 				var name = $("#file").prop('files')[0].name;
+				console.log('UploadDataView.upload.name',name);	
+
 				var path = null;
 				//http://stackoverflow.com/questions/12281775/get-data-from-file-input-in-jquery
 				var fileToUpload = $("#file").prop('files')[0];
