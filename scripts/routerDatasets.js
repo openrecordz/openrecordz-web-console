@@ -336,7 +336,7 @@ define([
 //			var detailView =null;
 
 //			if (showAsType=="table")
-			var detailView = new DatasetDetailView({data: data.records, totalCount:data.count, currentPage: page, datasetMeta:datasetMeta[0], text: text, showAsType:showAsType});
+			var detailView = new DatasetDetailView({data: data.records, totalCount:data.count, currentPage: page, datasetMeta:datasetMeta, text: text, showAsType:showAsType});
 //			else if (showAsType=="map")
 //				detailView = new DataOnMapView({data: data.items, totalCount:data.count, currentPage: page, datasetMeta:datasetMeta[0], text: text});
 			
