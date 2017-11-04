@@ -216,7 +216,7 @@ define([
 				view.datasetDetailTaken(datasetMeta,dsSlug,page, text,'auto');
 			};
 			var dataset = new Dataset();		
-			dataset.search('{"_slug":"'+dsSlug+'"}',callback);
+			dataset.byId(dsSlug, callback, true, true, true);
 
 			return this;
 		},
@@ -237,8 +237,8 @@ define([
 				view.datasetDetailTaken(datasetMeta,dsSlug,page, text,'table');
 			};
 			var dataset = new Dataset();		
-			dataset.search('{"_slug":"'+dsSlug+'"}',callback);
-
+			dataset.byId(dsSlug, callback, true, true, true);
+			
 			return this;
 		},
 
@@ -260,8 +260,8 @@ define([
 				view.datasetDetailTaken(datasetMeta,dsSlug,page, text,'resource');
 			};
 			var dataset = new Dataset();		
-			dataset.search('{"_slug":"'+dsSlug+'"}',callback);
-
+			dataset.byId(dsSlug, callback, true, true, true);
+			
 			return this;
 		},
 
@@ -281,8 +281,8 @@ define([
 				view.datasetDetailTaken(datasetMeta,dsSlug,page, text,'map');
 			};
 			var dataset = new Dataset();		
-			dataset.search('{"_slug":"'+dsSlug+'"}',callback);
-
+			dataset.byId(dsSlug, callback, true, true, true);
+			
 			return this;
 		},
 		
