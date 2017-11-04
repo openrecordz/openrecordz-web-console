@@ -44,7 +44,7 @@ define([
 		showAsType:"resource",
 
 		asLocationData: false,
-		asBinaryData:true,
+		asBinaryData:false,
 		asTableData:false,
 
 		countRecords:0,
@@ -80,7 +80,7 @@ define([
 			this.countRecords=this.datasetMeta._countRecords;
 			this.countBinaries=this.datasetMeta._countBinaries;
 			
-			this.asBinaryData=this.countBinaries>0;
+			//this.asBinaryData=this.countBinaries>0;
 			this.asTableData=this.countRecords>0;
 
 			this.text=this.options.text;

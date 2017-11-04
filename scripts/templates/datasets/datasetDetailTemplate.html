@@ -199,16 +199,11 @@ ciao2
 
 
 <ul class="nav nav-tabs">
-<!-- <%if (asBinaryData==true){%> -->
-  <li role="presentation" <%if (showAsType=="resource" || (showAsType=="auto" && asBinaryData==true) ){%>class="active"<%}%>><a href="#ds/<%=datasetMeta._slug%>/resource">Risorse</a></li>
-<!-- <%}%> -->
+  <li role="presentation" <%if (showAsType=="resource" || (showAsType=="auto" && asTableData==false) ){%>class="active"<%}%>><a href="#ds/<%=datasetMeta._slug%>/resource">Risorse</a></li>
 <%if (asTableData==true){%>
   <li role="presentation" <%if (showAsType=="table" || (showAsType=="auto" && asTableData==true)){%>class="active"<%}%>><a href="#ds/<%=datasetMeta._slug%>/table">Dati</a></li>
 <%}%>
-<!-- <%if (asLocationData==true){%> -->
   <li role="presentation" <%if (showAsType=="map"){%>class="active"<%}%>><a id="maptab" href="/datasets/<%=datasetMeta._slug%>/map"><%=_label.mappa%></a></li>
-<!-- <%}%> -->
-<!--  <li role="presentation"><a href="#">Analisi</a></li>-->
   <li role="presentation"><a href="/blog/<%=datasetMeta._slug%>" target="_blank">Blog</a></li>
 </ul>
 <br>
