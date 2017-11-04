@@ -127,7 +127,7 @@ define([
 
 
 			var properties = $.ajax({
-        	    url: tenant + '/service/v1/datasets/' + id+'?byslug='+searchBySlug+'&countr='+countRecords+'&countb='+countBinary,
+        	    url: tenant + '/service/v1/datasets/' + id+'/meta?byslug='+searchBySlug+'&countr='+countRecords+'&countb='+countBinary,
         	  //  url: 'http://localhost:8880/smart21-server/service/v1/datasets/'+id,
 				type : 'GET'
 			});
