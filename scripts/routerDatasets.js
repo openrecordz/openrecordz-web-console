@@ -316,9 +316,9 @@ define([
 			
 
 			if (text)
-				data.textAsMap(datasetMeta[0].id,text, page,callback,pageSize);			
+				data.textAsMap(datasetMeta.id,text, page,callback,pageSize);			
 			else
-				data.searchAsMap(datasetMeta[0].id,null, page,callback,pageSize,typeToSearch);
+				data.searchAsMap(datasetMeta.id,null, page,callback,pageSize,typeToSearch);
 
 
 			return this;
