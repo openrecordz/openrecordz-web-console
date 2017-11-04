@@ -216,7 +216,7 @@ define([
 				view.datasetDetailTaken(datasetMeta,dsSlug,page, text,'auto');
 			};
 			var dataset = new Dataset();		
-			dataset.byId(dsSlug, callback, true, true, true);
+			dataset.getById(dsSlug, callback, true, true, true);
 
 			return this;
 		},
@@ -237,7 +237,7 @@ define([
 				view.datasetDetailTaken(datasetMeta,dsSlug,page, text,'table');
 			};
 			var dataset = new Dataset();		
-			dataset.byId(dsSlug, callback, true, true, true);
+			dataset.getById(dsSlug, callback, true, true, true);
 			
 			return this;
 		},
@@ -260,7 +260,7 @@ define([
 				view.datasetDetailTaken(datasetMeta,dsSlug,page, text,'resource');
 			};
 			var dataset = new Dataset();		
-			dataset.byId(dsSlug, callback, true, true, true);
+			dataset.getById(dsSlug, callback, true, true, true);
 			
 			return this;
 		},
