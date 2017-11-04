@@ -106,12 +106,28 @@ define([
 		
 		
 			
-		getById: function(id, callback){
-			console.log('Dataset.getById');
-			console.log(id);
+		getById: function(id, callback, byslug, countr, countb){
+			console.log('Dataset.getById',id);
+			console.log('Dataset.getById.byslug',byslug);
+			console.log('Dataset.getById.countr',countr);
+			console.log('Dataset.getById.countb',countb);
 		
+			var searchBySlug=false;
+			var countRecords=false;
+			var countBinary=false;
+
+			if (byslug)
+				searchBySlug=byslug;
+
+			if (countr)
+			countRecords=countr;
+
+			if (countb)
+			countBinary=countb;
+
+
 			var properties = $.ajax({
-        	    url: tenant + '/service/v1/datasets/' + id,
+        	    url: tenant + '/service/v1/datasets/' + id+'?byslug='+searchBySlug+'&countr='+countRecords+'&countb='+countBinary,
         	  //  url: 'http://localhost:8880/smart21-server/service/v1/datasets/'+id,
 				type : 'GET'
 			});
