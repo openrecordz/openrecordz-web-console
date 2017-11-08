@@ -172,6 +172,48 @@ if ((localStorage.getItem('lan')) =="IT") {
 
 </script>
 
+<!-- @TODO spostare da qua -->
+<style type="text/css">
+	
+
+@media (max-width: 1088px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin: 7.5px -15px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .navbar-text {
+        float: none;
+        margin: 15px 0;
+    }
+    .navbar-collapse.collapse.in { 
+        display: block!important;
+    }
+    .collapsing {
+        overflow: hidden!important;
+    }
+}
+</style>
+
 <!-- chat21 -->
 <!-- <app-root></app-root>
 <script type="text/javascript" src="https://chat21-web.firebaseapp.com/inline.bundle.js"></script>
