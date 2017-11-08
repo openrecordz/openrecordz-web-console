@@ -103,6 +103,10 @@ s0.parentNode.insertBefore(s1,s0);
 <!-- Bootstrap Switch CSS -->
 <link rel="stylesheet" type="text/css" href="http://apps.openrecordz.com/assets/js/libs/bootstrap-switch/css/bootstrap3/bootstrap-switch.min.css">
 
+<!-- font awesome -->
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
     
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>

@@ -173,10 +173,10 @@ ciao2
 	    <%=_label.azioni%> <span class="caret"></span>
 	  </button>
 	  <ul class="dropdown-menu">
-	    <li><a href="#upsert/<%=datasetMeta._slug%>" id="btn-edit"><%=_label.modifica%></a></li>
-	    <li><a href="/" id="btn-delete-all-data"><%=_label.eliminaTuttiIdatiDelDataset%></a></li>
-	    <li><a href="/" id="btn-delete-dataset"><%=_label.cancellaIlDataset%></a></li>
-	  </ul>
+	    <li><a href="#upsert/<%=datasetMeta._slug%>" id="btn-edit"><i style="margin-right: 0.5em; color: #9E9E9E;" class="icon-pencil icon-large"></i><%=_label.modifica%></a></li>
+	    <li><a href="/" id="btn-delete-all-data"> <i class="icon-trash icon-large" style="margin-right: 0.5em; color: #9E9E9E;" class="icon-trash "></i><%=_label.eliminaTuttiIdatiDelDataset%></a></li>
+	    <li><a href="/" id="btn-delete-dataset"><i class="icon-remove-sign icon-large" style="margin-right: 0.5em; color: red;" class="icon-trash "></i><%=_label.cancellaIlDataset%></a></li>
+	   </ul>
 	</div>
 	
     <%}%>
