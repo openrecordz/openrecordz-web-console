@@ -139,5 +139,9 @@ _label_it= {
 "global_search_record_createdby" : "creato da",
 "global_search_record_createdon" : "il",
 
+// rowForm
+"row_form_delete_record" : "Cancella record",
+"row_form_delete_record_alert_text" : "Vuoi davvero cancellare questo record?\nL\'azione non può essere annullata",
+
 
 }

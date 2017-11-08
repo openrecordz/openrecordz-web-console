@@ -119,4 +119,8 @@ _label_en = {
 "global_search_record_createdby" : "created by",
 "global_search_record_createdon" : "on",
 
+// rowForm
+"row_form_delete_record" : "Delete record",
+"row_form_delete_record_alert_text" : "Do you want to delete this record?\nThe action can not be undone",
+
 }
