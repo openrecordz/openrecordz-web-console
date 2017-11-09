@@ -115,8 +115,6 @@ if (row!=null) {
 	</div>
 
 
-	 <%if (_user.isAdministrator==true || (_user.isAuthenticated==true && (_user.username==row._modifiedby || _user.username==row._createdby))){%>
-
 	<div>
 	 <span> isAdministrator : <%= _user.isAdministrator %> </span> </br>
 	 <span> isAuthenticated : <%= _user.isAuthenticated %> </span> </br>
@@ -124,8 +122,6 @@ if (row!=null) {
 	 <span> _createdby : <%= row._createdby %> </span> </br>
 	 <span> username : <%= _user.username %> </span> </br>
 	</div>
-
-	  <%}%>
 
 
 </div>
