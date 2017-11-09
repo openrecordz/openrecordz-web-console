@@ -167,15 +167,15 @@ ciaociao
 <%if (_user.isAdministrator==true || (_user.isAuthenticated==true && _user.username==datasetMeta._modifiedby)){%>
 ciao2
 <%}%>-->
-     <%if (_user.isAdministrator==true || (_user.isAuthenticated==true && _user.username==datasetMeta._modifiedby)){%>
+     <%if (_user.isAdministrator==true || (_user.isAuthenticated==true && (_user.username==datasetMeta._modifiedby || _user.username==datasetMeta._createdby))){%>
 	<div class="btn-group">
 	  <button type="button" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	    <%=_label.azioni%> <span class="caret"></span>
 	  </button>
 	  <ul class="dropdown-menu">
-	    <li><a href="#upsert/<%=datasetMeta._slug%>" id="btn-edit"><i style="margin-right: 0.5em; color: #9E9E9E;" class="icon-pencil icon-large"></i><%=_label.modifica%></a></li>
-	    <li><a href="/" id="btn-delete-all-data"> <i class="icon-trash icon-large" style="margin-right: 0.5em; color: #9E9E9E;" class="icon-trash "></i><%=_label.eliminaTuttiIdatiDelDataset%></a></li>
-	    <li><a href="/" id="btn-delete-dataset"><i class="icon-remove-sign icon-large" style="margin-right: 0.5em; color: red;" class="icon-trash "></i><%=_label.cancellaIlDataset%></a></li>
+	    <li><a href="#upsert/<%=datasetMeta._slug%>" id="btn-edit"><i class="fa fa-pencil-square-o" style="margin-right: 0.5em; color: #9E9E9E;" aria-hidden="true"></i><%=_label.modifica%></a></li>
+	    <li><a href="/" id="btn-delete-all-data"> <i class="fa fa-trash-o" style="margin-right: 0.5em; color: #9E9E9E;"  aria-hidden="true"></i><%=_label.eliminaTuttiIdatiDelDataset%></a></li>
+	    <li><a href="/" id="btn-delete-dataset"><i class="fa fa-times" style="margin-right: 0.5em; color: red;" aria-hidden="true"></i><%=_label.cancellaIlDataset%></a></li>
 	   </ul>
 	</div>
 	
