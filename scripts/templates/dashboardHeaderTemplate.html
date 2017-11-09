@@ -1,131 +1,94 @@
-<div class="navbar navbar-default navbar-fixed-top">
-	<div class="container-fluid">
-
-		<!-- home button  -->
-		<div class="navbar-header pull-left">     
-			<a class="navbar-brand" href="datasets">
-<!--			<a class="navbar-brand" href="index">-->
-				<% if (config.logoTenant) { %>
-				<img src="assets/images/<%= config.logoTenant %>" alt="OpenRecordz">
-					<!--style="max-height: 40px; max-width:100px; margin-top: -7px;"-->
-				<% } %>
-				<%= tenantName %>
-			</a>
-		</div>
+<nav class="navbar navbar-default">
+   <div class="container-fluid">
 
 
-		<!-- navbar right -->
-		<div  class="navbar-header pull-right">
-
-			<!-- button more  -->
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-
-			<div class="navbar-collapse collapse">
-				<ul class="nav navbar-nav">
-					<!-- Bottone di inserimento nuovo dataset -->
-					<li >
-						<a href="#upsert" id="add_dataset" >
-							<span class="glyphicon glyphicon-plus-sign"></span> <%=_label.creaNuovoDataset%>
-						</a>
-					</li>
-
-					<!-- <li class="active"><a href="#">Home</a></li> -->
-					<%if (isAuthenticated){%>
-						<li class="_dashboard"><a href="<%= dashboardDomain %>/dashboard"><%=_label.leTueApp%></a></li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= username %> <span class="caret"></span></a>
-							<ul class="dropdown-menu" role="menu">
-								<li class="_api"><a href="http://www.openrecordz.com/documentazione/"><%=_label.documentazione%></a></li>		
-								<!--<li>
-									<a href="http://<%= tenantName %>.ciaotrip.it/users/<%= username %>" target="_blank">Profilo</a>
-								</li>
-								<li><a href="http://<%= tenantName %>.ciaotrip.it/settings" target="_blank">Impostazioni utente</a></li>-->
-								<li><a href="#logout">Logout</a></li>
-							</ul>
-						</li>
-					<%} else {%>
-						<li class="_login"><a href="#login"><%=_label.accedi%></a></li>
-						<li class="_signup"><a href="<%= dashboardDomain %>/dashboard#signup"><%=_label.registrati%></a></li>
-					<%}%>
-				</ul>
-			</div>
-		</div>
-
-		<!-- navbar left items  -->
-		<div class="navbar-collapse collapse">
-			<ul class="nav navbar-nav">
-				<!-- <li class="active"><a href="#">Dashboard</a></li> -->
-				<li class="_datasets"><a href="datasets">Datasets</a></li>
-<!--				<%=isAdministrator%>-->
-				<%if (username=="admin"){%>
-				<li class="_users"><a href="users"><%=_label.utenti%></a></li>				
-				<%}%>
-				<!-- <li class="_api"><a href="http://www.openrecordz.com/documentazione/"><%=_label.documentazione%></a></li>		 -->		
-				<!-- 
-				<li class="_notifications"><a href="notifications.php">Notifiche</a></li>
-				 -->
-
-				<!-- Bottone di ricerca -->
-				<li>
-					<form class="navbar-form navbar-search"  role="search">
-						<div class="input-group">
-							<input type="text" class="form-control" placeholder="<%=_label.cerca%>" name="globalSearch" id="globalSearch">
-								<div class="input-group-btn">
-									<button id="btnGlobalSearch" class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-								</div>
-						</div>
-					</form>
-				</li>
-				
-				<% //if (isAdministrator) {%>
-				<!-- 
-				<li class="_settings"><a href="settings.php">Impostazioni</a></li>
-				<li class="_import"><a href="import.php">Import</a></li>
-				<li class="_phones"><a href="phones.php">Numeri Telefono</a></li>
-				<li class="_sms"><a href="sms.php">Sms</a></li>
-				<li class="_settingsSms"><a href="settingsSms.php">Impostazioni Sms</a></li>
-				 -->
-				<% //} %>
-				
-				
-				<!-- 
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-					<ul class="dropdown-menu" role="menu">
-						<li><a href="#">Action</a></li>
-						<li><a href="#">Another action</a></li>
-						<li><a href="#">Something else here</a></li>
-						<li class="divider"></li>
-						<li class="dropdown-header">Nav header</li>
-						<li><a href="#">Separated link</a></li>
-						<li><a href="#">One more separated link</a></li>
-					</ul>
-				</li>
-				 -->
-			</ul>
-		</div>
-	</div>
-</div>
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+         <span class="sr-only">Toggle navigation</span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         </button>
+         <!-- <a class="navbar-brand" href="#">Brand</a> -->
+         <a class="navbar-brand" href="datasets">
+          <!-- <a class="navbar-brand" href="index">-->
+          <% if (config.logoTenant) { %>
+          <img src="assets/images/<%= config.logoTenant %>" alt="OpenRecordz">
+            <!--style="max-height: 40px; max-width:100px; margin-top: -7px;"-->
+          <% } %>
+          <%= tenantName %>
+        </a>
+      </div>
 
 
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+         <ul class="nav navbar-nav">
+            <!-- <li class="active"><a href="#">Dashboard</a></li> -->
+            <li class="_datasets"><a href="datasets">Datasets</a></li>
+            <!-- <%=isAdministrator%> -->
+            <%if (username=="admin"){%>
+            <li class="_users"><a href="users"><%=_label.utenti%></a></li>        
+            <%}%>
+            <!-- <li class="_api"><a href="http://www.openrecordz.com/documentazione/"><%=_label.documentazione%></a></li> -->    
+            <!--  <li class="_notifications"><a href="notifications.php">Notifiche</a></li> -->
+            <% //if (isAdministrator) {%>
+            <!-- 
+            <li class="_settings"><a href="settings.php">Impostazioni</a></li>
+            <li class="_import"><a href="import.php">Import</a></li>
+            <li class="_phones"><a href="phones.php">Numeri Telefono</a></li>
+            <li class="_sms"><a href="sms.php">Sms</a></li>
+            <li class="_settingsSms"><a href="settingsSms.php">Impostazioni Sms</a></li>
+             -->
+            <% //} %>
+         </ul>
 
+          <!-- global search -->
+         <form class="navbar-form navbar-left">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="<%=_label.cerca%>" name="globalSearch" id="globalSearch">
+                <div class="input-group-btn">
+                  <button id="btnGlobalSearch" class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                </div>
+            </div>
+         </form>
 
+         <ul class="nav navbar-nav navbar-right">
+            <!-- add datasets -->
+            <li >
+              <a href="#upsert" id="add_dataset" >
+                <span class="glyphicon glyphicon-plus-sign"></span> <%=_label.creaNuovoDataset%>
+              </a>
+            </li>
 
+            <!-- your apps -->
+            <%if (isAuthenticated){%>
+            <li class="_dashboard"><a href="<%= dashboardDomain %>/dashboard"><%=_label.leTueApp%></a></li>
+            <%}%>
 
+            
+            <!-- profile and docs -->
+            <%if (isAuthenticated){%>
+            <!-- autenticated -->
+            <li class="dropdown">
+               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= username %> <span class="caret"></span></a>
+               <ul class="dropdown-menu">
+                  <li class="_api"><a href="http://www.openrecordz.com/documentazione/"><%=_label.documentazione%></a></li> 
+                  <!-- <li> <a href="http://<%= tenantName %>.ciaotrip.it/users/<%= username %>" target="_blank">Profilo</a> </li> -->
+                  <!-- <li><a href="http://<%= tenantName %>.ciaotrip.it/settings" target="_blank">Impostazioni utente</a></li> -->
+                  <li><a href="#logout">Logout</a></li>
+               </ul>
+            </li>
+            <%} else {%>
+              <!-- not authenticated -->
+              <li class="_login"><a href="#login"><%=_label.accedi%></a></li>
+              <li class="_signup"><a href="<%= dashboardDomain %>/dashboard#signup"><%=_label.registrati%></a></li>
+            <%}%>
+         </ul>
 
-
-
-
-
-
-
-
-
-
-
-
-
+      </div>
+      <!-- /.navbar-collapse -->
+   </div>
+   <!-- /.container-fluid -->
+</nav>
