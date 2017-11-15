@@ -36,6 +36,8 @@ define([
 //			'click #btnSearch': 'search',
 			
 //			'click #btnAdd':	'userAdd',
+
+			'click #btn-delete-record': 'deleteRecord',
 		},
 		
 
@@ -249,9 +251,39 @@ define([
 //		    } );
 //			return this;
 //		},
-		
-		
-		
+
+		deleteRecord: function(e) {
+			e.preventDefault();
+			e.stopPropagation();
+			console.log('RowFormView.deleteRecord');
+		 	var view = this;
+
+			if (confirm(_label.row_form_delete_record_alert_text)) {
+			    // delete the record
+
+				var callback = function() {
+					var targetRoute = "#ds/" + view.dsSlug;
+				  	Backbone.history.navigate( targetRoute, {trigger: true, replace: true});
+				  	return true;
+				};
+
+				// retrive the record id
+				var recordId = view.row.id;
+				console.log('RowFormView.deleteRecord');
+
+				// retrieve the data manager
+				var data = new Data();
+				// perfom the deletion
+				data.deleteById(view.row._dataset_ref_id, recordId, callback);
+
+				return this; 
+
+			} else {
+			    // Do nothing!
+			}
+
+			return this;
+		},
 		
 	});
 

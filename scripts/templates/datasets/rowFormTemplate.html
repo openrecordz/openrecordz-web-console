@@ -104,9 +104,24 @@ if (row!=null) {
 %>
 
 
-	<a class="btn btn-default btn-lg" href="#ds/<%=dsSlug%>/table"><%=_label.chiudi%></a>
+	<!-- <a class="btn btn-default btn-lg" href="#ds/<%=dsSlug%>/table"><%=_label.chiudi%></a> -->
+	<div class="row-fluid pull-left">
+	  <div class="span4 offset4">
+	  	<%if (_user.isAdministrator==true || (_user.isAuthenticated==true && (_user.username==row._modifiedby || _user.username==row._createdby))){%>
+	    <a id="btn-delete-record" class="btn btn-default btn-lg btn-danger" href="#ds/<%=dsSlug%>/table"><%=_label.row_form_delete_record%></a>
+	    <%}%>
+	    <a class="btn btn-default btn-lg" href="#ds/<%=dsSlug%>/table"><%=_label.chiudi%></a>
+	  </div>
+	</div>
 
 
+	<!-- <div>
+	 <span> isAdministrator : <%= _user.isAdministrator %> </span> </br>
+	 <span> isAuthenticated : <%= _user.isAuthenticated %> </span> </br>
+	 <span> _modifiedby : <%= row._modifiedby %> </span> </br>
+	 <span> _createdby : <%= row._createdby %> </span> </br>
+	 <span> username : <%= _user.username %> </span> </br>
+	</div> -->
 
 
 </div>
