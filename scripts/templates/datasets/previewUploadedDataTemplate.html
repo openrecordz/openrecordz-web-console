@@ -47,57 +47,59 @@
   <div style="overflow-x:auto;">
 <!--  <div class="table-responsive">-->
 	<%if (status=="fail"){	%>
-		Errore nel parsing del csv. Prego cambiare il delimitatore in virgola o punto e virgola.<br>
-	<%}%>
+		Errore nel parsing del csv. <br>
+		Prego cambiare il delimitatore in virgola o punto e virgola.<br>
+	<%} else {%>
 
-	<% if (firstLines && firstLines.length>0) {	%>
+		<% if (firstLines && firstLines.length>0) {	%>
 
-		<table class="table table-striped">
+			<table class="table table-striped">
 
-		<thead>
-			 <tr>				
-				<% for (var key in firstLines[0]) {
-					  if (firstLines[0].hasOwnProperty(key)) { 
-				  %>
-     					   <th>
-						   <%=key%>
-					   </th>
-				  <% 
+			<thead>
+				<tr>				
+					<% for (var key in firstLines[0]) {
+						if (firstLines[0].hasOwnProperty(key)) { 
+					%>
+							<th>
+							<%=key%>
+						</th>
+					<% 
+						}
 					}
+					%>
+					
+				</tr>
+			</thead>
+
+
+			<tbody>
+			<%
+				console.log(firstLines);
+				for(var i=0; i<firstLines.length && i<8 ; i++){ %>
+				<tr>
+					
+
+				<%	for (var key in firstLines[i]) {
+					if (firstLines[i].hasOwnProperty(key)) { 
+			%>
+				
+						<td>
+						<%= firstLines[i][key] %>
+					</td>
+			<%
+					}	 
+					} %>
+				</tr>
+			<%	
 				}
-				 %>
-				   
-			</tr>
-		</thead>
-
-
-		<tbody>
-		<%
-			console.log(firstLines);
-			for(var i=0; i<firstLines.length && i<8 ; i++){ %>
-			 <tr>
-				 
-
-			<%	for (var key in firstLines[i]) {
-				  if (firstLines[i].hasOwnProperty(key)) { 
-		%>
-			
-			          <td>
-					<%= firstLines[i][key] %>
-				  </td>
-		<%
-				  }	 
-				} %>
-			</tr>
-		<%	
-			}
-				 
-		%>
-		</tbody>
-		</table>
-	<%} else { %>
-		<%=_label.nessunDato%>
-	<% } %>
+					
+			%>
+			</tbody>
+			</table>
+		<%} else { %>
+			<%=_label.nessunDato%>
+		<% } %>
+	<%}%>
   </div>
 
 <br>
