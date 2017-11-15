@@ -8,31 +8,6 @@
     
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
-
-<!-- Gestione auto-login -->
-<script type="text/javascript">
-<?php
-if(isset($_POST["alusername"])) {
-	$autologin_username=$_POST["alusername"];
-	$autologin_basic_auth=$_POST["albasicAuth"];
-	$autologin_isAdministrator=$_POST["alautologin_isAdministrator"];
-// 	echo 'localStorage.setItem("username","';echo $autologin_username.'");';
-// 	echo 'localStorage.setItem("basicAuth","';echo $autologin_basic_auth.'");';
-// 	echo 'localStorage.setItem("isAdministrator","';echo $autologin_isAdministrator.'");';
-// 	echo 'localStorage.setItem("authenticated", true);';
-?>
-	console.log('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$');
-	console.log("autologin_username: <?=$autologin_username?>");
-	console.log("autologin_basic_auth: <?=$autologin_basic_auth?>");
-	console.log("autologin_isAdministrator: <?=$autologin_isAdministrator?>");
-	console.log('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$');
-	localStorage.setItem("username", "<?=$autologin_username?>");
-	localStorage.setItem("basicAuth", "<?=$autologin_basic_auth?>");
-	localStorage.setItem("isAdministrator", "<?=$autologin_isAdministrator?>");
-	localStorage.setItem("authenticated", true);
-<?php } ?>
-</script>
-
     
 <script src="config/config-dev.js"></script>
 <script src="config/config-<?=$tenant?>-dev.js"></script>

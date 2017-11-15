@@ -59,6 +59,9 @@ define([
 						|| mappedHeader.origColumnName=="longitudine" || mappedHeader.origColumnName=="Longitudine"){
 						mappedHeader.columnType="_longitude";
 						mappedHeader.columnName="_longitude";
+					}else if (mappedHeader.origColumnName=="id" || mappedHeader.origColumnName=="ID" ){
+						mappedHeader.columnType="_idext";
+						mappedHeader.columnName="_idext";
 					}else {
 						mappedHeader.columnType="gen";	
 						mappedHeader.columnName=head.replace(/\./g,"").replace(/\./g,"").replace(/\,/g,"").replace(/\$/g,"").trim();						

@@ -77,7 +77,8 @@ define([
 			if (tenantName=='apps'){
 				var url = window.location.href;
 //				if (url.startsWith("http://apps.console.rem21.com/dashboard.php")){
-				if (url.startsWith(dashboardDomain + "/dashboard")){
+				if ( (url.startsWith(dashboardDomain + "/dashboard"))
+					|| (url.startsWith(dashboardDomain + "/datasets#globalSearch")) ){
 					console.log('apps dashboard == true!');
 					this.before4();
 				}else{

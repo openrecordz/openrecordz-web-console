@@ -281,7 +281,7 @@ define([
 				view.datasetDetailTaken(datasetMeta,dsSlug,page, text,'map');
 			};
 			var dataset = new Dataset();		
-			dataset.byId(dsSlug, callback, true, true, true);
+			dataset.getById(dsSlug, callback, true, true, true);
 			
 			return this;
 		},
