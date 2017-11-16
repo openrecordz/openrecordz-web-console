@@ -90,6 +90,12 @@ define([
 			this.numberOfPages=Math.ceil(this.totalCount/this.rowPerPage);
 			console.log("numberOfPages", this.numberOfPages);
 		
+
+			for (var head in this.header) {
+						if (head=="_location"){
+ 							this.asLocationData=true;
+ 						} 						
+ 			}
 			
 // 			if (this.data !=null && this.data.length>0) {	
 // 				console.log("this.data[0]._type : "+ this.data[0]._type);
