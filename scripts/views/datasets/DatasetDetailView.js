@@ -92,6 +92,7 @@ define([
 		
 
 			for (var head in this.header) {
+				console.log("head", head);
 						if (head=="_latitude"){
 							 this.asLocationData=true;
 							 break;
