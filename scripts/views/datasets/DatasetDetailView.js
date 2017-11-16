@@ -92,7 +92,7 @@ define([
 		
 
 			for (var head in this.header) {
-						if (head=="_location"){
+						if (head=="_latitude"){
  							this.asLocationData=true;
  						} 						
  			}
