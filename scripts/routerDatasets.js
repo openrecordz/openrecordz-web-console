@@ -607,10 +607,13 @@ define([
 			}else {
 				let response_json_string = jQuery.parseJSON( response.responseText );
 				////			alert(json_string.developerMessage);
-				var errMessage = Utils.getError(response)+"<br>"+ response_json_string.developerMessage;
+				var errMessage = Utils.getError(response)+":<br>"+ response_json_string.developerMessage;
 				bootbox.alert({
 					title: 		'Esito operazione',
 					message:	errMessage,
+					callback: function(){ 					
+						Backbone.history.navigate('#ds/'+dsSlug, { trigger : true });
+					}
 				});
 			}
 			return this;	
