@@ -231,13 +231,15 @@ define([
 			var extension = fileName.substring(fileName.lastIndexOf('.')+1);
 			
 			if (extension=="csv") {
+				var function_dsSlug=this.dsSlug;
+				var function_uploadedFilePath=this.uploadedFilePath;
 				bootbox.confirm(_label.salvaEtrasformaInDataService, function(result){ 
 					if (result == true) {
-						var route = '#previewUploadedData/'+this.uploadedFilePath+"/ds/"+this.dsSlug;
+						var route = '#previewUploadedData/'+function_uploadedFilePath+"/ds/"+function_dsSlug;
 						Backbone.history.navigate(route, { trigger : true });
 	
 					} else {
-						Backbone.history.navigate("#ds/"+this.dsSlug, { trigger : true });				
+						Backbone.history.navigate("#ds/"+function_dsSlug, { trigger : true });				
 					}
 				})
 				

@@ -50,7 +50,7 @@ _label_en = {
 "nome":"Name (*)",
 "esempioElencoDelleFarmacieDiTurno":"Example: List of pharmacies on duty in 2016",
 "descriviItuoiDati":"Describe your data...",
-"salvaEtrasformaInDataService":"Save and transforms into DataService",
+"salvaEtrasformaInDataService":"Your are uploading a CSV file. Would you convert it into data record ?",
 
 "anteprimaDeiDatiStepTwoOfThree":"Data preview (Step 2 of 3)",
 "campiDelCsvSeparatiDa":"CSV fields separated by:",

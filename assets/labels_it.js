@@ -68,7 +68,7 @@ _label_it= {
 "nome":"Nome (*)",
 "esempioElencoDelleFarmacieDiTurno":"Esempio: Elenco delle farmacie di turno 2016",
 "descriviItuoiDati":"Descrivi i tuoi dati...",
-"salvaEtrasformaInDataService":"Salva e trasforma in DataService",
+"salvaEtrasformaInDataService":"Stai caricando un file CSV. Vuoi trasformarlo in dati?",
 
 "anteprimaDeiDatiStepTwoOfThree":"Anteprima dei dati (Step 2 di 3)",
 "campiDelCsvSeparatiDa":"Campi del CSV separati da:",
