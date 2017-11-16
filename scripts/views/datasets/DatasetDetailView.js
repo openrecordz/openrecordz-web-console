@@ -93,7 +93,8 @@ define([
 
 			for (var head in this.header) {
 						if (head=="_latitude"){
- 							this.asLocationData=true;
+							 this.asLocationData=true;
+							 break;
  						} 						
  			}
 			
