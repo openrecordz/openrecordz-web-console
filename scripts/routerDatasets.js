@@ -605,7 +605,7 @@ define([
 				var route = '#ds/'+dsSlug;		
 				Backbone.history.navigate(route, { trigger : true });
 			}else {
-				var errMessage = Utils.getError(response)+"<br>"+ response;
+				var errMessage = Utils.getError(response)+"<br>"+ response.developerMessage;
 				bootbox.alert({
 					title: 		'Esito operazione',
 					message:	errMessage,
