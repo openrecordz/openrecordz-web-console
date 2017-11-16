@@ -307,12 +307,16 @@ define([
 
 			var pageSize;
 			if (showAsType=="map")
-				pageSize=1000;
+				pageSize=200;
 			else
 				pageSize=20;
 			
+			var typeToSearch;
+
 			if (showAsType=="resource")
-				var typeToSearch="binary";
+				typeToSearch="binary";
+			else
+				typeToSearch="record";
 			
 
 			if (text)
