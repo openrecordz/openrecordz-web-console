@@ -36,13 +36,15 @@
 		   <option value="3" <%if(datasetMeta && datasetMeta._license && datasetMeta._license==3 ){%> selected<%}%>>Creative Commons</option>
 		   <option value="4" <%if(datasetMeta && datasetMeta._license && datasetMeta._license==4 ){%> selected<%}%>><%=_label.altro%></option>
 		  </select>	    
-		  <span id="helpBlock" class="help-block">Le definizioni delle licenze e ulteriori informazioni sono disponibili su <a href="http://opendefinition.org">opendefinition.org</a></span> 
+		  <span id="helpBlock" class="help-block">Le definizioni delle licenze e ulteriori informazioni sono disponibili su <a href="http://opendefinition.org" target="_blank" >opendefinition.org</a></span> 
 	  </div>
 	
 	
 	  <div class="form-group">
 	    <label for="_origin"><%=_label.origine%></label>
-	    <input type="url" class="form-control" id="_origin"  name="_origin" placeholder="http://example.com/dataset.json" value="<%if(datasetMeta && datasetMeta._origin){%><%=datasetMeta._origin%><%}%>">
+			<input type="url" class="form-control" id="_origin"  name="_origin" placeholder="http://example.com/dataset.json" value="<%if(datasetMeta && datasetMeta._origin){%><%=datasetMeta._origin%><%}%>">
+			<span id="helpBlock" class="help-block">Specifica la provenienza dei dati del dataset. Sono stati scaricati da un sito? Indicalo</span> 
+			
 	  </div>
 	
 	<hr>
