@@ -50,7 +50,10 @@
 		                	</div>
 						</div>	
 					</a>
-    			<% } else if(currentItem._type == "record")  { %>
+    			<% } else if(currentItem._type == "record")  { 
+					
+					if(currentItem._dataset !== null && currentItem._dataset !== undefined) {
+					%>
 					<a href="#ds/<%=currentItem._dataset._slug %>/id/<%=currentItem.id %>" name="record" class="list-group-item clearfix">
 						<div class="container">
   							<div class="row">
@@ -90,7 +93,9 @@
 							</div>	
 						</div>	
 					</a>
-    			<% } %>
+				<% 
+				}
+			} %>
 
 			<% } %> <!-- end for -->
 
