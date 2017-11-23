@@ -1,0 +1,97 @@
+<h3 class="page-header">Modifica Impostazioni</h3>
+
+<%
+
+function getTenantPropertyValue(codeProperty, tenantProperties){
+
+	/*
+	console.log("tenantProperties");
+	console.log(tenantProperties);
+
+	console.log("tenantName");
+	console.log(tenantName);
+	*/
+
+	 console.log(tenantProperties);
+	
+	 
+	codeProperty = codeProperty.replace("<TENANT>", tenantName);
+	// console.log(codeProperty);
+
+	var value = '';
+	for(var i in tenantProperties){
+		 // console.log(tenantProperties[i]);
+		 var json = JSON.parse(tenantProperties[i].json);
+		 // console.log(json);
+		 
+
+		if (json.code===codeProperty){
+			
+			// console.log("EQUALS");
+			value = json.message;
+			break;
+		} 
+		/*
+		else {
+			 console.log("DIFFERENT");
+		}
+		*/
+	}
+	return value;
+}
+
+
+function printProperty(property, indexSetting, indexProperty, tenantProperties){
+	var typeControl = property.typecontrol;
+	print('<div><form class="form-horizontal" role="form">');
+	print(property.label);
+	print('<input type="text" id="indexSetting" value="' + indexSetting + '" hidden>');
+	print('<input type="text" id="indexProperty" value="' + indexProperty + '" hidden>');
+	print('<div class="form-group">');
+	print('<div class="col-sm-11">');
+	var value = getTenantPropertyValue(property.code, tenantProperties);
+	if (typeControl=='text'){
+		print('<input type="text" class="form-control" id="message" placeholder="' + property.placeholder + '" value="' + value + '">');		
+	}else if (typeControl=='textarea'){
+		print('<textarea class="form-control" id="message" rows="5" placeholder="' + property.placeholder + '">' + value + '</textarea>');
+	}else if (typeControl=='image'){ 
+		print('<input type="file" accept="image/*" id="imageFile" class="form-control"/>'); 
+	}
+	print('</div>');
+	print('<div class="col-sm-1">');
+	print('<button type="submit" class="btn btn-primary" id="btnSave">Salva</button>');
+	print('</div>');
+	print('</div>');
+	
+	var tooltip = property.tooltip;
+	if (tooltip){
+		var indexCollapse = '' + indexSetting + indexProperty;
+		print('<a class="btn btn-info btn-xs" role="button" data-toggle="collapse" href="#collapseExample' + indexCollapse + '" aria-expanded="false" aria-controls="collapseExample' + indexCollapse + '"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> ESEMPIO</a>');
+		print('<div class="form-group">');
+		print('<div class="col-sm-11">');
+		print('<div class="collapse" id="collapseExample' + indexCollapse + '">');
+		print('<div class="well">');
+		print('<small>' + tooltip + '</small>');
+		print('</div>');
+		print('</div>');
+		print('</div>');
+		print('</div>');
+	}
+	
+	print('</form>');
+	print('</div>');
+}
+
+for(var i in settings){
+	//Inserisco la label della sezione
+	var sectionLabel = settings[i].label;
+	var properties = settings[i].properties;
+	print('<h4 class="page-header">' + sectionLabel + '</h4>');
+	//Visualizzazione delle properties. 
+	for(var j in properties){
+	   	var property = properties[j];
+	   	printProperty(property, i, j, tenantProperties);
+	}
+}
+
+%>

@@ -1,3 +1,7 @@
+<%
+var imageUrl = tenantName + '/products/' + datasetMeta.id + '/image?w=200&h=200';
+%>
+
 <div class="container">
 
 	<h3 class="page-header text-center"><%=_label.inserisciUnNuovoDataset%></h3>
@@ -6,7 +10,8 @@
 	  <div class="form-group">
 	    <label for="_name"><%=_label.nomeDelDataset%></label>
 	    <input type="text" class="form-control" id="_name"  name="_name" placeholder="<%=_label.nomeDelDatasetEsFarmacieDellaCitta%>" value="<%if(datasetMeta && datasetMeta._name){%><%=datasetMeta._name%><%}%>">
-	  </div>
+		</div>
+		
 	  <div class="form-group">
 	    <label for="exampleInputPassword1">Permalink (*)</label> 
 	    <div class="input-group">
@@ -15,7 +20,17 @@
 	    </div>
 		<span class="help-block hidden"></span>
 	    <!--<input type="text" class="form-control" id="_slug" placeholder="Permalink del dataset">-->
-	  </div>
+		</div>
+		
+		<div class="form-group">
+			<label for="_tags">
+				<%=_label.upsert_dataset_tags_label%>
+			</label>
+			<textarea id="_tags" name="_tags" class="form-control" rows="1" placeholder="<%=_label.upsert_dataset_tags_placeholder_label%>"><%if(datasetMeta && datasetMeta._tags){%><%=datasetMeta._tags%><%}%></textarea>
+			<span id="tags_help_block" class="help-block"><%=_label.upsert_dataset_tags_help_block_label%></span>
+		</div>
+
+
 	  <div class="form-group">
 	    <label for="_description"><%=_label.descrizione%></label>
 	     <textarea id="_description" name="_description" class="form-control" rows="5" placeholder="<%=_label.descriviIlTuoDataset%>"><%if(datasetMeta && datasetMeta._description){%><%=datasetMeta._description%><%}%></textarea>

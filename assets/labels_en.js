@@ -123,4 +123,8 @@ _label_en = {
 "row_form_delete_record" : "Delete record",
 "row_form_delete_record_alert_text" : "Do you want to delete this record?\nThe action can not be undone",
 
+// upsert dataset
+"upsert_dataset_tags_label" : "Tags",
+"upsert_dataset_tags_placeholder_label": "Add one or more tags for your dataset",
+"upsert_dataset_tags_help_block_label": "Every word must be separated from a space",
 }

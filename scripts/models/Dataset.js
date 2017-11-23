@@ -244,9 +244,7 @@ define([
 				console.log('Dataset.deleteById.fail');
 				callback('fail', jqXHR);
 			});
-		},
-		
-			
+		},			
 	});
     
 	return Dataset;

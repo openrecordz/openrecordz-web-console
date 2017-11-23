@@ -28,13 +28,14 @@ define([
 	
 	var UpsertDatasetView = BaseView.extend({
 		template:_.template(upsertDatasetTemplate),
-		datasetMeta:null,		
+		datasetMeta:null,	
+		imageFile: null,	
 		events : {
 //			"submit #upsertDataset" : "save",
 			//"submit #saveAndImportbnt" : "save",
 			"click #savebnt" : "save",
 			"click #saveAndImportbnt" : "save",
-			"keyup #_name" : "onkeyUpName"
+			"keyup #_name" : "onkeyUpName",
 //			'click #btnSearch': 'search',
 			
 //			'click #btnAdd':	'userAdd',
@@ -201,7 +202,7 @@ define([
 			}
 
 			return this;
-		}
+		},
 		
 // 		rowsTaken: function(rows){
 // 			console.log('DatasetDetailView.rowsTaken');

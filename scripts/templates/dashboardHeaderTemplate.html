@@ -14,8 +14,10 @@
          <a class="navbar-brand" href="datasets">
           <!-- <a class="navbar-brand" href="index">-->
           <% if (config.logoTenant) { %>
-          <img src="assets/images/<%= config.logoTenant %>" alt="OpenRecordz">
+          <!-- <img src="assets/images/<%= config.logoTenant %>" alt="OpenRecordz"> -->
             <!--style="max-height: 40px; max-width:100px; margin-top: -7px;"-->
+
+            <img src="http://via.placeholder.com/190x25" alt="OpenRecordz" onError="this.src='assets/images/<%= config.logoTenant %>';"> 
           <% } %>
           <%= tenantName %>
         </a>
@@ -33,7 +35,7 @@
             <%}%>
             <!-- <li class="_api"><a href="http://www.openrecordz.com/documentazione/"><%=_label.documentazione%></a></li> -->    
             <!--  <li class="_notifications"><a href="notifications.php">Notifiche</a></li> -->
-            <% //if (isAdministrator) {%>
+            <% if (isAdministrator) {%>
             <!-- 
             <li class="_settings"><a href="settings.php">Impostazioni</a></li>
             <li class="_import"><a href="import.php">Import</a></li>
@@ -41,7 +43,10 @@
             <li class="_sms"><a href="sms.php">Sms</a></li>
             <li class="_settingsSms"><a href="settingsSms.php">Impostazioni Sms</a></li>
              -->
-            <% //} %>
+              <li class="_settings">
+                <a href="settings.php">Impostazioni</a>
+              </li>
+            <% } %>
          </ul>
 
           <!-- global search -->

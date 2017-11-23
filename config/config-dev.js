@@ -7,7 +7,14 @@ var settings = [
 					            	 label: 'Nome dell\'applicazione. Alias del tenant.', 
 					            	 placeholder: '', 
 					            	 typecontrol: 'text'
-					             },
+								 },
+								 
+						{
+							code: 'tenants.settings.<TENANT>.tenant_image',
+							label: 'Immagine del tenant',
+							placeholder: '',
+							typecontrol: 'image'
+						},
 					             ]
 				},
                {

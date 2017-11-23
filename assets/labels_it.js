@@ -143,5 +143,10 @@ _label_it= {
 "row_form_delete_record" : "Cancella record",
 "row_form_delete_record_alert_text" : "Vuoi davvero cancellare questo record?\nL\'azione non può essere annullata",
 
+// upsert dataset
+"upsert_dataset_tags_label": "Tags",
+"upsert_dataset_tags_placeholder_label": "Aggiungi uno o più tags per il tuo dataset",
+"upsert_dataset_tags_help_block_label": "Ogni parola deve essere separata da uno spazio",
+
 
 }
