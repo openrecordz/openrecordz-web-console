@@ -102,15 +102,15 @@ define([
 		update: function(id, code, message, callback){
 			console.log('TenantProperty.update');
 			
-//			var data = new FormData();
-			var jsonValue = 'json={"id": "' + id + '","code":"' + code + '","message":"' + message + '"}';
-			
-//			data.append('json', jsonValue);
+			var data = {};
+			var jsonValue = '{"code":"' + code + '","message":"' + message + '"}';
+			data.json = jsonValue;
+
 			console.log(jsonValue);
 			
 			var update = $.ajax({
-				url: tenant + '/service/v1/cdata/_message_source/' + id + '?' + JSON.stringify(jsonValue),
-//				data: data,
+				url: tenant + '/service/v1/cdata/_message_source/' + id,
+				data: JSON.stringify(data),
 				cache: false,
 			    contentType: false,
 			    processData: false,
