@@ -78,6 +78,7 @@ _label_en = {
 "chiaveprimariacsv": "Primary Key of th CSV",
 "escludiColonna":"Skip column",
 "fine":"End",
+"import":"Import",
 
 "scopriLeAPI":"Discover API",
 "guidaRapidaAlleAPI":"Quick guide to API",

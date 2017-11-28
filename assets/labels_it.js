@@ -96,6 +96,7 @@ _label_it= {
 "chiaveprimariacsv": "Chiave primaria del CSV",
 "escludiColonna":"Escludi colonna",
 "fine":"Fine",
+"import":"Importa",
 
 "scopriLeAPI":"Scopri le API",
 "guidaRapidaAlleAPI":"Guida rapida alle API",
