@@ -143,8 +143,29 @@ define([
 				callback('fail', jqXHR);
 			});
 		},
-		
-			
+
+		uploadImage: function (id, file, callback) {
+			console.log('TenantProperty.uploadImage');
+			var data = new FormData();
+			data.append('id', id);
+			data.append('file', file);
+			var upload = $.ajax({
+				url: tenant + '/service/v1/cdata/updateimage',
+				data: data,
+				cache: false,
+				contentType: false,
+				processData: false,
+				type: 'POST'
+			});
+			upload.done(function (response) {
+				console.log('TenantProperty.uploadImage.done');
+				callback('success', response);
+			});
+			upload.fail(function (jqXHR, textStatus, errorThrown) {
+				console.log('TenantProperty.uploadImage.fail');
+				callback('fail', jqXHR);
+			});
+		},	
 	});
     
 	return TenantProperty;

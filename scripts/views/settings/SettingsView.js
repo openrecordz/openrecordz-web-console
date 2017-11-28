@@ -15,8 +15,9 @@ define([
 		
 
 		events: {
-			"submit": "btnSave"
+			"submit": "btnSave",
 //			'click #btnSave': 'btnSave',
+			//  "change #imageFile": "contentImageChanged",
 		},
 
 		
@@ -81,6 +82,12 @@ define([
 
 			var indexSetting = $(event.target).find('#indexSetting').val();
 			var indexProperty = $(event.target).find('#indexProperty').val();
+
+			//Recupero il code della property di cui fare add/update.
+			var codeProperty = config.settings[indexSetting].properties[indexProperty].code.replace("<TENANT>", tenantName);
+			console.log(codeProperty);
+
+			var idTenantProperty = this.getTenantPropertyId(codeProperty);
         
 //			var property = config.settings[indexSetting].properties[indexProperty];
 //			console.log(property);
@@ -89,34 +96,43 @@ define([
 			var message = $(event.target).find('#message').val();
 //			console.log(message);
 
-			//Recupero il code della property di cui fare add/update.
-			var codeProperty = config.settings[indexSetting].properties[indexProperty].code.replace("<TENANT>", tenantName);
-			console.log(codeProperty);
+			if (config.settings[indexSetting].properties[indexProperty].typecontrol == 'image') {
+				var mImage = $("#imageFile").prop('files')[0]
+				// console.log('mImage');
+				// console.log(mImage);
+				this.contentImageChanged(mImage, idTenantProperty);
+			} else if (config.settings[indexSetting].properties[indexProperty].typecontrol == 'text' 
+				|| config.settings[indexSetting].properties[indexProperty].typecontrol == 'textarea') {
 
-			//Definizione della callback da eseguire al termine dell' INSERT/UPDATE della property.
-			var callback = function(result, response){
-				view.propertySaved(result, response);
-			};
-			
-			var idTenantProperty = this.getTenantPropertyId(codeProperty);
-			if (idTenantProperty==null){
-				//Property non esistente --> Salvo la nuova tenantProperty.
-				if (!message || message.length===0){
-					this.propertySaved('success', null);
+				// //Recupero il code della property di cui fare add/update.
+				// var codeProperty = config.settings[indexSetting].properties[indexProperty].code.replace("<TENANT>", tenantName);
+				// console.log(codeProperty);
+
+				//Definizione della callback da eseguire al termine dell' INSERT/UPDATE della property.
+				var callback = function(result, response){
+					view.propertySaved(result, response);
+				};
+				
+				// var idTenantProperty = this.getTenantPropertyId(codeProperty);
+				if (idTenantProperty==null){
+					//Property non esistente --> Salvo la nuova tenantProperty.
+					if (!message || message.length===0){
+						this.propertySaved('success', null);
+					}else{
+						console.log('Salvo la nuova tenantProperty');
+						var tenantProperty = new TenantProperty();
+						tenantProperty.add(codeProperty, message, callback);					
+					}
 				}else{
-					console.log('Salvo la nuova tenantProperty');
+					//Property esistente --> Aggiorno la tenantProperty.
 					var tenantProperty = new TenantProperty();
-					tenantProperty.add(codeProperty, message, callback);					
-				}
-			}else{
-				//Property esistente --> Aggiorno la tenantProperty.
-				var tenantProperty = new TenantProperty();
-				if (!message || message.length===0){
-					console.log('Cancello la tenantProperty');
-					tenantProperty.deleteById(idTenantProperty, callback);
-				}else{
-					console.log('Aggiorno la tenantProperty');
-					tenantProperty.update(idTenantProperty, codeProperty, message, callback);	
+					if (!message || message.length===0){
+						console.log('Cancello la tenantProperty');
+						tenantProperty.deleteById(idTenantProperty, callback);
+					}else{
+						console.log('Aggiorno la tenantProperty');
+						tenantProperty.update(idTenantProperty, codeProperty, message, callback);	
+					}
 				}
 			}
 		},
@@ -179,6 +195,56 @@ define([
 				}
 			}
 			return id;
+		},
+
+
+		//=================================================================
+		//L'immagine del contenuto è cambiata.
+		contentImageChanged: function (image, contentImageChanged) {
+			console.log('ContentEditView.contentImageChanged');
+			var that = this;
+			bootbox.dialog({
+				message: "L'attuale immagine del contenuto verrà definitivamente cancellata. Continuare?",
+				title: "Attenzione",
+				buttons: {
+					cancel: {
+						label: "Cancel",
+						className: "btn-default",
+						callback: function () {
+							console.log('Cancel');
+						}
+					},
+					ok: {
+						label: "OK",
+						className: "btn-primary",
+						callback: function () {
+							console.log('OK');
+
+							//Upload della nuova immagine.
+							that.updateNewContentImage(image, contentImageChanged);
+						}
+					}
+				}
+			});
+		},
+
+		//Upload della nuova immagine.
+		updateNewContentImage: function (image, contentImageChanged) {
+			var view = this;
+			var callback = function (result, response) {
+
+				console.log('result: ');
+				console.log(result);
+
+				console.log('response: ');
+				console.log(response);
+
+				//view.contentImageUpdated(result, response);
+			};
+
+			
+			var tenantProperty = new TenantProperty();
+			tenantProperty.uploadImage(contentImageChanged, image, callback);
 		},
 		
 		

@@ -10,9 +10,8 @@ function getTenantPropertyValue(codeProperty, tenantProperties){
 
 	console.log("tenantName");
 	console.log(tenantName);
-	*/
 
-	 console.log(tenantProperties);
+	 */
 	
 	 
 	codeProperty = codeProperty.replace("<TENANT>", tenantName);
@@ -81,6 +80,9 @@ function printProperty(property, indexSetting, indexProperty, tenantProperties){
 	print('</form>');
 	print('</div>');
 }
+
+ console.log('tenantProperties: ');
+ console.log(tenantProperties);
 
 for(var i in settings){
 	//Inserisco la label della sezione
