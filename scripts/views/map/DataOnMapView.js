@@ -21,7 +21,7 @@ define([
 		zoom: 14,
 		map: null,
 		markers: [],
-		locations: [],
+		locations: null,
 		
 /*		events: {
 		   'render': 'afterRender'
@@ -37,6 +37,7 @@ define([
 			// this.asLocationData=this.options.asLocationData;
 			// console.log("this.asLocationData:"+this.asLocationData);
 			this.datasetMeta=this.options.datasetMeta;
+			this.locations = [];
 			this.loadLocationData(this.data);
 			//_g_datasetmeta=this.datasetMeta;
 //			this.position = this.options.position;
