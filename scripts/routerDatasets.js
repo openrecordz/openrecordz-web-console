@@ -320,7 +320,7 @@ define([
 			} else if (showAsType=="map") {
 				typeToSearch="record";
 			} else { //auto
-				var countRecords=this.datasetMeta._countRecords;
+				var countRecords=datasetMeta._countRecords;
 				if (countRecords>0){  //there are records
 					typeToSearch="record";
 				}else {		
