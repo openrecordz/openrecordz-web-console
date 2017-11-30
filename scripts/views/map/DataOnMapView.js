@@ -85,7 +85,7 @@ define([
 		
 		loadLocationData: function(data){
 			console.log('data',data);
-			this.locations.forEach(function(singleData){
+			data.forEach(function(singleData){
 				
 				//			     console.log("singleData",singleData);
 				
