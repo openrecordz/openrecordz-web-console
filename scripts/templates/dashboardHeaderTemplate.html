@@ -17,7 +17,7 @@
           <!-- <img src="assets/images/<%= config.logoTenant %>" alt="OpenRecordz"> -->
             <!--style="max-height: 40px; max-width:100px; margin-top: -7px;"-->
 
-            <img src="http://via.placeholder.com/190x25" alt="OpenRecordz" onError="this.src='assets/images/<%= config.logoTenant %>';"> 
+            <img src="<%=tenant + '/service/v1/files/download?path=logos/logo.png'%>" style="max-width: 190px;max-height: 50px;" alt="OpenRecordz" onError="this.src='assets/images/<%= config.logoTenant %>';"> 
           <% } %>
           <%= tenantName %>
         </a>

@@ -311,12 +311,22 @@ define([
 			else
 				pageSize=20;
 			
-			var typeToSearch;
 
-			if (showAsType=="resource")
+			var typeToSearch;
+			if (showAsType=="resource") {
 				typeToSearch="binary";
-			else
+			} else if (showAsType=="table") {
 				typeToSearch="record";
+			} else if (showAsType=="map") {
+				typeToSearch="record";
+			} else { //auto
+				var countRecords=this.datasetMeta._countRecords;
+				if (countRecords>0){  //there are records
+					typeToSearch="record";
+				}else {		
+					typeToSearch="binary";
+				}
+			} 
 			
 
 			if (text)
