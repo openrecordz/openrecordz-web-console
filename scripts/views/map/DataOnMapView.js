@@ -86,7 +86,7 @@ define([
 		
 		loadLocationData: function(data){
 			console.log('data',data);
-			var location = null;
+			var location;
 			data.forEach(function(singleData){
 				
 				//			     console.log("singleData",singleData);
@@ -102,6 +102,7 @@ define([
 									}
 					//			    location = [description, lat, lon, 1];
 									location = [id, lat, lon, title];
+									console.log("location :", location);
 									this.locations.push(location);
 								}
 							});
