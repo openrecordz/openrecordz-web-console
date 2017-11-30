@@ -47,7 +47,7 @@ define([
 			this.$el.html(this.template({asLocationData:this.asLocationData}));
 			console.log("rendered");
 			if (this.asLocationData) {
-				this.initGoogleMap(this.data);
+				this.initGoogleMap(this.data.records);
 				//mymap2=this;
 			}
 			//setTimeout(this.resize(),100000);
