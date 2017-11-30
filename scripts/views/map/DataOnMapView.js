@@ -16,7 +16,7 @@ define([
 		numberOfPages:0,
 		rowPerPage: 20,
 		text:null,
-		asLocationData:false,
+		// asLocationData:false,
 		position: config.position,
 		zoom: 14,
 		map: null,
@@ -34,10 +34,10 @@ define([
 			
 			//Recupero dei parametri passati al costruttore della classe.
 			this.data = this.options.data;
-			this.asLocationData=this.options.asLocationData;
-			console.log("this.asLocationData:"+this.asLocationData);
+			// this.asLocationData=this.options.asLocationData;
+			// console.log("this.asLocationData:"+this.asLocationData);
 			this.datasetMeta=this.options.datasetMeta;
-			this.loadLocationData(this.data.records);
+			this.loadLocationData(this.data);
 			//_g_datasetmeta=this.datasetMeta;
 //			this.position = this.options.position;
 //			this.zoom = this.options.zoom;
@@ -46,7 +46,7 @@ define([
 		
 		render: function(){
 			console.log('DataOnMapView.render');
-			this.$el.html(this.template({asLocationData:this.asLocationData}));
+			this.$el.html(this.template({}));
 			console.log("rendered");
 			if (this.locations>0) {
 				this.initGoogleMap();
