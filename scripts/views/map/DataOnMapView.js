@@ -46,7 +46,7 @@ define([
 		
 		render: function(){
 			console.log('DataOnMapView.render');
-			this.$el.html(this.template({}));
+			this.$el.html(this.template({locations:this.locations}));
 			console.log("rendered");
 			if (this.locations>0) {
 				this.initGoogleMap();
