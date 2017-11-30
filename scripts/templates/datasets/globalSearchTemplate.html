@@ -6,7 +6,7 @@
 
 		<br>
 
-		<% if (data != null && data != undefined &&  data.length > 0) {  %>
+		<% if (data &&  data.length > 0) {  %>
 
 			<!-- retrieves data items -->
 			<% for (var i=0;i < data.length; i++) { %>
@@ -93,9 +93,52 @@
 							</div>	
 						</div>	
 					</a>
+				<% } else if(currentItem._type == "binary")  { 
+					
+					if(currentItem._dataset !== null && currentItem._dataset !== undefined) {
+					%>
+					<a href="#ds/<%=currentItem._dataset._slug %>/id/<%=currentItem.id %>" name="record" class="list-group-item clearfix">
+						<div class="container">
+  							<div class="row">
+							    	
+			          			<!-- title -->
+			            		<div class="card-title">
+			              			<!-- <span style="word-wrap: break-word; font-weight: bold; font-size:18px;" >/<%=currentItem._tenants[0] %>/<%=currentItem._dataset._slug%>/<%=currentItem.id%> </span> -->
+
+			              			<span style="word-wrap: break-word; font-weight: bold; font-size:18px;" >
+			              				<%=currentItem._tenants[0] %><%=domainConsole%>/datasets#ds/<%=currentItem._dataset._slug %>/id/<%=currentItem.id %> </span>
+			                	</div>
+
+			                	<!-- subtitle -->
+			                	<div class="card-subtitle" style="padding-left:16px; padding-right:16px;">
+			                  		<span style="font-size:16px; word-wrap: break-word;"><%=currentItem._dataset._name%></span>
+			                    </div>
+
+			                    <!-- data type -->
+			                    <div class="row card-type" style="padding-left:16px; padding-right:16px;">
+			                    	<span style="height: 18px; padding-left:16px; padding-right:16px;">
+									 	<img class="img-rounded" src="./assets/images/ic-record.svg" style="height: 24px;"></img>
+		    						</span>
+	    					
+		                  			<span style="font-size:16px; word-wrap: break-word;"><%=currentItem._type%></span>
+			                    </div>
+
+			                    <!-- user creator and creation date -->
+			                  	<div class="row card-box-creation" style="padding:16px;">
+			                   		<div>
+			                   			<span style="text-align:left; padding-left:16px; word-wrap: break-word; padding-right:16px;" class="text-left"><%=_label.global_search_record_createdby %> <%=currentItem._createdby %></span>
+			                   		</div>
+			                      	<div>
+			                      		<span style="text-align:left; padding-left:16px; word-wrap: break-word; padding-right:16px;" class="text-left"><%=_label.global_search_record_createdon %> <%= moment(currentItem._createdon).format('LLL') %></span>
+			                      	</div>
+			                    </div> 
+				                
+							</div>	
+						</div>	
+					</a>
 				<% 
-				} 
-			} %>
+					} 
+				} %>
 
 			<% } %> <!-- end for -->
 
