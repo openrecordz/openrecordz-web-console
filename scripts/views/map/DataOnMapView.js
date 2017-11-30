@@ -86,6 +86,7 @@ define([
 		
 		loadLocationData: function(data){
 			console.log('data',data);
+			var location = null;
 			data.forEach(function(singleData){
 				
 				//			     console.log("singleData",singleData);
