@@ -37,7 +37,7 @@ define([
 			this.asLocationData=this.options.asLocationData;
 			console.log("this.asLocationData:"+this.asLocationData);
 			this.datasetMeta=this.options.datasetMeta;
-			loadLocationData(this.data.records);
+			this.loadLocationData(this.data.records);
 			//_g_datasetmeta=this.datasetMeta;
 //			this.position = this.options.position;
 //			this.zoom = this.options.zoom;
