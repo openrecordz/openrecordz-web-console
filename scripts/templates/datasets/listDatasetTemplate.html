@@ -45,9 +45,10 @@
 			<%
 			console.log(datasets);
 			for(var i=0; i<datasets.length; i++){
+				var currentItem = datasets[i];
 								
 			%>
-				<a href="#ds/<%=datasets[i]._slug %>" name="dataset" class="list-group-item clearfix">
+				<!-- <a href="#ds/<%=datasets[i]._slug %>" name="dataset" class="list-group-item clearfix">
 						<h4 class="list-group-item-heading"><%if (datasets[i]._name!=null ){%><%=datasets[i]._name %><%}else {%><%=datasets[i]._slug %><%}%>
 						  <span class="glyphicon glyphicon-chevron-right pull-right" style="top:10px" aria-hidden="true"></span>
 						</h4>
@@ -62,7 +63,78 @@
 								</em>
 							</p>
 						<%}%>
-				</a>				
+				</a>				 -->
+
+				<a href="#ds/<%=currentItem._slug %>" name="dataset" class="list-group-item clearfix">
+					<div class="container">
+						<div class="row">
+				
+							<!-- subtitle -->
+							<div class="card-title" style="padding-left:16px; padding-right:16px;">
+								<span style="font-size:16px; word-wrap: break-word;">
+									<%=currentItem._name%>
+								</span>
+							</div>
+				
+							<!-- data type -->
+							<div class="row card-type" style="padding-left:16px; padding-right:16px;">
+								<span style="height: 18px; padding-left:16px; padding-right:16px;">
+									<img class="img-rounded" src="./assets/images/ic-dataset.svg" style="height: 24px;"></img>
+								</span>
+				
+								<span style="font-size:16px; word-wrap: break-word;">
+									<%=currentItem._type%>
+								</span>
+							</div>
+
+							<div class="card-subtitle" style="margin-top:10px;padding-left:16px; padding-right:16px;">
+							<!-- description -->
+							<%if (datasets[i]._description!=null){%>
+								<p class="list-group-item-text">
+									<em>
+										<%if (datasets[i]._description.length>300){%>
+											<%=datasets[i]._description.substring(0,300)%>...
+										<%}else{%>
+											<%=datasets[i]._description%>
+										<%}%>
+									</em>
+								</p>
+								
+								<%}%>
+
+								<!-- tags -->
+								<%if (datasets[i]._tags!=null){%>
+									<p class="list-group-item-text">
+										<em>
+											<%if (datasets[i]._tags.length>300){%>
+												#<%=datasets[i]._tags.substring(0,300)%>...
+											<%}else{%>
+												#<%=datasets[i]._tags%>
+											<%}%>
+										</em>
+									</p>
+								
+									<%}%>
+							</div>
+				
+							<!-- user creator and creation date -->
+							<div class="row card-box-creation" style="padding:16px;">
+								<div>
+									<span style="text-align:left; padding-left:16px; word-wrap: break-word; padding-right:16px;" class="text-left">
+										<%=_label.global_search_record_createdby %>
+											<%=currentItem._createdby %>
+									</span>
+								</div>
+								<div>
+									<span style="text-align:left; padding-left:16px; word-wrap: break-word; padding-right:16px;" class="text-left">
+										<%=_label.global_search_record_createdon %>
+											<%= moment(currentItem._createdon).format('LLL') %>
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</a>
 			<%				
 			}
 			%>
