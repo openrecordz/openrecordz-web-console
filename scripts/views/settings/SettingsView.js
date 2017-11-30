@@ -245,7 +245,7 @@ define([
 
 			
 			var file = new File();
-			file.save("logo.png", "/logos", fileToUpload, callback);
+			file.save("logo.png", "/logos", image, callback);
 		},
 		
 		
