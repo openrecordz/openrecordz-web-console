@@ -3,10 +3,11 @@ define([
 	'core/BaseView',
 	'Session',
 	'models/TenantProperty',
+	'models/File',
 	'models/Utils',
 	'text!templates/settings/new_settingsTemplate.html'
 ], function(bootbox, BaseView, Session, 
-		TenantProperty, Utils,
+		TenantProperty, File, Utils,
 		settingsTemplate){
 
 	var SettingsView = BaseView.extend({
@@ -233,18 +234,18 @@ define([
 			var view = this;
 			var callback = function (result, response) {
 
-				console.log('result: ');
+				console.log('updateNewContentImage result: ');
 				console.log(result);
 
-				console.log('response: ');
+				console.log('updateNewContentImage response: ');
 				console.log(response);
 
 				//view.contentImageUpdated(result, response);
 			};
 
 			
-			var tenantProperty = new TenantProperty();
-			tenantProperty.uploadImage(contentImageChanged, image, callback);
+			var file = new File();
+			file.save("logo.png", "/logos", fileToUpload, callback);
 		},
 		
 		
