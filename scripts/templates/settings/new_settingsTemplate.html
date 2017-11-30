@@ -54,7 +54,7 @@ function printProperty(property, indexSetting, indexProperty, tenantProperties){
 	}else if (typeControl=='textarea'){
 		print('<textarea class="form-control" id="message" rows="5" placeholder="' + property.placeholder + '">' + value + '</textarea>');
 	}else if (typeControl=='image'){ 
-		print('<input type="file" accept="image/*" id="imageFile" class="form-control"/>'); 
+		print('<input type="file" accept="image/png" id="imageFile" class="form-control"/>'); 
 	}
 	print('</div>');
 	print('<div class="col-sm-1">');
