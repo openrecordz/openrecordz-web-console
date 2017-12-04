@@ -149,5 +149,12 @@ _label_it= {
 "upsert_dataset_tags_placeholder_label": "Aggiungi uno o più tags per il tuo dataset",
 "upsert_dataset_tags_help_block_label": "Ogni parola deve essere separata da uno spazio",
 
+// dataset_detail_template
+"dataset_detail_template_share_label": "Condividi",
+"dataset_detail_template_facebook_share_label": "Facebook",
+"dataset_detail_template_twitter_share_label": "Twitter",
+"dataset_detail_template_google_plus_share_label": "Google Plus",
+"dataset_detail_template_linkedin_share_label": "LinkedIn",
+
 
 }

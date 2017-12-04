@@ -128,4 +128,11 @@ _label_en = {
 "upsert_dataset_tags_label" : "Tags",
 "upsert_dataset_tags_placeholder_label": "Add one or more tags for your dataset",
 "upsert_dataset_tags_help_block_label": "Every word must be separated from a space",
+
+// dataset_detail_template
+"dataset_detail_template_share_label": "Share",
+"dataset_detail_template_facebook_share_label": "Facebook",
+"dataset_detail_template_twitter_share_label": "Twitter",
+"dataset_detail_template_google_plus_share_label": "Google Plus",
+"dataset_detail_template_linkedin_share_label": "LinkedIn",
 }
