@@ -106,11 +106,23 @@
 								<%if (datasets[i]._tags!=null){%>
 									<p class="list-group-item-text">
 										<em>
-											<%if (datasets[i]._tags.length>300){%>
-												#<%=datasets[i]._tags.substring(0,300)%>...
-											<%}else{%>
-												#<%=datasets[i]._tags%>
-											<%}%>
+											<%
+											
+											var mTags = datasets[i]._tags;
+											var res = mTags.split(" ");
+
+											var formattedTags = "";
+											for(var i = 0; i < res.length; i++) {
+												 var currentItem = "#" + res[i] + " ";
+												 formattedTags += currentItem;
+											}
+
+
+											if (formattedTags.length>300){%>
+												<%=formattedTags.substring(0,300)%>...
+											<%  }else{%>
+												<%=formattedTags%>
+											<% }%>
 										</em>
 									</p>
 								
