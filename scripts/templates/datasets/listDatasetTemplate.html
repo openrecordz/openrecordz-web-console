@@ -115,11 +115,14 @@
 											var res = mTags.split(" ");
 
 											if(res.length > 0) {
-												for(var i = 0; i < res.length; i++) {
-													console.log(res[i]);
-													var currentItem = " #" + res[i]; 
-													formattedTags += currentItem;
-												}
+												res.forEach(function(element) { 
+													console.log(element); 
+													if(element != null && element != undefined) {
+														var currentItem = " #" + element; 
+														formattedTags += currentItem;
+													}
+												});
+
 											} else {
 												console.log("tag.length <= 0");
 											}
