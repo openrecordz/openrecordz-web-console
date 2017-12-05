@@ -117,8 +117,8 @@
 											if(res.length > 0) {
 												res.forEach(function(element) { 
 													console.log(element); 
-													if(element != null && element != undefined) {
-														var currentItem = " #" + element; 
+													if(element != null && element != undefined && element) {
+														var currentItem = "#" + element + " "; 
 														formattedTags += currentItem;
 													}
 												});
