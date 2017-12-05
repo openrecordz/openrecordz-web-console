@@ -235,7 +235,11 @@ ciao2
   <li role="presentation" <%if (showAsType=="table" || (showAsType=="auto" && asTableData==true)){%>class="active"<%}%>><a href="#ds/<%=datasetMeta._slug%>/table">Dati</a></li>
 <%}%>
   <li role="presentation" <%if (showAsType=="map"){%>class="active"<%}%>><a id="maptab" href="/datasets/<%=datasetMeta._slug%>/map"><%=_label.mappa%></a></li>
-  <li role="presentation"><a href="/blog/<%=datasetMeta._slug%>" target="_blank">Blog</a></li>
+	<li role="presentation"><a href="/blog/<%=datasetMeta._slug%>" target="_blank">Blog</a></li>
+	<li role="presentation" <%if (showAsType=="info" || (showAsType=="auto" && asTableData==false) ){%>class="active"<%}%>>
+			<a href="#ds/<%=datasetMeta._slug%>/info"><%=_label.dataset_detail_template_tab_info_label%></a>
+	</li>
+
 </ul>
 <br>
 

@@ -150,11 +150,21 @@ _label_it= {
 "upsert_dataset_tags_help_block_label": "Ogni parola deve essere separata da uno spazio",
 
 // dataset_detail_template
+"dataset_detail_template_tab_info_label": "Informazioni",
 "dataset_detail_template_share_label": "Condividi",
 "dataset_detail_template_facebook_share_label": "Facebook",
 "dataset_detail_template_twitter_share_label": "Twitter",
 "dataset_detail_template_google_plus_share_label": "Google Plus",
 "dataset_detail_template_linkedin_share_label": "LinkedIn",
+
+// info_dataset_details_template
+"info_dataset_details_template_records_number": "Numero di record presenti",
+"info_dataset_details_template_tags": "Tags",
+"info_dataset_details_template_mapping": "Mappatura",
+"info_dataset_details_template_cretedby": "Creato da",
+"info_dataset_details_template_cretedon": "Creato il",
+"info_dataset_details_template_modifiedby": "Modificato da",
+"info_dataset_details_template_modifiedon": "Modificato il",
 
 
 }

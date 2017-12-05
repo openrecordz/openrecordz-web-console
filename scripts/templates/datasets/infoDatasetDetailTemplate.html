@@ -1,0 +1,160 @@
+  <div>
+
+	<% if (datasetMeta != null && datasetMeta != undefined) {	%>
+
+
+		<!-- <div class="jumbotron text-center">
+			<h1>My First Bootstrap Page</h1>
+			<p>Resize this responsive page to see the effect!</p>
+		</div> -->
+		
+		<div class="container">
+			<div class="row">
+
+				<div class="col-sm-12">
+					<h3>
+						<%=_label.info_dataset_details_template_records_number%>
+				</h3>
+					<p>
+						<%=datasetMeta._countRecords%>
+					</p>
+				</div>
+
+				<!-- <div class="col-sm-12">
+						<h3>
+							<%=_label.info_dataset_details_template_tags%>
+						</h3>
+					<p>
+						<%=datasetMeta._tags%>
+					</p>
+				</div> -->
+
+
+				<!-- tags -->
+				<%if (datasetMeta._tags!=null && datasetMeta._tags!=undefined){%>
+					<div class="col-sm-12">
+						<h3>
+							<%=_label.info_dataset_details_template_tags%>
+						</h3>
+						<p>
+							<em>
+								<%
+									var formattedTags = "";
+															
+									var mTags = datasetMeta._tags;
+									var res = mTags.split(" ");
+
+									if(res.length > 0) {
+										res.forEach(function(element) { 
+											if(element != null && element != undefined && element) {
+												var currentItem = "#" + element + " "; 
+												formattedTags += currentItem;
+											}
+										});
+									} 
+								%>
+								<%=formattedTags%>
+							</em>
+						</p>
+					</div>
+				<%}%>
+
+				<div class="col-sm-12">
+					<h3>
+						<%=_label.info_dataset_details_template_mapping%>
+					</h3>
+					<p>
+						<%
+						 	var prettyJson = JSON.stringify(datasetMeta._mapping, null, 2); // spacing level = 2
+						 %>
+						<pre><%=prettyJson%></pre>
+					</p>
+				</div>
+			</div> <!-- row -->
+		</div> <!-- container -->
+
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6">
+						<h3>
+							<%=_label.info_dataset_details_template_cretedby%>
+						</h3>
+					<p>
+						<%=datasetMeta._createdby%>
+					</p>
+				</div>
+
+				<div class="col-sm-6">
+					<h3>
+						<%=_label.info_dataset_details_template_cretedon%>
+					</h3>
+					<p>
+						<%= moment(datasetMeta._createdon).format('LLL') %>
+					</p>
+				</div>
+			</div><!-- row -->
+		</div><!-- container -->
+
+				<!-- <div class="col-sm-12">
+					<h3>Description</h3>
+					<p>
+						<%=datasetMeta._description%>
+					</p>
+				</div> -->
+
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6">
+					<h3>
+						<%=_label.info_dataset_details_template_modifiedby%>
+					</h3>
+					<p>
+						<%=datasetMeta._modifiedby%>
+					</p>
+				</div>
+
+				<div class="col-sm-6">
+					<h3>
+						<%=_label.info_dataset_details_template_modifiedon%>
+					</h3>
+					<p>
+						<%= moment(datasetMeta._modifiedon).format('LLL') %>
+					</p>
+			</div><!-- row -->
+		</div><!-- container -->
+
+	<%} else { %>
+		<h3><%=_label.nessunDatoBinarioCaricato%></h3>
+	<!--<em><%=_label.faiClickSullaVoceDiMenuTabellaPerVisualizzareEventualiDatiTabellari%></em>-->
+	<% } %>
+	</div>
+	
+
+
+
+
+	<%
+
+function syntaxHighlight(json) {
+    if (typeof json != 'string') {
+         json = JSON.stringify(json, undefined, 2);
+    }
+    json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
+        var cls = 'number';
+        if (/^"/.test(match)) {
+            if (/:$/.test(match)) {
+                cls = 'key';
+            } else {
+                cls = 'string';
+            }
+        } else if (/true|false/.test(match)) {
+            cls = 'boolean';
+        } else if (/null/.test(match)) {
+            cls = 'null';
+        }
+        return '<span class="' + cls + '">' + match + '</span>';
+    });
+}
+
+	%>

@@ -130,9 +130,20 @@ _label_en = {
 "upsert_dataset_tags_help_block_label": "Every word must be separated from a space",
 
 // dataset_detail_template
+"dataset_detail_template_tab_info_label": "Info",
 "dataset_detail_template_share_label": "Share",
 "dataset_detail_template_facebook_share_label": "Facebook",
 "dataset_detail_template_twitter_share_label": "Twitter",
 "dataset_detail_template_google_plus_share_label": "Google Plus",
 "dataset_detail_template_linkedin_share_label": "LinkedIn",
+
+// info_dataset_details_template
+"info_dataset_details_template_records_number": "Number of records present", 
+"info_dataset_details_template_tags" : "Tags", 
+"info_dataset_details_template_mapping" : "Mapping",
+"info_dataset_details_template_cretedby" : "Created by",
+"info_dataset_details_template_cretedon" : "Created on",
+"info_dataset_details_template_modifiedby" : "Modified by",
+"info_dataset_details_template_modifiedon" : "Modified on",
+
 }

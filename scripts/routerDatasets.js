@@ -79,6 +79,10 @@ define([
 			'ds/:dsSlug/page/:page/resource': 	'datasetDetailAsResource',
 			'ds/:dsSlug/page/:page/text/:text/resource': 	'datasetDetailAsResource',
 
+			'ds/:dsSlug/info': 'datasetDetailsInfo',
+			'ds/:dsSlug/page/:page/info': 'datasetDetailsInfo',
+			'ds/:dsSlug/page/:page/text/:text/info': 'datasetDetailsInfo',
+
 			'ds/:dsSlug': 	'datasetDetailAsAuto',
 			'ds/:dsSlug/page/:page': 	'datasetDetailAsAuto',
 			'ds/:dsSlug/page/:page/text/:text': 	'datasetDetailAsAuto',
@@ -265,6 +269,27 @@ define([
 			return this;
 		},
 
+		datasetDetailsInfo: function (dsSlug, page, text) {
+			console.log('RouterDatasets.datasetDetailsInfo');
+			console.log("dsSlug", dsSlug);
+			console.log("page", page);
+			console.log("text", text);
+
+			//			waitingDialog.show('I\'m waiting');
+
+			if (!page)
+				page = 0;
+
+			var view = this;
+			var callback = function (datasetMeta) {
+				view.datasetDetailTaken(datasetMeta, dsSlug, page, text, 'info');
+			};
+			var dataset = new Dataset();
+			dataset.getById(dsSlug, callback, true, true, true);
+
+			return this;
+		},
+
 		datasetDetailAsMap: function(dsSlug, page,text){ 
 			console.log('RouterDatasets.datasetDetailAsMap');
 			console.log("dsSlug", dsSlug); // nome dataset su cui fare la ricerca
@@ -319,7 +344,9 @@ define([
 				typeToSearch="record";
 			} else if (showAsType=="map") {
 				typeToSearch="record";
-			} else { //auto
+			} else if (showAsType == "info") {
+				typeToSearch = "info";
+			}else { //auto
 				var countRecords=datasetMeta._countRecords;
 				if (countRecords>0){  //there are records
 					typeToSearch="record";

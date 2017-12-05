@@ -16,6 +16,7 @@ define([
 //	'views/datasets/ListDataDetailView',
 	'views/datasets/TableDatasetDetailView',
 	'views/datasets/ResourceDatasetDetailView',
+	'views/datasets/InfoDatasetDetailView',
 	'views/map/DataOnMapView',
 	'text!templates/datasets/datasetDetailTemplate.html',
 ], function(BaseView, Session, 
@@ -27,6 +28,7 @@ define([
 //		ListDataDetailView,
 		TableDatasetDetailView,
 		ResourceDatasetDetailView,
+		InfoDatasetDetailView,
 		DataOnMapView,
 		datasetDetailTemplate){ 
 	
@@ -156,6 +158,8 @@ define([
 				} else { 
 					subDatasetDetailView = new ResourceDatasetDetailView({header:this.header, data: this.data, totalCount:this.totalCount, currentPage:this.currentPage, numberOfPages: this.numberOfPages, datasetMeta:this.datasetMeta, text:this.text});					
 				}
+			} else if (this.showAsType == "info") {
+				subDatasetDetailView = new InfoDatasetDetailView({ header: this.header, data: this.data, totalCount: this.totalCount, currentPage: this.currentPage, numberOfPages: this.numberOfPages, datasetMeta: this.datasetMeta, text: this.text });
 			}						
 
 
