@@ -131,6 +131,9 @@ _label_en = {
 
 // dataset_detail_template
 "dataset_detail_template_tab_info_label": "Info",
+"dataset_detail_template_tab_resources_label": "Resources",
+"dataset_detail_template_tab_data_label": "Data",
+"dataset_detail_template_tab_blog_label": "Blog",
 "dataset_detail_template_share_label": "Share",
 "dataset_detail_template_facebook_share_label": "Facebook",
 "dataset_detail_template_twitter_share_label": "Twitter",
