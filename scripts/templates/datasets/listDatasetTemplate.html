@@ -108,22 +108,21 @@
 									<p class="list-group-item-text">
 										<em>
 											<%
-											
-											var mTags = datasets[i]._tags;
-											var res = mTags.split(" ");
+												var mTags = datasets[i]._tags;
+												var res = mTags.split(" ");
 
-											var formattedTags = "";
-											for(var i = 0; i < res.length; i++) {
-													var currentItem = "#" + res[i] + " ";
-													formattedTags += currentItem;
-											}
+												var formattedTags = "";
+												for(var i = 0; i < res.length; i++) {
+														var currentItem = "#" + res[i] + " ";
+														formattedTags += currentItem;
+												}
 
-
-											if (formattedTags.length>300){%>
+												if (formattedTags.length>300){
+											%>
 												<%=formattedTags.substring(0,300)%>...
-											<%  }else{%>
+											<%  } %>
 												<%=formattedTags%>
-											<% }%>
+
 										</em>
 									</p>
 								
