@@ -66,9 +66,10 @@
 				</a>				 -->
 
 				<a href="#ds/<%=currentItem._slug %>" name="dataset" class="list-group-item clearfix">
-					<div class="container">
-						<div class="row">
 				
+					<div class="row">
+						<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+					
 							<!-- subtitle -->
 							<div class="card-title" style="padding-left:16px; padding-right:16px;">
 								<span style="font-size:16px; word-wrap: break-word;">
@@ -113,8 +114,8 @@
 
 											var formattedTags = "";
 											for(var i = 0; i < res.length; i++) {
-												 var currentItem = "#" + res[i] + " ";
-												 formattedTags += currentItem;
+													var currentItem = "#" + res[i] + " ";
+													formattedTags += currentItem;
 											}
 
 
@@ -145,7 +146,12 @@
 								</div>
 							</div>
 						</div>
+
+						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style=" position: relative;height: 14rem;">
+							 <span class="glyphicon glyphicon-chevron-right pull-right" style=" position: absolute; top: 50%;transform: translateY(-50%);" aria-hidden="true"></span>
+						</div>
 					</div>
+				
 				</a>
 			<%				
 			}
