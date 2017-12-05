@@ -116,19 +116,19 @@
 
 											if(res.length > 0) {
 												res.forEach(function(element) { 
-													console.log(element); 
+													// console.log(element); 
 													if(element != null && element != undefined && element) {
 														var currentItem = "#" + element + " "; 
 														formattedTags += currentItem;
 													}
 												});
 
-											} else {
-												console.log("tag.length <= 0");
-											}
-
-											console.log("formattedTags");
-											console.log(formattedTags);
+											} 
+											// else {
+											// 	console.log("tag.length <= 0");
+											// }
+											// console.log("formattedTags");
+											// console.log(formattedTags);
 											%>
 											<%=formattedTags%>
 										
