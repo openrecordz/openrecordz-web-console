@@ -68,7 +68,7 @@
 				<a href="#ds/<%=currentItem._slug %>" name="dataset" class="list-group-item clearfix">
 				
 					<div class="row">
-						<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+						<div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
 					
 							<!-- subtitle -->
 							<div class="card-title" style="padding-left:16px; padding-right:16px;">
@@ -90,7 +90,7 @@
 
 							<div class="card-subtitle" style="margin-top:10px;padding-left:16px; padding-right:16px;">
 							<!-- description -->
-							<%if (datasets[i]._description!=null){%>
+							<%if (datasets[i]._description!=null && datasets[i]._description != undefined){%>
 								<p class="list-group-item-text">
 									<em>
 										<%if (datasets[i]._description.length>300){%>
@@ -104,25 +104,23 @@
 								<%}%>
 
 								<!-- tags -->
-								<%if (datasets[i]._tags!=null){%>
+								<%if (datasets[i]._tags!=null && datasets[i]._tags!=undefined){%>
 									<p class="list-group-item-text">
 										<em>
 											<%
-												var mTags = datasets[i]._tags;
-												var res = mTags.split(" ");
+											
+											var mTags = datasets[i]._tags;
+											var res = mTags.split(" ");
 
-												var formattedTags = "";
-												for(var i = 0; i < res.length; i++) {
-														var currentItem = "#" + res[i] + " ";
-														formattedTags += currentItem;
-												}
+											var formattedTags = "";
+											for(var i = 0; i < res.length; i++) {
+													var currentItem = "#" + res[i] + " ";
+													formattedTags += currentItem;
+											}
 
-												if (formattedTags.length>300){
-											%>
-												<%=formattedTags.substring(0,300)%>...
-											<%  } %>
-												<%=formattedTags%>
-
+											 %>
+										
+											<%=formattedTags%>
 										</em>
 									</p>
 								
@@ -146,8 +144,8 @@
 							</div>
 						</div>
 
-						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style=" position: relative;height: 14rem;">
-							 <span class="glyphicon glyphicon-chevron-right pull-right" style=" position: absolute; top: 50%;transform: translateY(-50%);" aria-hidden="true"></span>
+						<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style=" position: relative;height: 14rem;">
+							 <span class="glyphicon glyphicon-chevron-right pull-right fa-2x" style=" position: absolute; top: 50%;transform: translateY(-50%);" aria-hidden="true"></span>
 						</div>
 					</div>
 				
