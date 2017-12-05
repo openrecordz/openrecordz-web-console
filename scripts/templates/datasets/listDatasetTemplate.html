@@ -108,23 +108,27 @@
 									<p class="list-group-item-text">
 										<em>
 											<%
+
+											var formattedTags = "";
 											
 											var mTags = datasets[i]._tags;
 											var res = mTags.split(" ");
 
-											var formattedTags = "";
-
-											if(res != null && res != undefined && res.length > 0) {
-
+											if(res.length > 0) {
 												for(var i = 0; i < res.length; i++) {
-														var currentItem = "#" + res[i] + " ";
-														formattedTags += currentItem;
+													console.log(res[i]);
+													var currentItem = " #" + res[i]; 
+													formattedTags += currentItem;
 												}
+											} else {
+												console.log("tag.length <= 0");
 											}
 
-											 %>
-										
+											console.log("formattedTags");
+											console.log(formattedTags);
+											%>
 											<%=formattedTags%>
+										
 										</em>
 									</p>
 								
