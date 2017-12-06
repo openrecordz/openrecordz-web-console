@@ -2,7 +2,7 @@
 <div id="dashboard_header" class="header"></div>
 
 <!-- Begin page content -->
-<div id="dashboard_content" class="container-fluid"></div>
+<div id="dashboard_content" class="container-fluid" style="margin-top:0px;"></div>
 
 <!-- Placeholder for footer page content -->
 <footer id="dashboard_footer" class="footer" style="padding-top:20px"></footer>
