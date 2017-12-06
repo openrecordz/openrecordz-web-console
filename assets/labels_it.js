@@ -170,5 +170,11 @@ _label_it= {
 "info_dataset_details_template_modifiedby": "Modificato da",
 "info_dataset_details_template_modifiedon": "Modificato il",
 
+// license
+"license_type_0": "Open Data Commons Public Domain Dedication and License (PDDL)",
+"license_type_1": "Open Data Commons Public Open Database License (ODbL)",
+"license_type_2": "GNU Free Documentation LicenseQ",
+"license_type_3": "Creative Commons",
+
 
 }

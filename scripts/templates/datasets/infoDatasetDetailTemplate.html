@@ -38,6 +38,27 @@
 					</p>
 				</div> -->
 
+				<%if (datasetMeta._license){%>
+					<div class="col-sm-12">
+						<h3>
+							<%=_label.licenza%>:
+						</h3>
+						<p>
+						<%if (datasetMeta._license == 0) {%>
+							<%= _label.license_type_0%>
+						<%} else if (datasetMeta._license == 1) {%>
+							<%= _label.license_type_1%>
+						<%} else if (datasetMeta._license == 2) {%>
+							<%= _label.license_type_2%>
+						<%} else if (datasetMeta._license == 3) {%>
+							<%= _label.license_type_3%>
+						<%} else {%>
+							<%=_label.altro%>
+						<%}%>
+						</p>
+					</div>
+				<%}%>
+
 
 				<!-- tags -->
 				<%if (datasetMeta._tags!=null && datasetMeta._tags!=undefined){%>
