@@ -236,7 +236,7 @@ ciao2
 <%}%>
   <li role="presentation" <%if (showAsType=="map"){%>class="active"<%}%>><a id="maptab" href="/datasets/<%=datasetMeta._slug%>/map"><%=_label.mappa%></a></li>
 	<li role="presentation"><a href="/blog/<%=datasetMeta._slug%>" target="_blank"><%= _label.dataset_detail_template_tab_blog_label%></a></li>
-	<li role="presentation" <%if (showAsType=="info" || (showAsType=="auto" && asTableData==false) ){%>class="active"<%}%>>
+	<li role="presentation" <% // if (showAsType=="info" || (showAsType=="auto" && asTableData==false) ){%>class="active"<%}%>>
 			<a href="#ds/<%=datasetMeta._slug%>/info"><%=_label.dataset_detail_template_tab_info_label%></a>
 	</li>
 
