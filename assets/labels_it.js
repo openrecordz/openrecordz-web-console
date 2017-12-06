@@ -162,6 +162,7 @@ _label_it= {
 
 // info_dataset_details_template
 "info_dataset_details_template_records_number": "Numero di record presenti",
+"info_dataset_details_template_binaries_number": "Numero di dati binari presenti", 
 "info_dataset_details_template_tags": "Tags",
 "info_dataset_details_template_mapping": "Mappatura",
 "info_dataset_details_template_cretedby": "Creato da",
