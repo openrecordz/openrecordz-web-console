@@ -1,4 +1,4 @@
-  <div>
+
 
 	<% if (datasetMeta != null && datasetMeta != undefined) {	%>
 
@@ -8,11 +8,12 @@
 			<p>Resize this responsive page to see the effect!</p>
 		</div> -->
 		
-		<div class="container">
+		
+		
 			<div class="row">
 
 				<div class="col-sm-12">
-					<h3>
+					<h3 class="list-group-item-heading">
 						<%=_label.info_dataset_details_template_records_number%>
 				</h3>
 					<p>
@@ -21,7 +22,7 @@
 				</div>
 
 				<div class="col-sm-12">
-					<h3>
+						<h3 class="list-group-item-heading">
 						<%=_label.info_dataset_details_template_binaries_number%>
 					</h3>
 					<p>
@@ -30,7 +31,7 @@
 				</div>
 
 				<!-- <div class="col-sm-12">
-						<h3>
+						<h3 class="list-group-item-heading">
 							<%=_label.info_dataset_details_template_tags%>
 						</h3>
 					<p>
@@ -40,7 +41,7 @@
 
 				<%if (datasetMeta._license){%>
 					<div class="col-sm-12">
-						<h3>
+						<h3 class="list-group-item-heading">
 							<%=_label.licenza%>:
 						</h3>
 						<p>
@@ -63,7 +64,7 @@
 				<!-- tags -->
 				<%if (datasetMeta._tags!=null && datasetMeta._tags!=undefined){%>
 					<div class="col-sm-12">
-						<h3>
+						<h3 class="list-group-item-heading">
 							<%=_label.info_dataset_details_template_tags%>
 						</h3>
 						<p>
@@ -90,7 +91,7 @@
 				<%}%>
 
 				<!-- <div class="col-sm-12">
-					<h3>
+					<h3 class="list-group-item-heading">
 						<%=_label.info_dataset_details_template_mapping%>
 					</h3>
 					<p>
@@ -101,12 +102,11 @@
 					</p>
 				</div> -->
 			</div> <!-- row -->
-		</div> <!-- container -->
 
-		<div class="container">
+	
 			<div class="row">
 				<div class="col-sm-12">
-						<h3>
+						<h3 class="list-group-item-heading">
 							<%=_label.info_dataset_details_template_cretedby%>
 						</h3>
 					<p>
@@ -115,7 +115,7 @@
 				</div>
 
 				<div class="col-sm-12">
-					<h3>
+					<h3 class="list-group-item-heading"></h3>
 						<%=_label.info_dataset_details_template_cretedon%>
 					</h3>
 					<p>
@@ -123,19 +123,19 @@
 					</p>
 				</div>
 			</div><!-- row -->
-		</div><!-- container -->
+	
 
 				<!-- <div class="col-sm-12">
-					<h3>Description</h3>
+					<h3 class="list-group-item-heading">
 					<p>
 						<%=datasetMeta._description%>
 					</p>
 				</div> -->
 
-		<div class="container">
+		
 			<div class="row">
 				<div class="col-sm-12">
-					<h3>
+					<h3 class="list-group-item-heading">
 						<%=_label.info_dataset_details_template_modifiedby%>
 					</h3>
 					<p>
@@ -144,21 +144,19 @@
 				</div>
 
 				<div class="col-sm-12">
-					<h3>
+					<h3 class="list-group-item-heading">
 						<%=_label.info_dataset_details_template_modifiedon%>
 					</h3>
 					<p>
 						<%= moment(datasetMeta._modifiedon).format('LLL') %>
 					</p>
 			</div><!-- row -->
-		</div><!-- container -->
+		
 
 	<%} else { %>
 		<h3><%=_label.nessunDatoBinarioCaricato%></h3>
 	<!--<em><%=_label.faiClickSullaVoceDiMenuTabellaPerVisualizzareEventualiDatiTabellari%></em>-->
 	<% } %>
-	</div>
-	
 
 
 
