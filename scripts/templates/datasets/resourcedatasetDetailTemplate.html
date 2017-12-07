@@ -13,7 +13,13 @@
 					%>
 
 				<div class="row list-group-item">
-					<div class="col-xs-11 col-sm-11 col-md-11 col-lg-11" style="padding:0px;">
+					<!-- it changes the row width depending on delete button visibility. The delete button is visible only if the user is logged and he is the 
+					data owner or an admin -->
+					<%if (_user.isAdministrator==true || (_user.isAuthenticated==true && (_user.username==row._modifiedby || _user.username==row._createdby))){%>
+						<div class="col-xs-11 col-sm-11 col-md-11 col-lg-11" style="padding:0px;">
+					<%} else {%>
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding:0px;"></div>
+					<%}%>
 						<a href="<%=tenant + '/service/v1/files/download?path='+data[i].file%>" class="list-group-item" style="border:none">
 							<div class="pull-left" style="padding-right:10px;">
 								
