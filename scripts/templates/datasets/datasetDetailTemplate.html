@@ -16,9 +16,18 @@
 
 
 <!-- Stack the columns on mobile by making one full-width and the other half-width -->
-<div class="row text-centered">
-	<!-- <div class="col-xs-12 col-md-2"></div> -->
-  <div class="col-xs-12 col-md-2">
+<div class="row">
+	<!-- dummy space -->
+	<%if (_user.isAdministrator==true || (_user.isAuthenticated==true && (_user.username==datasetMeta._modifiedby || _user.username==datasetMeta._createdby))){%>
+		<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+	<% } %>
+
+	<!-- api -->
+	<%if (_user.isAdministrator==true || (_user.isAuthenticated==true && (_user.username==datasetMeta._modifiedby || _user.username==datasetMeta._createdby))){%>
+  	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-2 text-center">
+	<% } else { %>
+		<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 text-center">
+	<% } %>
 
 	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#apiModal">
 				<span class="glyphicon glyphicon-cloud" aria-hidden="true"></span> <%=_label.scopriLeAPI%>
@@ -126,67 +135,83 @@
 		      </div>
 		    </div>
 		  </div>
+		</div> <!-- end modal -->
+	</div>
+	<!-- end api -->
+
+	<!-- download -->
+	<%if (_user.isAdministrator==true || (_user.isAuthenticated==true && (_user.username==datasetMeta._modifiedby || _user.username==datasetMeta._createdby))){%>
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-2 text-center">
+	<% } else {%>
+		<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 text-center">
+	<% } %>
+		<div class="dropdown">
+			<button type="button" class="btn btn-default btn-lg dropdown-toggle"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" >
+				<span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span> Download <span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu">
+				<li><a href="<%=tenant + '/service/v1/datasets/'+datasetMeta.id+'.csv?pagesize=1000'%>"><%=_label.downloadComeCSV%></a></li>
+				<li><a target="_blank" href="<%=tenant + '/service/v1/datasets/'+datasetMeta.id+'?pagesize=1000'%>"><%=_label.downloadComeJSON%></a></li>
+				<li><a href="<%=tenant + '/service/v1/datasets/'+datasetMeta.id+'.rdf?pagesize=1000'%>"><%=_label.downloadComeRDF%></a></li>
+				<!--<li><a target="_blank" href="#">Download come XML</a></li>-->
+			</ul>
 		</div>
-
-
-
-  </div>
-
-  <div class="col-xs-12 col-md-2">
-
-	<div class="dropdown">
-	  <button type="button" class="btn btn-default btn-lg dropdown-toggle"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" >
-	    <span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span> Download <span class="caret"></span>
-	  </button>
-	  <ul class="dropdown-menu">
-	    <li><a href="<%=tenant + '/service/v1/datasets/'+datasetMeta.id+'.csv?pagesize=1000'%>"><%=_label.downloadComeCSV%></a></li>
-			<li><a target="_blank" href="<%=tenant + '/service/v1/datasets/'+datasetMeta.id+'?pagesize=1000'%>"><%=_label.downloadComeJSON%></a></li>
-			<li><a href="<%=tenant + '/service/v1/datasets/'+datasetMeta.id+'.rdf?pagesize=1000'%>"><%=_label.downloadComeRDF%></a></li>
-	    <!--<li><a target="_blank" href="#">Download come XML</a></li>-->
-	  </ul>
 	</div>
+	<!-- end download -->
 
-  </div>
-
- <div class="col-xs-12 col-md-3">
+	<!-- upload resource -->
+	<%if (_user.isAdministrator==true || (_user.isAuthenticated==true && (_user.username==datasetMeta._modifiedby || _user.username==datasetMeta._createdby))){%>
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-2 text-center">
+	<% } else {%>
+		<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 text-center">
+	<% } %>
       <a href="#uploaddata/<%=datasetMeta._slug%>">
-	<button type="button" class="btn btn-success btn-lg">
-		<span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span> <%=_label.aggiungiNuovaRisorsa%>
-	</button>
+				<button type="button" class="btn btn-success btn-lg">
+					<span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span> <%=_label.aggiungiNuovaRisorsa%>
+				</button>
       </a>
-  </div>
-  <div class="col-xs-12 col-md-2">
-<!--
-<%=_user.username%>
-<%=datasetMeta._modifiedby%>
-<%=_user.username==datasetMeta._modifiedby%>
-<%=(_user.isAdministrator || (_user.isAuthenticated && _user.username==datasetMeta._modifiedby))%>
-
-<%if (false==false){%>
-ciaociao
-<%}%>
-<%if (_user.isAdministrator==true || (_user.isAuthenticated==true && _user.username==datasetMeta._modifiedby)){%>
-ciao2
-<%}%>-->
-     <%if (_user.isAdministrator==true || (_user.isAuthenticated==true && (_user.username==datasetMeta._modifiedby || _user.username==datasetMeta._createdby))){%>
-	<div class="btn-group">
-	  <button type="button" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	    <%=_label.azioni%> <span class="caret"></span>
-	  </button>
-	  <ul class="dropdown-menu">
-	    <li><a href="#upsert/<%=datasetMeta._slug%>" id="btn-edit"><i class="fa fa-pencil-square-o" style="margin-right: 0.5em; color: #9E9E9E;" aria-hidden="true"></i><%=_label.modifica%></a></li>
-	    <li><a href="/" id="btn-delete-all-data"> <i class="fa fa-trash-o" style="margin-right: 0.5em; color: #9E9E9E;"  aria-hidden="true"></i><%=_label.eliminaTuttiIdatiDelDataset%></a></li>
-	    <li><a href="/" id="btn-delete-dataset"><i class="fa fa-times" style="margin-right: 0.5em; color: red;" aria-hidden="true"></i><%=_label.cancellaIlDataset%></a></li>
-	   </ul>
 	</div>
+	<!-- end upload resource -->
 	
-    <%}%>
+	<!-- actions -->
+	<%if (_user.isAdministrator==true || (_user.isAuthenticated==true && (_user.username==datasetMeta._modifiedby || _user.username==datasetMeta._createdby))){%>
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-2 text-center">
+	<% } else {%>
+		<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 text-center">
+	<% } %>
+		<!--
+		<%=_user.username%>
+		<%=datasetMeta._modifiedby%>
+		<%=_user.username==datasetMeta._modifiedby%>
+		<%=(_user.isAdministrator || (_user.isAuthenticated && _user.username==datasetMeta._modifiedby))%>
 
-
+		<%if (false==false){%>
+		ciaociao
+		<%}%>
+		<%if (_user.isAdministrator==true || (_user.isAuthenticated==true && _user.username==datasetMeta._modifiedby)){%>
+		ciao2
+		<%}%>-->
+		<%if (_user.isAdministrator==true || (_user.isAuthenticated==true && (_user.username==datasetMeta._modifiedby || _user.username==datasetMeta._createdby))){%>
+			<div class="btn-group">
+				<button type="button" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<%=_label.azioni%> <span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu">
+					<li><a href="#upsert/<%=datasetMeta._slug%>" id="btn-edit"><i class="fa fa-pencil-square-o" style="margin-right: 0.5em; color: #9E9E9E;" aria-hidden="true"></i><%=_label.modifica%></a></li>
+					<li><a href="/" id="btn-delete-all-data"> <i class="fa fa-trash-o" style="margin-right: 0.5em; color: #9E9E9E;"  aria-hidden="true"></i><%=_label.eliminaTuttiIdatiDelDataset%></a></li>
+					<li><a href="/" id="btn-delete-dataset"><i class="fa fa-times" style="margin-right: 0.5em; color: red;" aria-hidden="true"></i><%=_label.cancellaIlDataset%></a></li>
+				</ul>
+			</div>
+		<%}%>
 	 </div>
+	 <!-- end actions -->
 	 
-	 	<!-- share box -->
-	<div class="btn-group col-xs-12 col-md-2">
+	<!-- share box -->
+	<%if (_user.isAdministrator==true || (_user.isAuthenticated==true && (_user.username==datasetMeta._modifiedby || _user.username==datasetMeta._createdby))){%>
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-2 text-center">
+		<% } else {%>
+			<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 text-center">
+	<% } %>
 	  <button type="button" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	    <%=_label.dataset_detail_template_share_label%> <span class="caret"></span>
 	  </button>
@@ -197,7 +222,11 @@ ciao2
 			<li><a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A//<%= tenantName %>.api.v2.openrecordz.com/datasets%23ds/<%= datasetMeta._slug %>&title=&summary=&source=" target="new_blank" ><i class="fa fa-linkedin" style="margin-right: 0.5em; color: #9E9E9E;" aria-hidden="true"></i><%=_label.dataset_detail_template_linkedin_share_label%></a></li>
 	   </ul>
 	</div>
-
+	<!-- end share box -->
+		<!-- dummy space -->
+	<%if (_user.isAdministrator==true || (_user.isAuthenticated==true && (_user.username==datasetMeta._modifiedby || _user.username==datasetMeta._createdby))){%>
+		<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+	<% } %>
 </div>
 
 
