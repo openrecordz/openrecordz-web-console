@@ -10,6 +10,7 @@
 					// https://stackoverflow.com/questions/680929/how-to-extract-extension-from-filename-string-in-javascript
 					var re = /(?:\.([^.]+))?$/; 
 					var ext = re.exec(data[i].file)[1]; 
+					ext = ext.toUpperCase();
 					%>
 
 				<div class="row list-group-item">
@@ -25,11 +26,11 @@
 								
 
 								<% if( ext === "csv") { %>
-									<img class="media-object" src="/assets/images/csv_small.png" alt="CSV Format">
-								<% } else {
-									 ext = ext.toUpperCase();
-									%>
-									<img class="media-object" src="/assets/images/generic_file.png" alt="<%= ext %> Format">
+									<img class="media-object" src="/assets/images/ic_file_type_csv.svg" alt="<%= ext %> Format">
+								<% } else if( ext === "pdf") { %>
+									<img class="media-object" src="/assets/images/ic_file_type_pdf.svg" alt="<%= ext %> Format">
+								<% } else {%>
+									<img class="media-object" src="/assets/images/ic_file_type_generic.svg" alt="<%= ext %> Format">
 								<% } %>
 							</div>
 
