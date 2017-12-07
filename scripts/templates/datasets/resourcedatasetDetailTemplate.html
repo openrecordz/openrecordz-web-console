@@ -46,7 +46,7 @@
 						</a>
 					</div>
 
-					<%if (_user.isAdministrator==true || (_user.isAuthenticated==true && (_user.username==row._modifiedby || _user.username==row._createdby))){%>
+					<%if (_user.isAdministrator==true || (_user.isAuthenticated==true && (_user.username==data[i]._modifiedby || _user.username==data[i]._createdby))){%>
 						<div class="delete-record-btn col-lg-1 col-md-1 col-sm-1 col-xs-1">
 							<button id="<%= data[i].id %>" style="width:58px; height:58px;" class="delete-me btn btn-danger col-xs-1 col-sm-1 col-md-1 col-lg-1">
 								<span class="glyphicon glyphicon-trash fa-2x"></span>
