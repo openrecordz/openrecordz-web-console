@@ -41,6 +41,7 @@ define([
 		
 		events : {
 //			"click #btnDataSearch" : "search",
+			'click .delete-me': 'deleteRecord',
 			
 		},
 		
@@ -95,6 +96,44 @@ define([
 		//identificato dal selettore.
 		assign: function (view, selector) {
 		    view.setElement(this.$(selector)).render();
+		},
+
+		deleteRecord: function(e) {
+			e.preventDefault();
+			e.stopPropagation();
+			console.log('ResourceDatasetDetailView.deleteRecord');
+			var view = this;
+			
+
+			if (confirm(_label.row_form_delete_record_alert_text)) {
+			    // delete the record
+
+				var callback = function() {
+					// var targetRoute = "#ds/" + view.datasetMeta._slug;
+					// Backbone.history.navigate( targetRoute, {trigger: true, replace: true});
+					  
+					// update view
+					Backbone.history.loadUrl(Backbone.history.getFragment());
+
+				  	return true;
+				};
+
+				// retrive the record id
+				var recordId = e.currentTarget.id;
+				console.log('ResourceDatasetDetailView.deleteRecord: recordId = ' + recordId);
+
+				// retrieve the data manager
+				var data = new Data();
+				// perfom the deletion
+				data.deleteById(view.datasetMeta._slug, recordId, callback);
+
+				return this; 
+
+			} else {
+			    // Do nothing!
+			}
+
+			return this;
 		},
 		
 

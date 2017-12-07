@@ -1,26 +1,72 @@
-  <div>
+<div>
 
 	<% if (data.length>0) {	%>
 
 
 		<div class="list-group">
-			<%for(var i=0; i<data.length; i++){ %>
+			<%for(var i=0; i<data.length; i++){  %>
+				<div class="row list-group-item">
+					<div class="col-xs-11 col-sm-11 col-md-11 col-lg-11" style="padding:0px;">
+						<a href="<%=tenant + '/service/v1/files/download?path='+data[i].file%>" class="list-group-item" style="border:none">
+							<div class="pull-left" style="padding-right:10px;">
+								<img class="media-object" src="/assets/images/csv_small.png" alt="CSV Format">
+							</div>
 
-				  <a href="<%=tenant + '/service/v1/files/download?path='+data[i].file%>" class="list-group-item">
-				    <div class="pull-left" style="padding-right:10px;">
-						      <img class="media-object" src="/assets/images/csv_small.png" alt="CSV Format">
-				    </div>
+							<h4 class="list-group-item-heading">
+								<%=data[i]["_name"]%>
+								<span class="glyphicon glyphicon-download-alt pull-right" aria-hidden="true"  style="padding-top: 10px;"></span>
+							</h4>
 
-				    <h4 class="list-group-item-heading">
-					<%=data[i]["_name"]%>
-					<span class="glyphicon glyphicon-download-alt pull-right" aria-hidden="true"  style="padding-top: 10px;"></span>
-				    </h4>
-				    <%if (data[i]["_description"]!=null){%>
-				   	 <p class="list-group-item-text"><em><%=data[i]["_description"]%></em></p>
-				    <%}else {%>	
-					<br>
-				    <%}%>
-				  </a>
+							<%if (data[i]["_description"]!=null){%>
+								<p class="list-group-item-text"><em><%=data[i]["_description"]%></em></p>
+							<%}else {%>	
+								<br>
+							<%}%>
+						</a>
+					</div>
+
+					<div class="delete-record-btn col-lg-1 col-md-1 col-sm-1 col-xs-1">
+						<button id="<%= data[i].id %>" style="width:58px; height:58px;" class="delete-me btn btn-danger col-xs-1 col-sm-1 col-md-1 col-lg-1">
+							<span class="glyphicon glyphicon-trash fa-2x"></span>
+						</button>
+					</div>
+				</div>
+		
+
+				<!-- <div class="list-group-item">
+					<div class="row">
+						<div class="col-xs-6 col-sm-8 col-md-10 col-lg-10">
+							<div class="pull-left" style="padding-right:10px;">
+								<img class="media-object" src="/assets/images/csv_small.png" alt="CSV Format">
+							</div>
+				
+							<h4 class="list-group-item-heading">
+								<%=data[i]["_name"]%>
+								
+							</h4>
+							<%if (data[i]["_description"]!=null){%>
+								<p class="list-group-item-text">
+									<em>
+										<%=data[i]["_description"]%>
+									</em>
+								</p>
+								<%}else {%>
+									<br>
+									<%}%>
+						</div>
+				
+						<div class="row col-xs-6 col-sm-4 col-md-2 col-lg-2">
+							<a href="<%=tenant + '/service/v1/files/download?path='+data[i].file%>" style="width:40px; height:40px; margin-right:10px;" class="btn btn-primary col-xs-6 col-sm-6 col-md-6 col-lg-6">
+								<span class="glyphicon glyphicon-download-alt"></span>
+							</a>
+						
+							<button style="width:40px; height:40px;" class="btn btn-danger col-xs-6 col-sm-6 col-md-6 col-lg-6" data-title="Delete" data-toggle="modal"
+								data-target="#delete">
+								<span class="glyphicon glyphicon-trash"></span>
+							</button>
+						</div>
+					</div>
+				</div> -->
 
 
 			<%}%>
@@ -32,5 +78,5 @@
 		<h3><%=_label.nessunDatoBinarioCaricato%></h3>
 	<!--<em><%=_label.faiClickSullaVoceDiMenuTabellaPerVisualizzareEventualiDatiTabellari%></em>-->
 	<% } %>
-  </div>
-
+ 
+</div>
