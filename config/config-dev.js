@@ -11,7 +11,7 @@ var settings = [
 								 
 						{
 							code: 'tenants.settings.<TENANT>.tenant_image',
-							label: 'Immagine del tenant',
+							label: 'Immagine del tenant. L\'immagine deve avere dimensione massima 190 x 50 px',
 							placeholder: '',
 							typecontrol: 'image'
 						},
@@ -22,8 +22,8 @@ var settings = [
             	   properties: [
             	                {
             	                	code: 'tenants.settings.<TENANT>.send.email.from',  
-            	                	label: 'Indirizzo email mittente. Se non specificato: noreply@smart21.it', 
-            	                	placeholder: 'noreply@smart21.it', 
+            	                	label: 'Indirizzo email mittente. Se non specificato: noreply@openrecordz.it', 
+            	                	placeholder: 'noreply@openrecordz.it', 
             	                	typecontrol: 'text'
             	                },
             	                {
@@ -77,23 +77,23 @@ var settings = [
             	                },
             	                ]
                },
-               {
-            	   label: 'Email - segnalazione',
-            	   properties: [
-            	                {
-            	                	code: 'tenants.settings.<TENANT>.report.send.email.to', 
-            	                	label: 'Indirizzo email destinatario delle segnalazioni. Se non impostato verrà usato to delle impostazioni generali', 
-            	                	placeholder: '', 
-            	                	typecontrol: 'text'
-            	                },
-            	                {
-            	                	code: 'tenants.settings.<TENANT>.report.send.email.subject', 
-            	                	label: 'Oggetto della mail. Se non specificato: Nuova Segnalazione', 
-            	                	placeholder: 'Nuova Segnalazione', 
-            	                	typecontrol: 'text'
-            	                },
-            	                ]
-               },
+            //    {
+            // 	   label: 'Email - segnalazione',
+            // 	   properties: [
+            // 	                {
+            // 	                	code: 'tenants.settings.<TENANT>.report.send.email.to', 
+            // 	                	label: 'Indirizzo email destinatario delle segnalazioni. Se non impostato verrà usato to delle impostazioni generali', 
+            // 	                	placeholder: '', 
+            // 	                	typecontrol: 'text'
+            // 	                },
+            // 	                {
+            // 	                	code: 'tenants.settings.<TENANT>.report.send.email.subject', 
+            // 	                	label: 'Oggetto della mail. Se non specificato: Nuova Segnalazione', 
+            // 	                	placeholder: 'Nuova Segnalazione', 
+            // 	                	typecontrol: 'text'
+            // 	                },
+            // 	                ]
+            //    },
                {
             	   label: 'Email - modelli personalizzati',
             	   properties: [
@@ -111,13 +111,13 @@ var settings = [
             	                	typecontrol: 'textarea',
             	                	tooltip: 'Ciao ${model.person.fullName}!!!\\r\\n<br>hai appena aggiunto un nuovo oggetto su ${info.tenantDisplayName}.\\r\\n\\r\\n<br>Clicca sul link per vedere il dettaglio ${info.tenantUrl}/contents/${model.product.id}\\r\\n\\r\\n<br>Buona continuazione\\r\\n\\r\\n<br>Il team di ${info.tenantDisplayName}'
             	                },
-            	                {
-            	                	code: 'tenants.settings.<TENANT>.abuse.send.email.template', 
-            	                	label: 'Modello per l\'invio delle email di segnalazione', 
-            	                	placeholder: '', 
-            	                	typecontrol: 'textarea',
-            	                	tooltip: 'Nuovo report registrato per la app ${info.tenantDisplayName}\\r\\n<br>tipo: ${model.objectType}\\r\\n<br>#if( $model.product )\\r\\n<br>Relativamente al prodotto seguente:\\r\\n<br>${info.tenantUrl}/products/${model.product.id}\\r\\n<br>#end\\r\\n<br>#if( $model.reporterUsername )\\r\\n<br>Dall\'utente: ${model.reporterUsername}\\r\\n<br>#end\\r\\n<br>testo:\\r\\n<br>${model.text}\\r\\n'
-            	                },
+            	                // {
+            	                // 	code: 'tenants.settings.<TENANT>.abuse.send.email.template', 
+            	                // 	label: 'Modello per l\'invio delle email di segnalazione', 
+            	                // 	placeholder: '', 
+            	                // 	typecontrol: 'textarea',
+            	                // 	tooltip: 'Nuovo report registrato per la app ${info.tenantDisplayName}\\r\\n<br>tipo: ${model.objectType}\\r\\n<br>#if( $model.product )\\r\\n<br>Relativamente al prodotto seguente:\\r\\n<br>${info.tenantUrl}/products/${model.product.id}\\r\\n<br>#end\\r\\n<br>#if( $model.reporterUsername )\\r\\n<br>Dall\'utente: ${model.reporterUsername}\\r\\n<br>#end\\r\\n<br>testo:\\r\\n<br>${model.text}\\r\\n'
+            	                // },
             	                ]
                },
                ];
