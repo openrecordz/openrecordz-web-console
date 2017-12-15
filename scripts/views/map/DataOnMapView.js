@@ -131,10 +131,13 @@ define([
 			console.log("this.locations",this.locations);
 
 			for (i = 0; i < this.locations.length; i++) {  
-				var marker = new google.maps.Marker({
-					position: new google.maps.LatLng(this.locations[i][1], this.locations[i][2]),
-					map: this.map
-				});
+				// check the lat/lon validity
+				if (this.locations[i][1] != undefined &&  this.locations[i][2] !=  undefined) {
+					var marker = new google.maps.Marker({
+						position: new google.maps.LatLng(this.locations[i][1], this.locations[i][2]),
+						map: this.map
+					});
+				}
 				console.log("marker",marker);
 				this.markers.push(marker);
 
