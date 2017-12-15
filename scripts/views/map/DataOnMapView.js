@@ -132,34 +132,36 @@ define([
 
 			for (i = 0; i < this.locations.length; i++) {  
 
-				console.log(i + ") location == "  + locations[i]);
-				console.log(this.locations[i]);
+				if (locations[i] !== undefined) {
+					console.log(i + ") location == "  + locations[i]);
+					console.log(this.locations[i]);
 
-				if (locations[i] !== undefined && locations[i][1] !== undefined && locations[i][2]!== undefined) {
-					// replace each occurrence of "," with "." for lat and lon
-					locations[i][1] = locations[i][1].replace(",", "."); // lat 
-					locations[i][2] = locations[i][2].replace(",", "."); // lon
+					if (locations[i][1] !== undefined && locations[i][2]!== undefined) {
+						// replace each occurrence of "," with "." for lat and lon
+						locations[i][1] = locations[i][1].replace(",", "."); // lat 
+						locations[i][2] = locations[i][2].replace(",", "."); // lon
 
-					// create the marker
-					var marker = new google.maps.Marker({
-						position: new google.maps.LatLng(this.locations[i][1], this.locations[i][2]),
-						map: this.map
-					});
-					console.log("marker",marker);
+						// create the marker
+						var marker = new google.maps.Marker({
+							position: new google.maps.LatLng(this.locations[i][1], this.locations[i][2]),
+							map: this.map
+						});
+						console.log("marker",marker);
 
-					// add the created marker to the map
-					this.markers.push(marker);
+						// add the created marker to the map
+						this.markers.push(marker);
 
-					//extend the bounds to include each marker's position
-					bounds.extend(marker.position);
+						//extend the bounds to include each marker's position
+						bounds.extend(marker.position);
 
-					google.maps.event.addListener(marker, 'click', (function(marker, i) {
-						return function() {
-							var infowindowContent='<a href="#ds/'+view.datasetMeta._slug+'/id/'+this.locations[i][0]+'"><h3>'+this.locations[i][3]+'</h3></a>';
-							infowindow.setContent(infowindowContent);
-							infowindow.open(this.map, marker);
-						}
-					})(marker, i));
+						google.maps.event.addListener(marker, 'click', (function(marker, i) {
+							return function() {
+								var infowindowContent='<a href="#ds/'+view.datasetMeta._slug+'/id/'+this.locations[i][0]+'"><h3>'+this.locations[i][3]+'</h3></a>';
+								infowindow.setContent(infowindowContent);
+								infowindow.open(this.map, marker);
+							}
+						})(marker, i));
+					}
 				}
 			}
 
