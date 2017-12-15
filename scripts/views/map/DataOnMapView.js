@@ -113,16 +113,20 @@ define([
 			console.log('DataOnMapView.initGoogleMap');
 			
 			var view = this;
-			
-			var posLatLng = new google.maps.LatLng(this.position.lat, this.position.lon);
-//			console.log(posLatLng);
-			var mapOptions = {
-				center: posLatLng,
-				zoom: this.zoom
-			};
-			this.map = new google.maps.Map(this.$('#map-container').get(0), mapOptions);
 
-			console.log("this.map",this.map);
+			var latitude = this.position.lat;
+			var longitude = this.position.lon;
+			if (view.isValidLat(latitude) && view.isValidLng(longitude)) {
+				var posLatLng = new google.maps.LatLng(latitude, longitude);
+	//			console.log(posLatLng);
+				var mapOptions = {
+					center: posLatLng,
+					zoom: this.zoom
+				};
+				this.map = new google.maps.Map(this.$('#map-container').get(0), mapOptions);
+
+				console.log("this.map",this.map);
+			}
 
 			//create empty LatLngBounds object
 			var bounds = new google.maps.LatLngBounds();
@@ -131,36 +135,51 @@ define([
 			console.log("this.locations",this.locations);
 
 			for (i = 0; i < this.locations.length; i++) {  
-				// check the lat/lon validity
-				if (this.locations[i][1] != undefined &&  this.locations[i][2] !=  undefined) {
+
+				var latitude = this.locations[i][1];
+				var longitude = this.locations[i][2];
+				if (view.isValidLat(latitude) && view.isValidLng(longitude)) {
 					var marker = new google.maps.Marker({
-						position: new google.maps.LatLng(this.locations[i][1], this.locations[i][2]),
+						position: new google.maps.LatLng(latitude, longitude),
 						map: this.map
 					});
+					console.log("marker",marker);
+					this.markers.push(marker);
+
+
+					//extend the bounds to include each marker's position
+					bounds.extend(marker.position);
+
+					google.maps.event.addListener(marker, 'click', (function(marker, i) {
+						return function() {
+							var infowindowContent='<a href="#ds/'+view.datasetMeta._slug+'/id/'+this.locations[i][0]+'"><h3>'+this.locations[i][3]+'</h3></a>';
+							infowindow.setContent(infowindowContent);
+							infowindow.open(this.map, marker);
+						}
+					})(marker, i));
 				}
-				console.log("marker",marker);
-				this.markers.push(marker);
 
+				//now fit the map to the newly inclusive bounds
+				this.map.fitBounds(bounds);
 
-				//extend the bounds to include each marker's position
-				bounds.extend(marker.position);
-
-				google.maps.event.addListener(marker, 'click', (function(marker, i) {
-					return function() {
-						var infowindowContent='<a href="#ds/'+view.datasetMeta._slug+'/id/'+this.locations[i][0]+'"><h3>'+this.locations[i][3]+'</h3></a>';
-						infowindow.setContent(infowindowContent);
-						infowindow.open(this.map, marker);
-					}
-				})(marker, i));
 			}
-
-			//now fit the map to the newly inclusive bounds
-			this.map.fitBounds(bounds);
 
 
 			//this.resize();
 
 			return this;
+		},
+
+		private isValidLat : function (val) {
+			return (isNumeric(val) && (val >= -90.0) && (val <= 90.0));
+		},
+
+		private isValidLng : function (val) {
+			return (isNumeric(val) && (val >= -180.0) && (val <= 180.0));
+		},
+
+ 		private isNumeric : function (n) {
+			return !isNaN(parseFloat(n)) && isFinite(n);
 		},
 		
 		
