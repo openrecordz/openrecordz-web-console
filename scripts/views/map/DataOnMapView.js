@@ -170,7 +170,7 @@ define([
 		},
 		
 		 areCoordsValid: function (lat, lon) {
-			return (inrange(-90, number_lat, 90) && inrange(-180, number_lng, 180)) ? true : false;
+			return (this.inrange(-90, number_lat, 90) && this.inrange(-180, number_lng, 180)) ? true : false;
 		},
 
 		 inrange: function (min, number, max) {
