@@ -134,7 +134,7 @@ define([
 				console.log("AAAAAAAAAAAAAAAAAA");
 				console.log(this.locations[i]);
 
-				if (areCoordsValid(this.locations[i][1], this.locations[i][2])) {
+				if (this.areCoordsValid(this.locations[i][1], this.locations[i][2])) {
 					var marker = new google.maps.Marker({
 						position: new google.maps.LatLng(this.locations[i][1], this.locations[i][2]),
 						map: this.map
@@ -169,11 +169,11 @@ define([
 			return this;
 		},
 		
-		private areCoordsValid: function (lat, lon) {
+		 areCoordsValid: function (lat, lon) {
 			return (inrange(-90, number_lat, 90) && inrange(-180, number_lng, 180)) ? true : false;
 		},
 
-		private inrange: function (min, number, max) {
+		 inrange: function (min, number, max) {
 			return (!isNaN(number) && (number >= min) && (number <= max)) ? true : false;
 		},
 		
