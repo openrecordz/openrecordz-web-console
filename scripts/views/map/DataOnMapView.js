@@ -134,7 +134,7 @@ define([
 				console.log("AAAAAAAAAAAAAAAAAA");
 				console.log(this.locations[i]);
 
-				if (view.areCoordsValid(this.locations[i][1], this.locations[i][2])) {
+				if (areCoordsValid(this.locations[i][1], this.locations[i][2])) {
 					var marker = new google.maps.Marker({
 						position: new google.maps.LatLng(this.locations[i][1], this.locations[i][2]),
 						map: this.map
