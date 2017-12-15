@@ -141,20 +141,23 @@ define([
 					});
 					console.log("marker", marker);
 					this.markers.push(marker);
-
-					//extend the bounds to include each marker's position
-					bounds.extend(marker.position);
-
-					google.maps.event.addListener(marker, 'click', (function (marker, i) {
-						return function () {
-							var infowindowContent = '<a href="#ds/' + view.datasetMeta._slug + '/id/' + this.locations[i][0] + '"><h3>' + this.locations[i][3] + '</h3></a>';
-							infowindow.setContent(infowindowContent);
-							infowindow.open(this.map, marker);
-						}
-					})(marker, i));
 				} else {
 					console.log(this.locations[i][1] + " - " +  this.locations[i][2] + " are not valid");
 				}
+
+				console.log("marker");
+				console.log(marker);
+
+				//extend the bounds to include each marker's position
+				bounds.extend(marker.position);
+
+				google.maps.event.addListener(marker, 'click', (function(marker, i) {
+					return function() {
+						var infowindowContent='<a href="#ds/'+view.datasetMeta._slug+'/id/'+this.locations[i][0]+'"><h3>'+this.locations[i][3]+'</h3></a>';
+						infowindow.setContent(infowindowContent);
+						infowindow.open(this.map, marker);
+					}
+				})(marker, i));
 			}
 
 			//now fit the map to the newly inclusive bounds
