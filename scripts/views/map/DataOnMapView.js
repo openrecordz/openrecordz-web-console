@@ -133,24 +133,28 @@ define([
 			for (i = 0; i < this.locations.length; i++) {  
 				console.log("AAAAAAAAAAAAAAAAAA");
 				console.log(this.locations[i]);
-				var marker = new google.maps.Marker({
-					position: new google.maps.LatLng(this.locations[i][1], this.locations[i][2]),
-					map: this.map
-				});
-				console.log("marker",marker);
-				this.markers.push(marker);
 
+				if (view.areCoordsValid(this.locations[i][1], this.locations[i][2])) {
+					var marker = new google.maps.Marker({
+						position: new google.maps.LatLng(this.locations[i][1], this.locations[i][2]),
+						map: this.map
+					});
+					console.log("marker", marker);
+					this.markers.push(marker);
 
-				//extend the bounds to include each marker's position
-				bounds.extend(marker.position);
+					//extend the bounds to include each marker's position
+					bounds.extend(marker.position);
 
-				google.maps.event.addListener(marker, 'click', (function(marker, i) {
-					return function() {
-						var infowindowContent='<a href="#ds/'+view.datasetMeta._slug+'/id/'+this.locations[i][0]+'"><h3>'+this.locations[i][3]+'</h3></a>';
-						infowindow.setContent(infowindowContent);
-						infowindow.open(this.map, marker);
-					}
-				})(marker, i));
+					google.maps.event.addListener(marker, 'click', (function (marker, i) {
+						return function () {
+							var infowindowContent = '<a href="#ds/' + view.datasetMeta._slug + '/id/' + this.locations[i][0] + '"><h3>' + this.locations[i][3] + '</h3></a>';
+							infowindow.setContent(infowindowContent);
+							infowindow.open(this.map, marker);
+						}
+					})(marker, i));
+				} else {
+					console.log(this.locations[i][1] + " - " +  this.locations[i][2] + " are not valid");
+				}
 			}
 
 			//now fit the map to the newly inclusive bounds
@@ -162,11 +166,13 @@ define([
 			return this;
 		},
 		
-		
-		
-		
-		
-		
+		private areCoordsValid: function (lat, lon) {
+			return (inrange(-90, number_lat, 90) && inrange(-180, number_lng, 180)) ? true : false;
+		},
+
+		private inrange: function (min, number, max) {
+			return (!isNaN(number) && (number >= min) && (number <= max)) ? true : false;
+		},
 		
 	});
 
