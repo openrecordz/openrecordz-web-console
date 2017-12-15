@@ -133,13 +133,13 @@ define([
 			for (i = 0; i < this.locations.length; i++) {  
 
 				if (this.locations[i] !== undefined) {
-					console.log(i + ") location == " + this.locations[i]);
-					console.log(this.locations[i]);
+					// console.log(i + ") location == " + this.locations[i]);
+					// console.log(this.locations[i]);
 
 					if (this.locations[i][1] !== undefined && this.locations[i][2]!== undefined) {
 						// replace each occurrence of "," with "." for lat and lon
-						locations[i][1] = this.locations[i][1].replace(",", "."); // lat 
-						locations[i][2] = this.locations[i][2].replace(",", "."); // lon
+						this.locations[i][1] = this.locations[i][1].replace(",", "."); // lat 
+						this.locations[i][2] = this.locations[i][2].replace(",", "."); // lon
 
 						// create the marker
 						var marker = new google.maps.Marker({
@@ -156,6 +156,9 @@ define([
 
 						google.maps.event.addListener(marker, 'click', (function(marker, i) {
 							return function() {
+								console.log(i + ") location == " + this.locations[i]);
+								console.log(this.locations[i]);
+								
 								var infowindowContent='<a href="#ds/'+view.datasetMeta._slug+'/id/'+this.locations[i][0]+'"><h3>'+this.locations[i][3]+'</h3></a>';
 								infowindow.setContent(infowindowContent);
 								infowindow.open(this.map, marker);
