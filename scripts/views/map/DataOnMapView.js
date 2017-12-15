@@ -133,22 +133,20 @@ define([
 			for (i = 0; i < this.locations.length; i++) {  
 				console.log(this.locations[i]);
 
-				if (this.areCoordsValid(this.locations[i][1], this.locations[i][2])) {
+				var mLat, mLon;
+				if (this.locations[i][1] !== undefined && this.locations[i][2] !== undefined) {
+					mLat = this.locations[i][1].replace(',', '.');
+					mLon = this.locations[i][1].replace(',', '.');
+				} 
+
+				if (this.areCoordsValid(mLat, mLon)) {
 					var marker = new google.maps.Marker({
-						position: new google.maps.LatLng(this.locations[i][1], this.locations[i][2]),
+						position: new google.maps.LatLng(mLat, mLon),
 						map: this.map
 					});
 					console.log("marker", marker);
 					this.markers.push(marker);
-				} else {
-					console.log(this.locations[i][1] + " - " +  this.locations[i][2] + " are not valid");
-
-					if (this.locations[i][1] !== undefined && this.locations[i][2] !== undefined) {
-						this.locations[i][1] = this.locations[i][1].replace(',', '.');
-						this.locations[i][2] = this.locations[i][1].replace(',', '.');
-					} 
-					
-				}
+				} 
 
 				//extend the bounds to include each marker's position
 				if(marker != undefined) {
