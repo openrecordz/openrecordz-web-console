@@ -131,32 +131,24 @@ define([
 			console.log("this.locations",this.locations);
 
 			for (i = 0; i < this.locations.length; i++) {  
-				console.log(this.locations[i]);
+				var marker = new google.maps.Marker({
+					position: new google.maps.LatLng(this.locations[i][1], this.locations[i][2]),
+					map: this.map
+				});
+				console.log("marker",marker);
+				this.markers.push(marker);
 
-				if (this.locations[i][1] !== undefined && this.locations[i][2] !== undefined) {
-					this.locations[i][1] = this.locations[i][1].replace(',', '.');
-					this.locations[i][2] = this.locations[i][2].replace(',', '.');
-				} 
 
-				if (this.areCoordsValid(this.locations[i][1], this.locations[i][2])) {
-					var marker = new google.maps.Marker({
-						position: new google.maps.LatLng(this.locations[i][1], this.locations[i][2]),
-						map: this.map
-					});
-					console.log("marker", marker);
-					this.markers.push(marker);
+				//extend the bounds to include each marker's position
+				bounds.extend(marker.position);
 
-					//extend the bounds to include each marker's position
-					bounds.extend(marker.position);
-
-					google.maps.event.addListener(marker, 'click', (function (marker, i) {
-						return function () {
-							var infowindowContent = '<a href="#ds/' + view.datasetMeta._slug + '/id/' + this.locations[i][0] + '"><h3>' + this.locations[i][3] + '</h3></a>';
-							infowindow.setContent(infowindowContent);
-							infowindow.open(this.map, marker);
-						}
-					})(marker, i));
-				} 	
+				google.maps.event.addListener(marker, 'click', (function(marker, i) {
+					return function() {
+						var infowindowContent='<a href="#ds/'+view.datasetMeta._slug+'/id/'+this.locations[i][0]+'"><h3>'+this.locations[i][3]+'</h3></a>';
+						infowindow.setContent(infowindowContent);
+						infowindow.open(this.map, marker);
+					}
+				})(marker, i));
 			}
 
 			//now fit the map to the newly inclusive bounds
@@ -168,13 +160,11 @@ define([
 			return this;
 		},
 		
-		 areCoordsValid: function (lat, lon) {
-			return (this.inrange(-90, lat, 90) && this.inrange(-180, lon, 180)) ? true : false;
-		},
-
-		 inrange: function (min, number, max) {
-			return (!isNaN(number) && (number >= min) && (number <= max)) ? true : false;
-		},
+		
+		
+		
+		
+		
 		
 	});
 
