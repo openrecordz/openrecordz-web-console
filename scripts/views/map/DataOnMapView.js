@@ -132,14 +132,14 @@ define([
 
 			for (i = 0; i < this.locations.length; i++) {  
 
-				if (locations[i] !== undefined) {
-					console.log(i + ") location == "  + locations[i]);
+				if (this.locations[i] !== undefined) {
+					console.log(i + ") location == " + this.locations[i]);
 					console.log(this.locations[i]);
 
-					if (locations[i][1] !== undefined && locations[i][2]!== undefined) {
+					if (this.locations[i][1] !== undefined && this.locations[i][2]!== undefined) {
 						// replace each occurrence of "," with "." for lat and lon
-						locations[i][1] = locations[i][1].replace(",", "."); // lat 
-						locations[i][2] = locations[i][2].replace(",", "."); // lon
+						locations[i][1] = this.locations[i][1].replace(",", "."); // lat 
+						locations[i][2] = this.locations[i][2].replace(",", "."); // lon
 
 						// create the marker
 						var marker = new google.maps.Marker({
