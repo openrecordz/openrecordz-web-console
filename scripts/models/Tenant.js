@@ -22,6 +22,8 @@ define([
 	        	    url: tenant + '/service/v1/tenants/me',
 				type : 'GET'
 			});
+			console.log('AAAAAAAA');
+			console.log(url);
 			tenants.done(function(response){
 				console.log('Tenant.getAll.done');
 //				callback('success', response);
