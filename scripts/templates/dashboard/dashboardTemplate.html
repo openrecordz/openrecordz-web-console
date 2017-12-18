@@ -51,10 +51,14 @@
 		<%
 
 		if (tenants!=null && tenants.length>0) {
-		_.each(tenants, function(singleTenant) { %> 
+		_.each(tenants, function(singleTenant) { 
 
+			console.log("AAAAA");
+			 console.log(singleTenant);
 
+			if(singleTenant !== "apps") 
 
+			 %>
 		      <div>
 			    <div class="col-md-4">
 				  <a href="http://<%= singleTenant %><%=domainConsole%>">
@@ -84,7 +88,7 @@
 
 			</div>
 
-		<% }); 
+		<% } // end if } // end for); 
 		}else {%>
 
 			<center>
