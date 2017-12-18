@@ -47,20 +47,21 @@
 
 	<div class="list-apps row">
 
+		<% 
+			if (tenants!=null && tenants.length>0) {
+				// Find and remove item from an array 
+				var i = tenants.indexOf("apps");
+				if(i != -1) { 
+					 tenants.splice(i, 1); 
+				}
+			}
+		%>
+
 
 		<%
 
 		if (tenants!=null && tenants.length>0) {
 		_.each(tenants, function(singleTenant) { %> 
-
-
-			<% 
-				// Find and remove item from an array 
-				var i = array.indexOf("apps");
-				if(i != -1) { 
-					array.splice(i, 1); 
-				}
-			%>
 
 				<div>
 					<div class="col-md-4">
