@@ -51,44 +51,48 @@
 		<%
 
 		if (tenants!=null && tenants.length>0) {
-		_.each(tenants, function(singleTenant) { 
+		_.each(tenants, function(singleTenant) { %> 
 
-			console.log("AAAAA");
-			 console.log(singleTenant);
 
-			if(singleTenant !== "apps") {
-
-			 %>
-		      <div>
-			    <div class="col-md-4">
-				  <a href="http://<%= singleTenant %><%=domainConsole%>">
-					    <div class="panel panel-default">
-						<div class="panel-heading">
-						    <h5 class="panel-title text-center mynodecoration" ><%= singleTenant %></h5>
-						</div>
-					    
-						<div class="panel-body text-center">
-
-						    <div class="text-center"> 
-							<h4> <small> http://<%= singleTenant %><%=domainConsole%></small></h4>
-						    </div>
-
-						    <div><img alt="" width="60" height="60" class="img-circle" src="http://apps.openrecordz.com/assets/images/console.png"></div>
-						    
-						</div>
-				
+			<% 
 			
-						<div class="panel-footer">
-						    <button class="btn btn-block btn-primary" >Entra</button>
-						</div>
-					    </div>
-		   		  </a>
+			console.log("AAAAAA");
+			 console.log(singleTenant);
+			
+			if(true) { %>
 
-			    </div>
+				<div>
+					<div class="col-md-4">
+					<a href="http://<%= singleTenant %><%=domainConsole%>">
+							<div class="panel panel-default">
+							<div class="panel-heading">
+								<h5 class="panel-title text-center mynodecoration" ><%= singleTenant %></h5>
+							</div>
+							
+							<div class="panel-body text-center">
 
-			</div>
+								<div class="text-center"> 
+								<h4> <small> http://<%= singleTenant %><%=domainConsole%></small></h4>
+								</div>
 
-		<% } // end if } // end for); 
+								<div><img alt="" width="60" height="60" class="img-circle" src="http://apps.openrecordz.com/assets/images/console.png"></div>
+								
+							</div>
+					
+				
+							<div class="panel-footer">
+								<button class="btn btn-block btn-primary" >Entra</button>
+							</div>
+							</div>
+					</a>
+
+					</div>
+
+				</div>
+
+			<% } %>
+
+		<% }); 
 		}else {%>
 
 			<center>
