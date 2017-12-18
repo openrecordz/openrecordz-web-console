@@ -55,8 +55,12 @@
 
 
 			<% 
-			
-			if(singleTenant && singleTenant !== "apps") { %>
+				// Find and remove item from an array 
+				var i = array.indexOf("apps");
+				if(i != -1) { 
+					array.splice(i, 1); 
+				}
+			%>
 
 				<div>
 					<div class="col-md-4">
@@ -86,8 +90,6 @@
 					</div>
 
 				</div>
-
-			<% } %>
 
 		<% }); 
 		}else {%>
