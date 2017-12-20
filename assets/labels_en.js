@@ -98,7 +98,7 @@ _label_en = {
 "downloadComeJSON":"Download as JSON",
 "aggiungiNuovaRisorsa":"Add New Resource",
 "azioni":"Actions",
-"modifica":"Edit portal",
+"modifica":"Edit dataset",
 "eliminaTuttiIdatiDelDataset":"Delete all data from dataset",
 "cancellaIlDataset":"Delete the dataset",
 "risorseBinarie":"Binary Resources",
