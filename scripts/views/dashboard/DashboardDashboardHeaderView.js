@@ -3,12 +3,14 @@ define([
 	'underscore',
 	'core/BaseView',
 	'Session',
+	'models/GlobalSearch',
 	'text!templates/dashboard/dashboarddashboardHeaderTemplate.html'
 ], function(
 		$, 
 		_,
 		BaseView,
 		Session, 
+		GlobalSearch,
 		dashboarddashboardHeaderTemplate){
 
 	var DashboardDashboardHeaderView = BaseView.extend({
@@ -25,12 +27,36 @@ define([
 //			'click #tabThree' : 'tabThree',
 //		},
 
+		events: {
+			'click #btnGlobalSearch': 'globalSearch'
+		},
+
 		
 		
 		initialize: function(){
 			console.log('DashboardDashboardHeaderView.initialize');
 			//Recupero degli eventuali parametri passati come parametro al costruttore della classe.
 			this.navBarActiveButton = this.options.navBarActiveButton;
+		},
+
+
+		globalSearch: function (e) {
+			e.preventDefault();
+			e.stopPropagation();
+
+			console.log('DashboardDashboardHeaderView.globalSearch');
+			var view = this;
+
+			var globalSearch = ($('#globalSearch').val() != null && $('#globalSearch').val() != '') ? $('#globalSearch').val() : null;
+
+			if (globalSearch != null) {
+				console.log("DashboardDashboardHeaderView.globalSearch == " + globalSearch);
+				Backbone.history.navigate('#globalSearch/' + globalSearch, { trigger: true });
+
+
+			} else {
+				console.log("DashboardDashboardHeaderView.globalSearch == null");
+			}
 		},
 		
 		
