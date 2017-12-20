@@ -26,7 +26,7 @@ _label_it= {
 
 "utenti":"Utenti",
 "documentazione":"Documentazione",
-"leTueApp":"I tuoi portali Open Data",
+"leTueApp":"I tuoi portali",
 "accedi":"Accedi",
 "registrati":"Registrati",
 

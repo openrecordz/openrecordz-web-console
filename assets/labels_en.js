@@ -8,7 +8,7 @@ _label_en = {
 
 "utenti":"Users",
 "documentazione":"Documentation",
-"leTueApp":"Your Open Data portal",
+"leTueApp":"Your portals",
 "accedi":"Log in",
 "registrati":"Sign up",
 
