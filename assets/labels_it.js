@@ -26,16 +26,16 @@ _label_it= {
 
 "utenti":"Utenti",
 "documentazione":"Documentazione",
-"leTueApp":"Le tue App",
+"leTueApp":"I tuoi portali Open Data",
 "accedi":"Accedi",
 "registrati":"Registrati",
 
-"accediEiniziaAcostruireLaTuaSmartCity":"Accedi e inizia a costruire la tua Smart City",
+"accediEiniziaAcostruireLaTuaSmartCity":"Accedi e inizia a costruire il tuo portale Open Data",
 "indirizzoEmailUsername":"Indirizzo email o Username",
 "haiDimenticatoLaPassword":"Hai dimenticato la password?",
 "nonHaiUnAccount":"Non hai un account?",
 
-"registratiGratisEiniziaAcostruireLaTuaSmartCity":"Registrati gratis e inizia a costruire la tua Smart City",
+"registratiGratisEiniziaAcostruireLaTuaSmartCity":"Registrati gratis e inizia a costruire il tuo portale Open Data",
 "nomeCompleto":"Nome Completo",
 "haiGiaUnAccount":"Hai già un account?",
 
@@ -46,7 +46,7 @@ _label_it= {
 "datasetDisponibile":"dataset disponibile",
 "datasetDisponibili":"dataset disponibili",
 "cliccaSullaRigaPerIlDettaglio":"Clicca sulla riga per il dettaglio",
-"nessunDatasetPresentePerLaApp":"Nessun dataset presente per la App",
+"nessunDatasetPresentePerLaApp":"Nessun dataset presente per il portale Open Data",
 "creaNuovoDatasetDalBottoneInAlto":"Crea un nuovo Dataset dal bottone in alto in questa pagina e inizia a caricare i dati open",
 
 "inserisciUnNuovoDataset":"Inserisci un nuovo Dataset",

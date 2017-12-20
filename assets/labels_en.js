@@ -8,16 +8,16 @@ _label_en = {
 
 "utenti":"Users",
 "documentazione":"Documentation",
-"leTueApp":"Your App",
+"leTueApp":"Your Open Data portal",
 "accedi":"Log in",
 "registrati":"Sign up",
 
-"accediEiniziaAcostruireLaTuaSmartCity":"Log in and start building your Smart City",
+"accediEiniziaAcostruireLaTuaSmartCity":"Log in and start building your Open Data portal",
 "indirizzoEmailUsername":"Email or Username",
 "haiDimenticatoLaPassword":"Forgot your password?",
 "nonHaiUnAccount":"Don't have an account?",
 
-"registratiGratisEiniziaAcostruireLaTuaSmartCity":"Sign up for free and start building your Smart City",
+"registratiGratisEiniziaAcostruireLaTuaSmartCity":"Sign up for free and start building your Open Data portal",
 "nomeCompleto":"Full Name",
 "haiGiaUnAccount":"Already have an account?",
 
@@ -28,7 +28,7 @@ _label_en = {
 "datasetDisponibile":"dataset available",
 "datasetDisponibili":"datasets available",
 "cliccaSullaRigaPerIlDettaglio":"Click on the row for the detail",
-"nessunDatasetPresentePerLaApp":"No dataset available for the App",
+"nessunDatasetPresentePerLaApp":"No dataset available for the Open Data portal",
 "creaNuovoDatasetDalBottoneInAlto":"Create a new dataset from the button on top in this page and begins to load the open data",
 
 "inserisciUnNuovoDataset":"Enter a new Dataset",
