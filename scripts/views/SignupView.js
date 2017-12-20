@@ -102,7 +102,7 @@ define([
 				var tenantName = $('#tenant').val();
 				if (tenantName=="") {
 					//tenantName is not valid. 
-					Utils.showError(that, 'tenant', 'Inserire il nome della App!');
+					Utils.showError(that, 'tenant', _label.new_tenant_modal_template_app_validation_title);
 					valid = false;
 				}
 			}

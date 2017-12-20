@@ -192,6 +192,7 @@ _label_it= {
 // new_tenant_modal_template
 "new_tenant_modal_template_modal_title": "Crea un nuovo portale Open Data",
 "new_tenant_modal_template_app_title": "Nome del portale Open Data (*)",
+"new_tenant_modal_template_app_validation_title": "Inserire un nome per il nuovo portale!!",
 "new_tenant_modal_template_app_title_description": "Inserisci il nome del portale o alcune parole chiave per descriverlo. Queste informazioni verranno utilizzate per creare l'indirizzo del tuo nuovo portale Open Data.",
 "new_tenant_modal_template_app_title_placeholder": "indica il nome del portale .I.E.: \"Comune di Roma\" o \"Trasporti attivi a Roma\"",
 "new_tenant_modal_template_app_web_address": "Indirizzo Web del portale",
