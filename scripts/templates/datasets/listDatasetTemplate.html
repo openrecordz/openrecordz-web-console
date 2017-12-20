@@ -147,10 +147,9 @@
 
 										<%=_label.global_search_record_createdon %>
 										<% 
-											var formattedTime = moment(currentItem._createdon);
-											formattedTime.locale('it');
+										 	var formattedTime = moment(content._createdon, "LLL", 'it');
 										%>
-										<%= formattedTime.format('LLL') %>
+										<%= formattedTime %>
 									</span>
 								</div>
 							</div>
