@@ -160,8 +160,9 @@ _label_en = {
 "dashboard_header_new_app_button" : "New Open Data portal",
 "dashboard_header_new_app_page_header" : "My portals",
 "dashboard_header_new_app_page_description": "Click on \"Manage the portal\" to administer yout Open Data portal",
-"dashboard_header_new_app_title": "You have not created any portal.\nClick on the  \"New Open Data portal\" button to create your first one",
-"dashboard_header_new_app_sub_title": "Create an Open Data portal for yourself or for your municipality, your city or your body. Create a dataset and upload your Open Data(Excel file, CSV or other)",
+"dashboard_header_new_app_title": "You have not created any portal. Click on the  \"New Open Data portal\" button to create your first one",
+"dashboard_header_new_app_sub_title": "Click on the  \"New Open Data portal\" button to create your first one",
+"dashboard_header_new_app_title_description": "Create an Open Data portal for yourself or for your municipality, your city or your body. Create a dataset and upload your Open Data(Excel file, CSV or other)",
 "dashboard_header_manage_portal": "Manage the portal",
 
 

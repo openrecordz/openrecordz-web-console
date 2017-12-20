@@ -180,8 +180,9 @@ _label_it= {
 "dashboard_header_new_app_button": "Nuovo portale Open Data",
 "dashboard_header_new_app_page_header": "I miei portali",
 "dashboard_header_new_app_page_description": "Clicca su \"Gestisci il portale\" per amministrare il tuo portale Open Data.",
-"dashboard_header_new_app_title": "Non hai creato alcun portale.\nClicca sul pulsante \"Nuovo portale Open Data\" per creare il tuo primo portale",
-"dashboard_header_new_app_sub_title": "Crea un portale Open Data per te oppure per il tuo Comune, la tua Città o il tuo Ente. Crea un dataset e carica i tuoi Open Data (File Excel, CSV o altro)",
+"dashboard_header_new_app_title": "Non hai creato alcun portale.",
+"dashboard_header_new_app_sub_title": "Clicca sul pulsante \"Nuovo portale Open Data\" per creare il tuo primo portale",
+"dashboard_header_new_app_title_description": "Crea un portale Open Data per te oppure per il tuo Comune, la tua Città o il tuo Ente. Crea un dataset e carica i tuoi Open Data (File Excel, CSV o altro)",
 "dashboard_header_manage_portal": "Gestisci il portale",
 
 
