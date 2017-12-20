@@ -25,6 +25,7 @@ _label_en = {
 "creaNuovoDataset":"new dataset",
 "cercaDataset":"Search datasets...",
 "cerca":"Search",
+"global_search": "Search within all portals",
 "datasetDisponibile":"dataset available",
 "datasetDisponibili":"datasets available",
 "cliccaSullaRigaPerIlDettaglio":"Click on the row for the detail",

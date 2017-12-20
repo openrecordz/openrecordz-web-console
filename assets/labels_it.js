@@ -43,6 +43,7 @@ _label_it= {
 "creaNuovoDataset":"Nuovo dataset",
 "cercaDataset":"Cerca i dataset...",
 "cerca":"Cerca",
+"global_search": "Cerca in tutti i portali",
 "datasetDisponibile":"dataset disponibile",
 "datasetDisponibili":"dataset disponibili",
 "cliccaSullaRigaPerIlDettaglio":"Clicca sulla riga per il dettaglio",
