@@ -80,7 +80,7 @@ define([
 
 			if($('#newTenantName').val()==''){
 				//alert('Inserire un nome per la nuova app!');
-				Utils.showError(that, 'newTenantName', 'Inserire un nome per la nuova app!!');
+				Utils.showError(that, 'newTenantName', _label.new_tenant_modal_template_app_validation_title);
 				valid = false;
 			}
 			return valid;
