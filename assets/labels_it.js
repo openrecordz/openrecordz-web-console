@@ -185,6 +185,14 @@ _label_it= {
 "dashboard_header_new_app_title_description": "Crea un portale Open Data per te oppure per il tuo Comune, la tua Città o il tuo Ente. Crea un dataset e carica i tuoi Open Data (File Excel, CSV o altro)",
 "dashboard_header_manage_portal": "Gestisci il portale",
 
+// new_tenant_modal_template
+"new_tenant_modal_template_modal_title": "Crea un nuovo portale Open Data",
+"new_tenant_modal_template_app_title": "portale Open Data (*)",
+"new_tenant_modal_template_app_title_description": "Inserisci il nome del portale o alcune parole chiave per descriverlo. Queste informazioni verranno utilizzate per creare l'indirizzo del tuo nuovo portale Open Data.",
+"new_tenant_modal_template_app_title_placeholder": "indica il nome del portale .I.E.: \"Comune di Roma\" o \"Trasporti attivi a Roma\"",
+"new_tenant_modal_template_app_web_address": "Indirizzo Web del portale",
+"new_tenant_modal_template_app_web_address_description": "rappresenta l\'indirizzo del tuo portale opendata su OpenRecordz. Scopri come associarlo ad un ",
+"new_tenant_modal_template_app_web_address_clickable_description": "nome di dominio personalizzato",
 
 
 }

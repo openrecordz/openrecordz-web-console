@@ -165,5 +165,12 @@ _label_en = {
 "dashboard_header_new_app_title_description": "Create an Open Data portal for yourself or for your municipality, your city or your body. Create a dataset and upload your Open Data(Excel file, CSV or other)",
 "dashboard_header_manage_portal": "Manage the portal",
 
-
+// new_tenant_modal_template
+"new_tenant_modal_template_modal_title" : "Create a new Open Data portal",
+"new_tenant_modal_template_app_title": "Open Data portal (*)",
+"new_tenant_modal_template_app_title_description": "Enter the name of the portal or some keywords to describe it. This information will be used to create the address of your new Open Data portal.",
+"new_tenant_modal_template_app_title_placeholder": "indicate the portal name .I.E.: \"Municipality of Rome\" or \"active transports in Rome\"",
+"new_tenant_modal_template_app_web_address": "Open Data porta Web address",
+"new_tenant_modal_template_app_web_address_description": "it represents the address of your open data portal on OpenRecordz. Find out how to associate it with a ",
+"new_tenant_modal_template_app_web_address_clickable_description": "custom domain name",
 }
