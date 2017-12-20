@@ -23,7 +23,7 @@ _label_en = {
 
 "elencoDatasetDisponibili":"List of available datasets",
 "creaNuovoDataset":"new dataset",
-"cercaDataset":"Search datasets...",
+"cercaDataset":"Search datasets within portal...",
 "cerca":"Search",
 "global_search": "Search within all portals",
 "datasetDisponibile":"dataset available",

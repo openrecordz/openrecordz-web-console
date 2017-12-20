@@ -41,7 +41,7 @@ _label_it= {
 
 "elencoDatasetDisponibili":"Elenco dei dataset disponibili",
 "creaNuovoDataset":"Nuovo dataset",
-"cercaDataset":"Cerca i dataset...",
+"cercaDataset":"Cerca i dataset nel portal...",
 "cerca":"Cerca",
 "global_search": "Cerca in tutti i portali",
 "datasetDisponibile":"dataset disponibile",
