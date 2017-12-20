@@ -127,7 +127,7 @@ _label_en = {
 // upsert dataset
 "upsert_dataset_tags_label" : "Tags",
 "upsert_dataset_tags_placeholder_label": "Add one or more tags for your dataset",
-"upsert_dataset_tags_help_block_label": "Every word must be separated from a space",
+"upsert_dataset_tags_help_block_label": "Every tag must be separated from a space",
 
 // dataset_detail_template
 "dataset_detail_template_tab_info_label": "Info",
