@@ -7,16 +7,21 @@ define([
 	'views/dashboard/DashboardDashboardHeaderView',
 	'views/dashboard/DashboardDashboardFooterView',
 	'views/dashboard/DashboardView',
+	'views/datasets/GlobalSearchView',
 	'Session',
-	'models/Tenant'
+	'models/Tenant',
+	'models/GlobalSearch'
 ], function($, 
 //		_, Backbone, 
 //		Spinner, 
 		Smart21Router,
 		DashboardDashboardHeaderView, DashboardDashboardFooterView,
 		DashboardView, 
+		GlobalSearchView,
 		Session,
-		Tenant){
+		Tenant,
+		GlobalSearch
+	){
 
 	var RouterDashboard = Smart21Router.extend({
 
@@ -30,7 +35,9 @@ define([
 		routes: {
 //			'none': 'none',	
 			
+			'globalSearch/:text': 'globalSearch',
 			'*default': 'home',	//La default route DEVE essere l'ultima!!!
+			
 		},
 		
 		
@@ -87,7 +94,40 @@ define([
 			//Creazione del contenuto.
 			var dashboardView = new DashboardView({tenants:tenantsRes});
 			this.changeView(dashboardView, '#dashboard_content');
+		},
+
+		globalSearch: function (text) {
+			console.log('RouterDashboard.globalSearch');
+			console.log("text", text);
+
+			var view = this;
+			var callback = function (data) {
+				console.log('data :' + data);
+				view.globalSearchDataTaken(data, text);
+			};
+
+			var globalSearch = new GlobalSearch();
+			//console.log('dsSlug :' + dsSlug);
+
+			globalSearch.textAsMap("59b95378e4b0a018d1a61896", text, 0, callback, 10);
+
+
+			return this;
+
+		},
+
+		globalSearchDataTaken: function (data, text) {
+			console.log('RouterDashboard.globalSearchDataTaken');
+			console.log("data", data);
+			console.log("text", text);
+			this.setHeaderAndFooter();
+
+			var globalSearchView = new GlobalSearchView({ data: data, text: text });
+
+			this.changeView(globalSearchView, '#dashboard_content');
+			return this;
 		}
+
 			
 		
 	});
