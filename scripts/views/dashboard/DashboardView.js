@@ -62,8 +62,8 @@ define([
 
 			Backbone.history.navigate('none', {trigger: true});
 			bootbox.alert({
-				title: 		'App creata',
-				message:	'Complimenti, App creata con successo!. Fai click sul bottone Entra per amministrare la App',
+				title: _label.dashboard_view_app_created_title,
+				message: _label.dashboard_view_app_created_message,
 			});
 			Backbone.history.navigate('', { trigger : true });
 

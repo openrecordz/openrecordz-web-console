@@ -156,6 +156,10 @@ _label_en = {
 "license_type_2": "GNU Free Documentation LicenseQ", 
 "license_type_3": "Creative Commons", 
 
+// dashboard_view
+"dashboard_view_app_created_title": "Open Data portal created", 
+"dashboard_view_app_created_message": "Congratulations, your Open Data portal has been created successfully", 
+
 // dashboard_header
 "dashboard_header_new_app_button" : "New Open Data portal",
 "dashboard_header_new_app_page_header" : "My portals",
