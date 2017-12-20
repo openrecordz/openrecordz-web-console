@@ -149,7 +149,11 @@
 								<div>
 									<span style="text-align:left; padding-left:16px; word-wrap: break-word; padding-right:16px;" class="text-left">
 										<%=_label.global_search_record_createdon %>
-											<%= moment(currentItem._createdon).format('LLL') %>
+											<% 
+											var formattedTime = moment(currentItem._createdon);
+											 formattedTime.locale('it');
+											%>
+											<%= formattedTime.format('LLL') %>
 									</span>
 								</div>
 							</div>
