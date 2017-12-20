@@ -116,7 +116,7 @@ _label_it= {
 "downloadComeJSON":"Download come JSON",
 "aggiungiNuovaRisorsa":"Aggiungi Nuova Risorsa",
 "azioni":"Azioni",
-"modifica":"Modifica",
+"modifica":"Modifica portale",
 "eliminaTuttiIdatiDelDataset":"Elimina tutti i dati del dataset",
 "cancellaIlDataset":"Cancella il dataset",
 "risorseBinarie":"Risorse Binarie",
