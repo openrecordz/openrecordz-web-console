@@ -142,7 +142,7 @@ _label_en = {
 "dataset_detail_template_linkedin_share_label": "LinkedIn",
 
 // info_dataset_details_template
-"info_dataset_details_template_records_number": "Number of records present", 
+"info_dataset_details_template_records_number": "Number of records", 
 "info_dataset_details_template_binaries_number": "Number of binaries data", 
 "info_dataset_details_template_tags" : "Tags", 
 "info_dataset_details_template_mapping" : "Mapping",

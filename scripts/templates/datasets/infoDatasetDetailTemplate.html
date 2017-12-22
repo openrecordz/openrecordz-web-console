@@ -1,73 +1,75 @@
 
-
+<div>
 	<% if (datasetMeta != null && datasetMeta != undefined) {	%>
 
+		<table class="table table-striped jumbotron">
 
-		<!-- <div class="jumbotron text-center">
-			<h1>My First Bootstrap Page</h1>
-			<p>Resize this responsive page to see the effect!</p>
-		</div> -->
-		
-		
-		
-			<div class="row">
+			<tbody>
+				<!-- record number -->
+				<tr>
+					<td class="list-group-item-heading">
+						<span style="font-size:18px; font-weight: bold;">
+							<%=_label.info_dataset_details_template_records_number%>
+						</span>
+					</td>
+					<td >
+						<span style="font-size:18px;">
+							<%=datasetMeta._countRecords%>
+						</span>
+					</td>
+				</tr>
 
-				<div class="col-sm-12">
-					<h3 class="list-group-item-heading">
-						<%=_label.info_dataset_details_template_records_number%>
-				</h3>
-					<p>
-						<%=datasetMeta._countRecords%>
-					</p>
-				</div>
+				<!-- binaries number -->
+				<tr>
+					<td class="list-group-item-heading">
+							<span style="font-size:18px; font-weight: bold;">
+							<%=_label.info_dataset_details_template_binaries_number%>
+						</span>
+					</td>
+					<td>
+						<span style="font-size:18px">
+							<%=datasetMeta._countBinaries%>
+						</span>
+					</td>
+				</tr>
 
-				<div class="col-sm-12">
-						<h3 class="list-group-item-heading">
-						<%=_label.info_dataset_details_template_binaries_number%>
-					</h3>
-					<p>
-						<%=datasetMeta._countBinaries%>
-					</p>
-				</div>
-
-				<!-- <div class="col-sm-12">
-						<h3 class="list-group-item-heading">
-							<%=_label.info_dataset_details_template_tags%>
-						</h3>
-					<p>
-						<%=datasetMeta._tags%>
-					</p>
-				</div> -->
-
+				<!-- license -->
 				<%if (datasetMeta._license){%>
-					<div class="col-sm-12">
-						<h3 class="list-group-item-heading">
+				<tr>
+					<td class="list-group-item-heading">
+						<span style="font-size:18px; font-weight: bold;">	
 							<%=_label.licenza%>:
-						</h3>
-						<p>
-						<%if (datasetMeta._license == 0) {%>
-							<%= _label.license_type_0%>
-						<%} else if (datasetMeta._license == 1) {%>
-							<%= _label.license_type_1%>
-						<%} else if (datasetMeta._license == 2) {%>
-							<%= _label.license_type_2%>
-						<%} else if (datasetMeta._license == 3) {%>
-							<%= _label.license_type_3%>
-						<%} else {%>
-							<%=_label.altro%>
-						<%}%>
-						</p>
-					</div>
+						</span>
+					</td>
+					<td>
+						<span style="font-size:18px">
+							<%if (datasetMeta._license == 0) {%>
+								<%= _label.license_type_0%>
+							<%} else if (datasetMeta._license == 1) {%>
+								<%= _label.license_type_1%>
+							<%} else if (datasetMeta._license == 2) {%>
+								<%= _label.license_type_2%>
+							<%} else if (datasetMeta._license == 3) {%>
+								<%= _label.license_type_3%>
+							<%} else {%>
+								<%=_label.altro%>
+							<%}%>
+						</span>
+					</td>
+				</tr>
 				<%}%>
 
 
 				<!-- tags -->
 				<%if (datasetMeta._tags!=null && datasetMeta._tags!=undefined){%>
-					<div class="col-sm-12">
-						<h3 class="list-group-item-heading">
+				<tr>
+					<td class="list-group-item-heading">
+						<span style="font-size:18px; font-weight: bold;">
 							<%=_label.info_dataset_details_template_tags%>
-						</h3>
-						<p>
+						</span>
+					</td>
+					<td>
+						<span style="font-size:18px">
 							<em>
 								<%
 									var formattedTags = "";
@@ -82,7 +84,7 @@
 													var currentItem = "#" + element + " "; 
 													formattedTags += currentItem;
 												} else {
-													 formattedTags += element + " ";
+														formattedTags += element + " ";
 												}
 											}
 										});
@@ -90,79 +92,107 @@
 								%>
 								<%=formattedTags%>
 							</em>
-						</p>
-					</div>
+						</span>
+					</td>
+				</tr>
 				<%}%>
 
-				<!-- <div class="col-sm-12">
-					<h3 class="list-group-item-heading">
-						<%=_label.info_dataset_details_template_mapping%>
-					</h3>
-					<p>
-						<%
-						 	var prettyJson = JSON.stringify(datasetMeta._mapping, null, 2); // spacing level = 2
-						 %>
-						<pre><%=prettyJson%></pre>
-					</p>
-				</div> -->
-			</div> <!-- row -->
-
-	
-			<div class="row">
-				<div class="col-sm-12">
-						<h3 class="list-group-item-heading">
+				<!-- created by -->
+				<tr>
+					<td class="list-group-item-heading">
+							<span style="font-size:18px; font-weight: bold;">
 							<%=_label.info_dataset_details_template_cretedby%>
-						</h3>
-					<p>
-						<%=datasetMeta._createdby%>
-					</p>
-				</div>
+						</span>
+					</td>
+					<td>
+						<span style="font-size:18px">
+							<%=datasetMeta._createdby%>
+						</span>
+					</td>
+				</tr>
 
-				<div class="col-sm-12">
-					<h3 class="list-group-item-heading"></h3>
-						<%=_label.info_dataset_details_template_cretedon%>
-					</h3>
-					<p>
-						<%= moment(datasetMeta._createdon).format('LL') %>
-					</p>
-				</div>
-			</div><!-- row -->
-	
+				<!-- created on -->
+				<tr>
+					<td class="list-group-item-heading">
+							<span style="font-size:18px; font-weight: bold;">
+							<%=_label.info_dataset_details_template_cretedon%>
+						</span>
+					</td>
+					<td>
+						<span style="font-size:18px">
+							<%= moment(datasetMeta._createdon).format('LL') %>
+						</span>
+					</td>
+				</tr>
 
-				<!-- <div class="col-sm-12">
-					<h3 class="list-group-item-heading">
-					<p>
-						<%=datasetMeta._description%>
-					</p>
-				</div> -->
+				<!-- description -->
+				<!-- <tr>
+					<td class="list-group-item-heading">
+						<span style="font-size:18px; font-weight: bold;"></span>
+					</td>
+					<td>
+						<span style="font-size:18px">
+							<%=datasetMeta._description%>
+						</span>
+					</td>
+				</tr> -->
 
-		
-			<div class="row">
-				<div class="col-sm-12">
-					<h3 class="list-group-item-heading">
-						<%=_label.info_dataset_details_template_modifiedby%>
-					</h3>
-					<p>
-						<%=datasetMeta._modifiedby%>
-					</p>
-				</div>
+				<!-- modified by -->
+				<tr>
+					<td class="list-group-item-heading">
+							<span style="font-size:18px; font-weight: bold;">
+							<%=_label.info_dataset_details_template_modifiedby%>
+						</span>
+					</td>
+					<td>
+						<span style="font-size:18px">
+							<%=datasetMeta._modifiedby%>
+						</span>
+					</td>
+				</tr>
 
-				<div class="col-sm-12">
-					<h3 class="list-group-item-heading">
-						<%=_label.info_dataset_details_template_modifiedon%>
-					</h3>
-					<p>
-						<%= moment(datasetMeta._modifiedon).format('LL') %>
-					</p>
-			</div><!-- row -->
+
+				<!-- modified on -->
+				<tr>
+					<td class="list-group-item-heading">
+							<span style="font-size:18px; font-weight: bold;">
+							<%=_label.info_dataset_details_template_modifiedon%>
+						</span>
+					</td>
+					<td>
+						<span style="font-size:18px">
+							<%= moment(datasetMeta._modifiedon).format('LL') %>
+						</span>
+					</td>
+				</tr>
+
+				<!-- mapping -->
+				<!-- <tr>
+					<td class="list-group-item-heading">
+						<span style="font-size:18px; font-weight: bold;">
+							<%=_label.info_dataset_details_template_mapping%>
+						</span>
+					</td>
+					<td>
+						<span style="font-size:18px">
+						<%
+							var prettyJson = JSON.stringify(datasetMeta._mapping, null, 2); // spacing level = 2
+						%>
+						<pre><%=prettyJson%></pre>
+						</span>
+					</td>
+				</tr> -->
+
+
+			</tbody>
+		</table>
 		
 
 	<%} else { %>
 		<h3><%=_label.nessunDatoBinarioCaricato%></h3>
-	<!--<em><%=_label.faiClickSullaVoceDiMenuTabellaPerVisualizzareEventualiDatiTabellari%></em>-->
 	<% } %>
 
-
+</div>
 
 
 	<%
