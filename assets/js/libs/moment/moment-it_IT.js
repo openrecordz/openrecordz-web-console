@@ -743,11 +743,10 @@
 
         _longDateFormat : {
             LT : "h:mm A",
-            L : "MM/DD/YYYY",
-            LL : "MMMM D YYYY",
-            LLL : "MMMM D YYYY LT",
-            LLLL : "dddd, MMMM D YYYY LT",
-            LLLLT: "dd MMMM YYYY"
+            L: "DD/MM/YYYY",
+            LL: "DD MMMM YYYY",
+            LLL: "D MMMM YYYY LT",
+            LLLL: "D dddd MMMM YYYY LT",
         },
         longDateFormat : function (key) {
             var output = this._longDateFormat[key];
