@@ -78,8 +78,10 @@
 									if(res.length > 0) {
 										res.forEach(function(element) { 
 											if(element != null && element != undefined && element) {
-												var currentItem = "#" + element + " "; 
-												formattedTags += currentItem;
+												if(!element.startsWith("#")) {
+													var currentItem = "#" + element + " "; 
+													formattedTags += currentItem;
+												}
 											}
 										});
 									} 
