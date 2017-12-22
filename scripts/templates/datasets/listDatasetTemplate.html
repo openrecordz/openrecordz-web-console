@@ -79,13 +79,15 @@
 				
 							<!-- data type -->
 							<div class="row card-type" style="padding-top:16px;padding-left:16px;padding-right:16px">
-								<span style="height: 18px; padding-left:16px; padding-right:16px;">
-									<img class="img-rounded" src="./assets/images/ic-dataset.svg" style="height: 24px;"></img>
-								</span>
-				
-								<span style="font-size:16px; word-wrap: break-word;">
-									<%=currentItem._type%>
-								</span>
+								<div class="row" style="margin-left:16px;">
+									<span class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding-left: 0px; padding-right: 0px; width: 24px;">
+										<img class="img-rounded" src="./assets/images/ic-dataset.svg" style="width:24px; height: 24px;margin-right:16px">
+									</span>
+							
+									<span class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="height: 24px;padding-left: 0px;padding-right: 0px;margin-left:8px">
+										<%=currentItem._type%>
+									</span>
+								</div>
 							</div>
 
 							<div class="card-subtitle" style="margin-top:10px;padding-left:16px; padding-right:16px;">
@@ -143,7 +145,7 @@
 							</div>
 				
 							<!-- user creator and creation date -->
-							<div class="row card-box-creation" style="padding:16px;">
+							<div class="row card-box-creation" style="padding-top:8px;padding-bottom:8px;padding-left:16px;padding-right:8px;">
 								<div>
 									<span style="text-align:left; padding-left:16px; word-wrap: break-word; padding-right:16px;" class="text-left">
 										<%=_label.global_search_record_createdby %> <%=currentItem._createdby %> <%=_label.global_search_record_createdon %> <%= moment(currentItem._createdon).format('LL') %>

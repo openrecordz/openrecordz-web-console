@@ -11,16 +11,28 @@
          <span class="icon-bar"></span>
          </button>
          <!-- <a class="navbar-brand" href="#">Brand</a> -->
-         <a class="navbar-brand" style="padding: 0px 0px" href="datasets">
-          <!-- <a class="navbar-brand" href="index">-->
-          <% if (config.logoTenant) { %>
-          <!-- <img src="assets/images/<%= config.logoTenant %>" alt="OpenRecordz"> -->
-            <!--style="max-height: 40px; max-width:100px; margin-top: -7px;"-->
 
-            <img src="<%=tenant + '/service/v1/files/download?path=logos/logo.png'%>" style="max-width: 190px;max-height: 50px; object-fit: cover; object-position: center; height: 50px; width: 190px ;" alt="OpenRecordz" onError="this.src='assets/images/<%= config.logoTenant %>';"> 
-          <% } %>
 
-          <%= tenantName %>
+
+        <a class="navbar-brand" style="padding: 0px 0px" href="datasets">
+
+
+
+          <div syle=" margin: 30px auto; width: 300px;">
+            
+            <div class="col1" style="width: 50%; float: left;">
+              <% if (config.logoTenant) { %>
+                <!-- <img src="assets/images/<%= config.logoTenant %>" alt="OpenRecordz"> -->
+                <!--style="max-height: 40px; max-width:100px; margin-top: -7px;"-->
+              
+                <img src="<%=tenant + '/service/v1/files/download?path=logos/logo.png'%>" style="max-width: 190px;max-height: 50px; object-fit: cover; object-position: center; height: 50px; width: 190px ;"
+                  alt="OpenRecordz" onError="this.src='assets/images/<%= config.logoTenant %>';">
+                <% } %>
+            </div>
+            <div class="col2" style="float: right;">
+               <%= tenantName %>
+            </div>
+          </div>
         </a>
       </div>
 
