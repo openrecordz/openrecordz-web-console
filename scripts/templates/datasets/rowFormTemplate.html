@@ -90,12 +90,12 @@ if (row!=null) {
 			
 			 <div class="form-group">
 			    <label for="_createdby">Created by</label>
-					<strong id="_createdby"><%= row["_createdby"] %></strong> at <strong id="_createdon"><%= moment(row["_createdon"]).format('LLLLL') %></strong>	    
+					<strong id="_createdby"><%= row["_createdby"] %></strong> at <strong id="_createdon"><%= moment(row["_createdon"]).format('LLLLT') %></strong>	    
 			  </div>
 
 				 <div class="form-group">
 			    <label for="_modifiedby">Modified by</label>
-					<strong id="_modifiedby"><%= row["_modifiedby"] %></strong> at <strong id="_modifieon"><%= moment(row["_modifiedon"]).format('LLLLL') %></strong>	    
+					<strong id="_modifiedby"><%= row["_modifiedby"] %></strong> at <strong id="_modifieon"><%= moment(row["_modifiedon"]).format('LLLLT') %></strong>	    
 			  </div>
 
 
