@@ -101,7 +101,7 @@ table {table-layout:fixed}
 							<%=data[i][key]%>
 						<%}%>				
 					<%} else if (key=="_createdon" || key=="_modifiedon"){%>
-						<%= moment(data[i][key]).format('LLL') %>
+						<%= moment(data[i][key]).format('LLLLL') %>
 					<%} else {
 						if (data[i][key]) {	
 					%>
