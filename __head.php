@@ -154,12 +154,18 @@ if ((localStorage.getItem('lan')) =="IT") {
 
 
 <!-- chat21 -->
-<!-- <app-root></app-root>
+<app-root></app-root>
 <script type="text/javascript" src="https://chat21-web.firebaseapp.com/inline.bundle.js"></script>
 <script type="text/javascript" src="https://chat21-web.firebaseapp.com/polyfills.bundle.js"></script>
 <script type="text/javascript" src="https://chat21-web.firebaseapp.com/scripts.bundle.js"></script>
 <script type="text/javascript" src="https://chat21-web.firebaseapp.com/styles.bundle.js"></script>
 <script type="text/javascript" src="https://chat21-web.firebaseapp.com/vendor.bundle.js"></script>
-<script type="text/javascript" src="https://chat21-web.firebaseapp.com/main.bundle.js"></script> -->
+<script type="text/javascript" src="https://chat21-web.firebaseapp.com/main.bundle.js">
+</script>
+
+<script type="text/javascript">
+	chat21_tenant="openrecordz";
+	chat21_agentId="support";
+</script>
 
 
