@@ -118,8 +118,10 @@
 												res.forEach(function(element) { 
 													// console.log(element); 
 													if(element != null && element != undefined && element) {
-														var currentItem = "#" + element + " "; 
-														formattedTags += currentItem;
+														if(!element.startsWith("#")) {
+															var currentItem = "#" + element + " "; 
+															formattedTags += currentItem;
+														}
 													}
 												});
 
