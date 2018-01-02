@@ -16,7 +16,7 @@
 
     			<% if(currentItem._type == "dataset") { %>
 					<!-- print dataset -->
-					<a href="<%=currentItem._tenants[0] %><%=domainConsole%>/datasets#ds/<%=currentItem._slug %>" name="dataset" class="list-group-item clearfix">
+					<a href="<%=domainConsole%>/datasets#ds/<%=currentItem._slug %>" name="dataset" class="list-group-item clearfix">
 						<div class="container">
   							<div class="row">
 							    	
@@ -60,7 +60,7 @@
 					
 					if(currentItem._dataset !== null && currentItem._dataset !== undefined) {
 					%>
-					<a href="<%=currentItem._tenants[0] %><%=domainConsole%>/datasets#ds/<%=currentItem._dataset._slug %>/id/<%=currentItem.id %>" name="record" class="list-group-item clearfix">
+					<a href="<%=domainConsole%>/datasets#ds/<%=currentItem._dataset._slug %>/id/<%=currentItem.id %>" name="record" class="list-group-item clearfix">
 						<div class="container">
   							<div class="row">
 							    	
@@ -108,7 +108,7 @@
 					
 					if(currentItem._dataset !== null && currentItem._dataset !== undefined) {
 					%>
-					<a href="<%=currentItem._tenants[0] %><%=domainConsole%>/datasets#ds/<%=currentItem._dataset._slug %>/id/<%=currentItem.id %>" name="record" class="list-group-item clearfix">
+					<a href="<%=domainConsole%>/datasets#ds/<%=currentItem._dataset._slug %>/id/<%=currentItem.id %>" name="record" class="list-group-item clearfix">
 						<div class="container">
   							<div class="row">
 							    	
