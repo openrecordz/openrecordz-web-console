@@ -12,9 +12,11 @@
 			<% for (var i=0;i < data.length; i++) { %>
 				<% var currentItem = data[i]; %>
 
+				<% console.log(data[i]); %>
+
     			<% if(currentItem._type == "dataset") { %>
 					<!-- print dataset -->
-					<a href="#ds/<%=currentItem._slug %>" name="dataset" class="list-group-item clearfix">
+					<a href="<%=currentItem._tenants[0] %><%=domainConsole%>/datasets#ds/<%=currentItem._slug %>" name="dataset" class="list-group-item clearfix">
 						<div class="container">
   							<div class="row">
 							    	
@@ -30,13 +32,17 @@
 			                    </div>
 
 			                    <!-- data type -->
-			                    <div class="row card-type" style="padding-left:16px; padding-right:16px;">
-			                    	<span style="height: 18px; padding-left:16px; padding-right:16px;">
-									 	<img class="img-rounded" src="./assets/images/ic-dataset.svg" style="height: 24px;"></img>
-		    						</span>
-	    					
-		                  			<span style="font-size:16px; word-wrap: break-word;"><%=currentItem._type%></span>
-			                    </div>
+								<div class="row card-type" style="padding-top:16px;padding-left:16px;padding-right:16px">
+									<div class="row" style="margin-left:16px;">
+										<span class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding-left: 0px; padding-right: 0px; width: 24px;">
+											<img class="img-rounded" src="./assets/images/ic-dataset.svg" style="width:24px; height: 24px;margin-right:16px">
+										</span>
+								
+										<span class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="height: 24px;padding-left: 0px;padding-right: 0px;margin-left:8px">
+											<%= currentItem._type %>
+										</span>
+									</div>
+								</div>
 
 			                    <!-- user creator and creation date -->
 			                  	<div class="row card-box-creation" style="padding:16px;">
@@ -54,7 +60,7 @@
 					
 					if(currentItem._dataset !== null && currentItem._dataset !== undefined) {
 					%>
-					<a href="#ds/<%=currentItem._dataset._slug %>/id/<%=currentItem.id %>" name="record" class="list-group-item clearfix">
+					<a href="<%=currentItem._tenants[0] %><%=domainConsole%>/datasets#ds/<%=currentItem._dataset._slug %>/id/<%=currentItem.id %>" name="record" class="list-group-item clearfix">
 						<div class="container">
   							<div class="row">
 							    	
@@ -72,13 +78,17 @@
 			                    </div>
 
 			                    <!-- data type -->
-			                    <div class="row card-type" style="padding-left:16px; padding-right:16px;">
-			                    	<span style="height: 18px; padding-left:16px; padding-right:16px;">
-									 	<img class="img-rounded" src="./assets/images/ic-record.svg" style="height: 24px;"></img>
-		    						</span>
-	    					
-		                  			<span style="font-size:16px; word-wrap: break-word;"><%=currentItem._type%></span>
-			                    </div>
+								<div class="row card-type" style="padding-top:16px;padding-left:16px;padding-right:16px">
+									<div class="row" style="margin-left:16px;">
+										<span class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding-left: 0px; padding-right: 0px; width: 24px;">
+											<img class="img-rounded" src="./assets/images/ic-record.svg" style="width:24px; height: 24px;margin-right:16px">
+										</span>
+
+										<span class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="height: 24px;padding-left: 0px;padding-right: 0px;margin-left:8px">
+											<%= currentItem._type %>
+										</span>
+									</div>
+								</div>
 
 			                    <!-- user creator and creation date -->
 			                  	<div class="row card-box-creation" style="padding:16px;">
@@ -98,7 +108,7 @@
 					
 					if(currentItem._dataset !== null && currentItem._dataset !== undefined) {
 					%>
-					<a href="#ds/<%=currentItem._dataset._slug %>/id/<%=currentItem.id %>" name="record" class="list-group-item clearfix">
+					<a href="<%=currentItem._tenants[0] %><%=domainConsole%>/datasets#ds/<%=currentItem._dataset._slug %>/id/<%=currentItem.id %>" name="record" class="list-group-item clearfix">
 						<div class="container">
   							<div class="row">
 							    	
@@ -116,13 +126,17 @@
 			                    </div>
 
 			                    <!-- data type -->
-			                    <div class="row card-type" style="padding-left:16px; padding-right:16px;">
-			                    	<span style="height: 18px; padding-left:16px; padding-right:16px;">
-									 	<img class="img-rounded" src="./assets/images/ic-record.svg" style="height: 24px;"></img>
-		    						</span>
-	    					
-		                  			<span style="font-size:16px; word-wrap: break-word;"><%=currentItem._type%></span>
-			                    </div>
+								<div class="row card-type" style="padding-top:16px;padding-left:16px;padding-right:16px">
+									<div class="row" style="margin-left:16px;">
+										<span class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding-left: 0px; padding-right: 0px; width: 24px;">
+											<img class="img-rounded" src="./assets/images/ic_file_type_generic.png" style="width:24px; height: 24px;margin-right:16px">
+										</span>
+
+										<span class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="height: 24px;padding-left: 0px;padding-right: 0px;margin-left:8px">
+											<%= currentItem._type %>
+										</span>
+									</div>
+								</div>
 
 			                    <!-- user creator and creation date -->
 			                  	<div class="row card-box-creation" style="padding:16px;">
