@@ -29,7 +29,7 @@
 	//var domainConsole = ".localhost";
 	var domainConsole = "localhost";
 	//production
-	var domainConsole = ".v2.openrecordz.com";
+	var domainConsole = ".openrecordz.com";
 
 	// check if the domain console starts with ".". if not add it
 	if(domainConsole.charAt(0) !== ".") {

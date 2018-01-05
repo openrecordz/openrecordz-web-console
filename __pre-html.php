@@ -33,6 +33,6 @@ if (count($a)<=0) {
 // else
 // 	$hostmane = 'frontiere21.it';
 //$hostmane = 'v2.smart21.it';
-$hostmane = 'api2.openrecordz.com';
+$hostmane = 'api.openrecordz.com';
 //$hostmane = 'api.openrecordz.local:8880/smart21-server';
 ?>
