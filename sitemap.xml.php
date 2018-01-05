@@ -23,7 +23,7 @@ echo $output;
 
 <?php
 // QUERY: DATASET DISPONIBILI
-$url= "http://".$tenant.".api.openrecordz.com/service/v1/datasets?pagesize=100000";
+$url= "http://".$tenant.".api2.openrecordz.com/service/v1/datasets?pagesize=100000";
 // echo "URL: " .$url;
 // Initiate curl
 $ch = curl_init();

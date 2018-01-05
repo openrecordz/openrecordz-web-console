@@ -18,7 +18,7 @@ require_once('__pre-html.php');
  * QUERY AL SERVIZIO: con l'ID e il DATASET passato da BLOG seleziona l'oggetto CON L'ID DATO
  * da Json creo ARRAY dei DATI dell'oggetto con l'id e il dataset passato da blog.php
  */
-$url= "http://".$tenant.".api.openrecordz.com/service/v1/cdata/".$dataset."/".$id_OpenRecordZ."";
+$url= "http://".$tenant.".api2.openrecordz.com/service/v1/cdata/".$dataset."/".$id_OpenRecordZ."";
 
     // echo "URL: " .$url;
     // Initiate curl
@@ -92,7 +92,7 @@ $RequestUriNoSlash = trim($RequestUri, '/');
  * per li dataset richiesto itero (5):
  * Nome del dataset - Descrizione del dataset - Autore del dataset - Data creazione dataset - Slug del dataset */
 
-$url= "http://".$tenant.".api.openrecordz.com/service/v1/datasets?q={\"_slug\":\"".$dataset."\"}";
+$url= "http://".$tenant.".api2.openrecordz.com/service/v1/datasets?q={\"_slug\":\"".$dataset."\"}";
 //$url= "http://".$tenant.".api.openrecordz.com/service/v1/datasets?q={\"_slug\":\"defibrillatori_nk\"}";
 // echo "URL: " .$url;
 // Initiate curl
