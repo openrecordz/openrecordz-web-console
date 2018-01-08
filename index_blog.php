@@ -34,7 +34,7 @@ $datasetUpper = strtoupper($dataset);
 
 /* QUERY:
  * DATASET DISPONIBILI X IL TENANT passato in URL */
-$url= "http://".$tenant.".api2.openrecordz.com/service/v1/datasets";
+$url= "http://".$tenant.".api.openrecordz.com/service/v1/datasets";
 // echo "URL: " .$url;
 // Initiate curl
 $ch = curl_init();

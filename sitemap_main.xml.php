@@ -13,7 +13,7 @@ echo $output;
 
 // QUERY: TENANT DISPONIBILI
 
-$url= "http://default.api2.openrecordz.com/service/v1/gfunctions/g_getalltenants";
+$url= "http://default.api.openrecordz.com/service/v1/gfunctions/g_getalltenants";
 // echo "URL: " .$url;
 // Initiate curl
 $ch = curl_init();
