@@ -1,5 +1,5 @@
 <nav class="navbar navbar-default">
-   <div class="container-fluid">
+   <div class="container-fluid" style="padding-left: 0px;padding-right: 0px;">
 
 
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -12,19 +12,22 @@
          </button>
          <!-- <a class="navbar-brand" href="#">Brand</a> -->
 
+         <!-- logo -->
+         <a style="padding: 0px 0px" href="datasets" class="collapse navbar-collapse" >
+          <span class="logo pull-left">
+            <% if (config.logoTenant) { %>
+               <img src="<%=tenant + '/service/v1/files/download?path=logos/logo.png'%>" alt="OpenRecordz" onError="this.src='assets/images/<%= config.logoTenant %>';" style="max-width: 190px;max-height: 50px; object-fit: cover; object-position: center; height: 50px; width: 190px ;">
+            <% } %>
+          </span>
 
+          <!-- logo name -->
+          <span class="name pull-left" style=" font-size: 14px; color: #333; padding: 15px 10px 0 10px;" > <%= tenantName %></span>
+      </a>
 
-        <a class="navbar-brand" style="padding: 0px 0px" href="datasets">
-
-
-
+       <!-- <a class="navbar-brand" style="padding: 0px 0px" href="datasets">
           <div syle=" margin: 30px auto; width: 300px;">
-            
             <div class="col1" style="width: 50%; float: left;">
               <% if (config.logoTenant) { %>
-                <!-- <img src="assets/images/<%= config.logoTenant %>" alt="OpenRecordz"> -->
-                <!--style="max-height: 40px; max-width:100px; margin-top: -7px;"-->
-              
                 <img src="<%=tenant + '/service/v1/files/download?path=logos/logo.png'%>" style="max-width: 190px;max-height: 50px; object-fit: cover; object-position: center; height: 50px; width: 190px ;"
                   alt="OpenRecordz" onError="this.src='assets/images/<%= config.logoTenant %>';">
                 <% } %>
@@ -33,7 +36,8 @@
                <%= tenantName %>
             </div>
           </div>
-        </a>
+        </a> -->
+        
       </div>
 
 
