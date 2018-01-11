@@ -24,7 +24,7 @@ define([
 				// @TODO rimuovi // url : 'http://tenant1.api.openrecordz.com/service/v1/datasets/59b95378e4b0a018d1a61896.map',
 				// http://apps.api2.openrecordz.com/service/v1/search?text=lecce
         	    // url:  tenant + '/service/v1/datasets/'+ dsId +".map",
-        	    url:  tenant + '/service/v1/search?text='+ text +"&crossdomainsearch=true",
+        	    url:  tenant + '/service/v1/search?pagesize=200&text='+ text +"&crossdomainsearch=true",
 			data: data,
 				type : 'GET'
 			});
