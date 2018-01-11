@@ -11,14 +11,30 @@
 			<!-- 
 				<a class="navbar-brand" href="#">Tenant name</a>
 			 -->
-			<a class="navbar-brand" href="index">
+			<!-- <a class="navbar-brand" href="index">
 				<% if (config.logoTenant) { %>
-				<!-- <img src="assets/images/<%= config.logoTenant %>" alt="openRecordz" style="max-width: 190px;max-height: 50px; object-fit: cover; object-position: center; height: 50px; width: 190px ;" > -->
 				<img src="assets/images/<%= config.logoTenant %>" alt="openRecordz">
-				<!--style="max-height: 40px; max-width:100px; margin-top: -7px;">-->
 				<% } %>
 				<%= tenantName %>
+			</a> -->
+
+			<!-- logo -->
+			<a style="padding: 0px 0px" href="index" class="collapse navbar-collapse">
+				<span class="logo pull-left">
+					<% if (config.logoTenant) { %>
+						<img src="assets/images/<%= config.logoTenant %>" alt="OpenRecordz" 
+						 style="max-width: 190px;max-height: 50px; object-fit: cover; object-position: center; height: 50px; width: 190px ;">
+						<% } %>
+				</span>
+			
+				<!-- logo name -->
+				<span class="name pull-left" style=" font-size: 14px; color: #333; padding: 15px 10px 0 10px;">
+					<%= tenantName %>
+				</span>
 			</a>
+
+
+
 		</div>
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
