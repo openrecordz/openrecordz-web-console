@@ -175,7 +175,7 @@ _label_en = {
 "new_tenant_modal_template_app_title": "Open Data portal name (*)",
 "new_tenant_modal_template_app_validation_title": "Insert a name for the new portal!!",
 "new_tenant_modal_template_app_title_description": "Enter the name of the portal or some keywords to describe it. This information will be used to create the address of your new Open Data portal.",
-"new_tenant_modal_template_app_title_placeholder": "indicate the portal name .I.E.: 'Municipality of Rome' or 'active transports in Rome'",
+"new_tenant_modal_template_app_title_placeholder": "for example: 'Municipality of Rome' or 'transports in Rome'",
 "new_tenant_modal_template_app_web_address": "Open Data porta Web address",
 "new_tenant_modal_template_app_web_address_description": "it represents the address of your open data portal on OpenRecordz. Find out how to associate it with a ",
 "new_tenant_modal_template_app_web_address_clickable_description": "custom domain name",
