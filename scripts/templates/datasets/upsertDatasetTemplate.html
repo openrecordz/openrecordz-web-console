@@ -18,6 +18,16 @@
 		<span class="help-block hidden"></span>
 	    <!--<input type="text" class="form-control" id="_slug" placeholder="Permalink del dataset">-->
 		</div>
+
+		<div class="form-group">
+			<label for="_main_image">
+				<%=_label.upsert_dataset_main_image_label%>
+			</label>
+			<textarea id="_main_image" name="_main_image" class="form-control" rows="1" placeholder="<%=_label.upsert_dataset_main_image_placeholder_label%>"><%if(datasetMeta && datasetMeta._main_image){%><%=datasetMeta._main_image%><%}%></textarea>
+			<span id="tags_help_block" class="help-block">
+				<%=_label.upsert_dataset_main_image_help_block_label%>
+			</span>
+		</div>
 		
 		<div class="form-group">
 			<label for="_tags">

@@ -149,6 +149,9 @@ _label_it= {
 "upsert_dataset_tags_label": "Tags",
 "upsert_dataset_tags_placeholder_label": "Aggiungi uno o più tags per il tuo dataset",
 "upsert_dataset_tags_help_block_label": "Ogni tag deve essere separata da uno spazio",
+"upsert_dataset_main_image_label": "Immagine",
+"upsert_dataset_main_image_placeholder_label": "Aggiungi una immagine per il tuo dataset",
+"upsert_dataset_main_image_help_block_label": "TODO",
 
 // dataset_detail_template
 "dataset_detail_template_tab_info_label": "Informazioni",
