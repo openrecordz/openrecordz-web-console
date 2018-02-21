@@ -132,7 +132,7 @@ _label_en = {
 "upsert_dataset_tags_help_block_label": "Every tag must be separated from a space",
 "upsert_dataset_main_image_label": "Image",
 "upsert_dataset_main_image_placeholder_label": "Add an image for your dataset",
-"upsert_dataset_main_image_help_block_label": "Enter the link of the image of the dataset! (png - 150×150)",
+"upsert_dataset_main_image_help_block_label": "Enter the link of the image of the dataset! (png - 150×150) i.e: http://flicker.com/myimage.png",
 
 // dataset_detail_template
 "dataset_detail_template_tab_info_label": "Info",
