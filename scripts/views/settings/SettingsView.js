@@ -242,7 +242,7 @@ define([
 
 				bootbox.alert({
 					title: 		'Immagine Portale',
-					message:	'Immaggine del portale caricata con successo. Torna alla home per visualizzare le modifiche.',
+					message:	'Immagine del Portale caricata con successo. Torna alla home per visualizzare le modifiche.',
 				});
 				//view.contentImageUpdated(result, response);
 			};

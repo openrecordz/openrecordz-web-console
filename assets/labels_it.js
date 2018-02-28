@@ -30,12 +30,12 @@ _label_it= {
 "accedi":"Accedi",
 "registrati":"Registrati",
 
-"accediEiniziaAcostruireLaTuaSmartCity":"Accedi e inizia a costruire il tuo portale Open Data",
+"accediEiniziaAcostruireLaTuaSmartCity":"Accedi e inizia a costruire il tuo Portale open data",
 "indirizzoEmailUsername":"Indirizzo email o Username",
 "haiDimenticatoLaPassword":"Hai dimenticato la password?",
 "nonHaiUnAccount":"Non hai un account?",
 
-"registratiGratisEiniziaAcostruireLaTuaSmartCity":"Registrati gratis e inizia a costruire il tuo portale Open Data",
+"registratiGratisEiniziaAcostruireLaTuaSmartCity":"Registrati gratis e inizia a costruire il tuo Portale open data",
 "nomeCompleto":"Nome Completo",
 "haiGiaUnAccount":"Hai già un account?",
 
@@ -47,7 +47,7 @@ _label_it= {
 "datasetDisponibile":"dataset disponibile",
 "datasetDisponibili":"dataset disponibili",
 "cliccaSullaRigaPerIlDettaglio":"Clicca sulla riga per il dettaglio",
-"nessunDatasetPresentePerLaApp":"Nessun dataset presente per il portale Open Data",
+"nessunDatasetPresentePerLaApp":"Nessun dataset presente per il Portale open data",
 "creaNuovoDatasetDalBottoneInAlto":"Crea un nuovo Dataset dal bottone in alto in questa pagina e inizia a caricare i dati open",
 
 "inserisciUnNuovoDataset":"Inserisci un nuovo Dataset",
@@ -181,26 +181,26 @@ _label_it= {
 "license_type_3": "Creative Commons",
 
 // dashboard_view
-"dashboard_view_app_created_title": "Portale Open Data creato",
+"dashboard_view_app_created_title": "Portale open data creato",
 "dashboard_view_app_created_message": "Complimenti, il tuo portal Open Data è stato creato con successo", 
 
 // dashboard_header
-"dashboard_header_new_app_button": "Nuovo portale Open Data",
+"dashboard_header_new_app_button": "Nuovo Portale open data",
 "dashboard_header_new_app_page_header": "I miei portali",
-"dashboard_header_new_app_page_description": "Clicca su \"Gestisci il portale\" per amministrare il tuo portale Open Data.",
+"dashboard_header_new_app_page_description": "Clicca su \"Gestisci il Portale\" per amministrare il tuo Portale open data.",
 "dashboard_header_new_app_title": "Non hai creato alcun portale.",
-"dashboard_header_new_app_sub_title": "Clicca sul pulsante \"Nuovo portale Open Data\" per creare il tuo primo portale",
-"dashboard_header_new_app_title_description": "Crea un portale Open Data per te oppure per il tuo Comune, la tua Città o il tuo Ente. Crea un dataset e carica i tuoi Open Data (File Excel, CSV o altro)",
-"dashboard_header_manage_portal": "Gestisci il portale",
+"dashboard_header_new_app_sub_title": "Clicca sul pulsante \"Nuovo Portale open data\" per creare il tuo primo Portale",
+"dashboard_header_new_app_title_description": "Crea un Portale open data per te oppure per il tuo Comune, la tua Città o il tuo Ente. Crea un dataset e carica i tuoi Open Data (File Excel, CSV o altro)",
+"dashboard_header_manage_portal": "Gestisci il Portale",
 
 // new_tenant_modal_template
-"new_tenant_modal_template_modal_title": "Crea un nuovo portale Open Data",
-"new_tenant_modal_template_app_title": "Nome del portale Open Data (*)",
-"new_tenant_modal_template_app_validation_title": "Inserire un nome per il nuovo portale!!",
-"new_tenant_modal_template_app_title_description": "Inserisci il nome del portale o alcune parole chiave per descriverlo. Queste informazioni verranno utilizzate per creare l'indirizzo del tuo nuovo portale Open Data.",
+"new_tenant_modal_template_modal_title": "Crea un nuovo Portale open data",
+"new_tenant_modal_template_app_title": "Nome del Portale Open Data (*)",
+"new_tenant_modal_template_app_validation_title": "Inserire un nome per il nuovo Portale!!",
+"new_tenant_modal_template_app_title_description": "Inserisci il nome del Portale o alcune parole chiave per descriverlo. Queste informazioni verranno utilizzate per creare l'indirizzo del tuo nuovo portale Open Data.",
 "new_tenant_modal_template_app_title_placeholder": "per esempio: 'Comune di Roma' o 'Trasporti a Roma'",
-"new_tenant_modal_template_app_web_address": "Indirizzo Web del portale",
-"new_tenant_modal_template_app_web_address_description": "rappresenta l\'indirizzo del tuo portale opendata su OpenRecordz. Scopri come associarlo ad un ",
+"new_tenant_modal_template_app_web_address": "Indirizzo Web del Portale",
+"new_tenant_modal_template_app_web_address_description": "rappresenta l\'indirizzo del tuo Portale open data su OpenRecordz. Scopri come associarlo ad un ",
 "new_tenant_modal_template_app_web_address_clickable_description": "nome di dominio personalizzato",
 
 

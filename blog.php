@@ -292,7 +292,7 @@ require_once('__pre-html.php');
                 <div class="col-xs-12 col-sm-4 ">    
                     <div class="navbar-header pull-right">
 
-                        <a class="btn btn-success navbar-btn" href="http://apps.openrecordz.com/dashboard.php#signup" style="margin-left: 10px; margin-right: 10px; margin-top: 12px;" itemprop="url">CREA GRATIS IL TUO PORTALE OPENDATA</a>
+                        <a class="btn btn-success navbar-btn" href="http://apps.openrecordz.com/dashboard.php#signup" style="margin-left: 10px; margin-right: 10px; margin-top: 12px;" itemprop="url">CREA GRATIS IL TUO PORTALE OPEN DATA</a>
 
                     </div>
                 </div>

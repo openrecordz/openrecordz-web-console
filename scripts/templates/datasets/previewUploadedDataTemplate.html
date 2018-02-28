@@ -49,8 +49,11 @@
 	<%if (status=="fail"){	%>
 		Errore nel parsing del csv. <br>
 		Prego cambiare il delimitatore in virgola o punto e virgola.<br><br>
-		Log dell'errore : <br>
-		<%=JSON.stringify(firstLines)%>
+		<script>
+		var error = '<%=JSON.stringify(firstLines)%>'
+		</script>
+		<a href="#" onclick="alert(error)">Visualizza log dell'errore</a><
+		
 	<%} else {%>
 
 		<% if (firstLines && firstLines.length>0) {	%>
