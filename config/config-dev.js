@@ -11,7 +11,7 @@ var settings = [
 								 
 						{
 							code: 'tenants.settings.<TENANT>.tenant_image',
-							label: 'Immagine del tenant. (dimensione consigliata 190 x 50 px)',
+							label: 'Immagine del tenant in formato PNG. (dimensione consigliata 190 x 50 px)',
 							placeholder: '',
 							typecontrol: 'image'
 						},
