@@ -249,7 +249,7 @@ define([
 
 			
 			var file = new File();
-			file.save("logo.png", "/logos", image, callback);
+			file.save("logo", "/logos", image, callback);
 		},
 		
 		
