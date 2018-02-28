@@ -48,7 +48,8 @@
 <!--  <div class="table-responsive">-->
 	<%if (status=="fail"){	%>
 		Errore nel parsing del csv. <br>
-		Prego cambiare il delimitatore in virgola o punto e virgola.<br>
+		Prego cambiare il delimitatore in virgola o punto e virgola.<br><br>
+		Log dell'errore : <br>
 		<%=JSON.stringify(firstLines)%>
 	<%} else {%>
 
