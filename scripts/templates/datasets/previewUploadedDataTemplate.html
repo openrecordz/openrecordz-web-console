@@ -49,7 +49,7 @@
 	<%if (status=="fail"){	%>
 		Errore nel parsing del csv. <br>
 		Prego cambiare il delimitatore in virgola o punto e virgola.<br>
-		<%=firstLines%>
+		<%=JSON.stringify(firstLines)%>
 	<%} else {%>
 
 		<% if (firstLines && firstLines.length>0) {	%>
