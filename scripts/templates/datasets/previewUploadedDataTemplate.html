@@ -52,8 +52,8 @@
 		<script>
 		var error = '<%=JSON.stringify(firstLines)%>'
 		</script>
-		<a href="" onclick="alert(error)">Visualizza log dell'errore</a>
-		
+		<button onclick="alert(error)">Visualizza log dell'errore</button>
+				
 	<%} else {%>
 
 		<% if (firstLines && firstLines.length>0) {	%>
