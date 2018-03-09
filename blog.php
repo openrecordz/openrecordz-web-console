@@ -645,7 +645,7 @@ if ((array_key_exists('status', $data)) && ($data['status'] == '404')) { ?>
                                             ?>
                                             <div id="map">
                                                 <a href="https://www.google.com/maps/place/<?=$geocoordinates;?>/" target="_blank">
-                                                    <img class="img-responsive" src="http://maps.googleapis.com/maps/api/staticmap?center=<?=$geocoordinates;?>&zoom=13&scale=false&size=900x200&maptype=roadmap&key=AIzaSyD6AbPa1pPA3L6rk0p9i94daMA7eh-7aXQ&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:%7C<?=$geocoordinates;?>" alt="Google Map di <?=$geocoordinates;?>">
+                                                    <img class="img-responsive" src="http://maps.googleapis.com/maps/api/staticmap?center=<?=$geocoordinates;?>&zoom=13&scale=false&size=900x200&maptype=roadmap&key=AIzaSyB37d72GrweF2ghjB3I1UiIj8Hw1bAYaHM&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:%7C<?=$geocoordinates;?>" alt="Google Map di <?=$geocoordinates;?>">
                                                 </a>
                                             </div>
                                           <?php
