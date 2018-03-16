@@ -48,7 +48,7 @@ _label_it= {
 "datasetDisponibili":"dataset disponibili",
 "cliccaSullaRigaPerIlDettaglio":"Clicca sulla riga per il dettaglio",
 "nessunDatasetPresentePerLaApp":"Nessun dataset presente per il Portale open data",
-"creaNuovoDatasetDalBottoneInAlto":"Crea un nuovo Dataset dal bottone in alto in questa pagina e inizia a caricare i dati open",
+"creaNuovoDatasetDalBottoneInAlto":"Crea un nuovo Dataset dal bottone in alto a destra in questa pagina e inizia a caricare i dati open",
 
 "inserisciUnNuovoDataset":"Inserisci un nuovo Dataset",
 "nomeDelDataset":"Nome del Dataset",
@@ -57,7 +57,7 @@ _label_it= {
 "descriviIlTuoDataset":"Descrivi il tuo dataset...",
 "licenza":"Licenza",
 "altro":"Altro",
-"origine":"Origine",
+"origine":"Fonte",
 "annulla":"Annulla",
 "salva":"Salva",
 "carica":"Carica",
@@ -182,7 +182,7 @@ _label_it= {
 
 // dashboard_view
 "dashboard_view_app_created_title": "Portale open data creato",
-"dashboard_view_app_created_message": "Complimenti, il tuo portal Open Data è stato creato con successo", 
+"dashboard_view_app_created_message": "Complimenti, il tuo portale Open Data è stato creato con successo", 
 
 // dashboard_header
 "dashboard_header_new_app_button": "Nuovo Portale open data",
