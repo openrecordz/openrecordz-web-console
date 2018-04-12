@@ -107,6 +107,15 @@ define([
 				}
 			}
 
+			var termsConditions = $("#termsConditions").is(":checked");
+			// var termsConditions = $('#termsConditions').val();
+			if (!termsConditions) {
+				//termsConditions is not valid.
+				// Utils.showError(that, 'termsConditions', _label.signup_view_terms_conditions_error);
+				alert(_label.signup_view_terms_conditions_error);
+				valid = false;
+			}
+
 			if(!valid){
 				$('#formAlert').show();
 			}

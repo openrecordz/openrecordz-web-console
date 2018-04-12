@@ -203,5 +203,10 @@ _label_it= {
 "new_tenant_modal_template_app_web_address_description": "rappresenta l\'indirizzo del tuo Portale open data su OpenRecordz. Scopri come associarlo ad un ",
 "new_tenant_modal_template_app_web_address_clickable_description": "nome di dominio personalizzato",
 
-
+// signup_view
+"signup_view_accept_terms_conditions_label": "Accetto i",
+"signup_view_terms_conditions_label": "termini e condizioni",
+"signup_view_accept_terms_conditions2_label": "e le",
+"signup_view_privacy": "norme sulla privacy",
+"signup_view_terms_conditions_error": "Devi accettare le condizioni generali e le norme sulla privacy",
 }

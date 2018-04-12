@@ -183,4 +183,11 @@ _label_en = {
 "new_tenant_modal_template_app_web_address": "Open Data porta Web address",
 "new_tenant_modal_template_app_web_address_description": "it represents the address of your open data portal on OpenRecordz. Find out how to associate it with a ",
 "new_tenant_modal_template_app_web_address_clickable_description": "custom domain name",
+
+// signup_view
+"signup_view_accept_terms_conditions_label": "Agree the",
+"signup_view_terms_conditions_label": "terms and conditions",
+"signup_view_accept_terms_conditions2_label": "and the",
+"signup_view_privacy": "privacy policies",
+"signup_view_terms_conditions_error": "You must accept the general conditions and the privacy rules",
 }
