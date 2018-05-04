@@ -110,7 +110,7 @@ _label_en = {
 
 "visualizzaIlDatoConId":"Viewing data with id",
 
-"nessunDatoBinarioCaricato":"No data available",
+"nessunDatoBinarioCaricato":"No data available. Click Add New Resource button to upload new data.",
 //"faiClickSullaVoceDiMenuTabellaPerVisualizzareEventualiDatiTabellari":"Click on the Table menu item to display eventual tabular data"
 
 "dataset_label" : "(dataset)",

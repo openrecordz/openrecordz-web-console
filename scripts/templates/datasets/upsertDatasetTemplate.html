@@ -56,8 +56,8 @@
 	
 	  <div class="form-group">
 	    <label for="_origin"><%=_label.origine%></label>
-			<input type="url" class="form-control" id="_origin"  name="_origin" placeholder="http://example.com/dataset.json" value="<%if(datasetMeta && datasetMeta._origin){%><%=datasetMeta._origin%><%}%>">
-			<span id="helpBlock" class="help-block">Specifica la provenienza dei dati del dataset. Sono stati scaricati da un sito? Indicalo</span> 
+			<input type="url" class="form-control" id="_origin"  name="_origin" placeholder="Opzionale http://example.com/dataset.json" value="<%if(datasetMeta && datasetMeta._origin){%><%=datasetMeta._origin%><%}%>">
+			<span id="helpBlock" class="help-block">Specifica opzionalmente la provenienza dei dati del dataset. Sono stati scaricati da un sito? Indicalo</span> 
 			
 	  </div>
 	
@@ -81,12 +81,12 @@
 		  </label>
 		  <span id="helpBlock" class="help-block">Tutti gli utenti potranno modificare i dati del dataset </span>
 		</div>
-		<div class="radio">
+		<div class="radio disabled">
 		  <label>
 		    <input type="radio" name="_accesstype" id="_accesstype_priv" value="5" <%if(datasetMeta && datasetMeta._accesstype && datasetMeta._accesstype==5 ){%> checked<%}%>>
 		    <b>Privato</b>
 		  </label>
-		  <span id="helpBlock" class="help-block">Solo gli utenti invitati potranno modificare il dataset</span>
+		  <span id="helpBlock" class="help-block">Solo gli utenti invitati potranno modificare il dataset. Funzionalità disponibile per i profili a pagamento.</span>
 		</div>	    
 	  </div>
 

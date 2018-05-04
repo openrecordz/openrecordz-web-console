@@ -129,7 +129,7 @@ _label_it= {
 
 "visualizzaIlDatoConId":"Visualizza il dato con id",
 
-"nessunDatoBinarioCaricato":"Nessun dato caricato",
+"nessunDatoBinarioCaricato":"Nessun dato caricato. Fai click sul bottone Aggiungi Nuova Risorsa per caricare i tuoi open data.",
 //"faiClickSullaVoceDiMenuTabellaPerVisualizzareEventualiDatiTabellari":"Fai clic sulla voce di menu Tabella per visualizzare eventuali dati tabellari"
 
 
