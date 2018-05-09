@@ -620,7 +620,7 @@ if (($fieldKey[0] != "_") && (array_key_exists('status', $arr_variable_key)) && 
                              ?>
 
                             <div itemprop="image" itemscope itemtype="http://schema.org/ImageObject" class="card__image border-tlr-radius">
-                                <img src="https://maps.googleapis.com/maps/api/streetview?size=600x300&location=<?=$geocoordinates;?>&heading=151.78&pitch=-0.76&key=AIzaSyD6AbPa1pPA3L6rk0p9i94daMA7eh-7aXQ" alt="Google immagine di <?=$geocoordinates;?>" class="border-tlr-radius" itemprop="url">
+                                <img src="https://maps.googleapis.com/maps/api/streetview?size=600x300&location=<?=$geocoordinates;?>&heading=151.78&pitch=-0.76&key=AIzaSyB37d72GrweF2ghjB3I1UiIj8Hw1bAYaHM" alt="Google immagine di <?=$geocoordinates;?>" class="border-tlr-radius" itemprop="url">
                                 <meta itemprop="width" content="600">
                                 <meta itemprop="height" content="300">
                             </div>
@@ -663,7 +663,7 @@ if (($fieldKey[0] != "_") && (array_key_exists('status', $arr_variable_key)) && 
                                         ?>
                                         <div id="map">
                                             <a href="https://www.google.com/maps/place/<?=$lat;?>,<?=$log;?>/" target="_blank">
-                                                <img class="img-responsive" src="http://maps.googleapis.com/maps/api/staticmap?center=<?=$geocoordinates;?>&zoom=13&scale=false&size=900x200&maptype=roadmap&key=AIzaSyD6AbPa1pPA3L6rk0p9i94daMA7eh-7aXQ&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:%7C<?=$geocoordinates;?>" alt="Google Map di <?=$geocoordinates;?>">
+                                                <img class="img-responsive" src="http://maps.googleapis.com/maps/api/staticmap?center=<?=$geocoordinates;?>&zoom=13&scale=false&size=900x200&maptype=roadmap&key=AIzaSyB37d72GrweF2ghjB3I1UiIj8Hw1bAYaHM&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:%7C<?=$geocoordinates;?>" alt="Google Map di <?=$geocoordinates;?>">
                                             </a>
                                         </div>
                                     <?php
