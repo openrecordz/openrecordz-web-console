@@ -620,7 +620,7 @@ if (($fieldKey[0] != "_") && (array_key_exists('status', $arr_variable_key)) && 
                              ?>
 
                             <div itemprop="image" itemscope itemtype="http://schema.org/ImageObject" class="card__image border-tlr-radius">
-                                <img src="https://maps.googleapis.com/maps/api/streetview?size=600x300&location=<?=$geocoordinates;?>&heading=151.78&pitch=-0.76&key=AIzaSyB37d72GrweF2ghjB3I1UiIj8Hw1bAYaHM" alt="Google immagine di <?=$geocoordinates;?>" class="border-tlr-radius" itemprop="url">
+                                <img src="https://maps.googleapis.com/maps/api/streetview?size=600x300&location=<?=$geocoordinates;?>&heading=151.78&pitch=-0.76&key=AIzaSyAXC01i0-xLN3idukOgVWhh4-c7FO9hLPU" alt="Google immagine di <?=$geocoordinates;?>" class="border-tlr-radius" itemprop="url">
                                 <meta itemprop="width" content="600">
                                 <meta itemprop="height" content="300">
                             </div>
