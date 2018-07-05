@@ -5,7 +5,17 @@
 <meta name="author" content="">
 <link rel="icon" href="../../favicon.ico">
 <title>OpenRecordz</title>
-    
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KH3WHLQ');</script>
+<!-- End Google Tag Manager -->
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
     
@@ -153,21 +163,13 @@ if ((localStorage.getItem('lan')) =="IT") {
 </script>
 
 
-<!-- chat21 -->
-<!-- <app-root></app-root>
-<script type="text/javascript" src="https://chat21-web.firebaseapp.com/inline.bundle.js"></script>
-<script type="text/javascript" src="https://chat21-web.firebaseapp.com/polyfills.bundle.js"></script>
-<script type="text/javascript" src="https://chat21-web.firebaseapp.com/scripts.bundle.js"></script>
-<script type="text/javascript" src="https://chat21-web.firebaseapp.com/styles.bundle.js"></script>
-<script type="text/javascript" src="https://chat21-web.firebaseapp.com/vendor.bundle.js"></script>
-<script type="text/javascript" src="https://chat21-web.firebaseapp.com/main.bundle.js"> -->
 
-<app-root projectid='5ae1867d86724100146e1df5' projectname='OpenRecordz.com'></app-root>
+<!-- ultima <app-root projectid='5ae1867d86724100146e1df5' projectname='OpenRecordz.com'></app-root>
 <script type="text/javascript" src="https://widget.tiledesk.com/inline.bundle.js"></script>
 <script type="text/javascript" src="https://widget.tiledesk.com/polyfills.bundle.js"></script>
 <script type="text/javascript" src="https://widget.tiledesk.com/styles.bundle.js"></script>
 <script type="text/javascript" src="https://widget.tiledesk.com/vendor.bundle.js"></script>
-<script type="text/javascript" src="https://widget.tiledesk.com/main.bundle.js"></script>
+<script type="text/javascript" src="https://widget.tiledesk.com/main.bundle.js"></script> -->
 
 </script>
 
